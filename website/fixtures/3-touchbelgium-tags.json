@@ -1,0 +1,10 @@
+[{"model":"website.tag","pk":1,"fields":{"word":"knowledge base"}},
+{"model":"website.tag","pk":2,"fields":{"word":"Ameliorated"}},
+{"model":"website.tag","pk":3,"fields":{"word":"Devolved"}},
+{"model":"website.tag","pk":4,"fields":{"word":"Grass-roots"}},
+{"model":"website.tag","pk":5,"fields":{"word":"Organic"}},
+{"model":"website.tag","pk":6,"fields":{"word":"Cross-platform"}},
+{"model":"website.tag","pk":7,"fields":{"word":"tertiary"}},
+{"model":"website.tag","pk":8,"fields":{"word":"zero tolerance"}},
+{"model":"website.tag","pk":9,"fields":{"word":"Versatile"}},
+{"model":"website.tag","pk":10,"fields":{"word":"actuating"}}]
