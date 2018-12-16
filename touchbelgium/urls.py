@@ -31,10 +31,9 @@ router.register(r'posts', views.PostViewSet, basename="posts")
 router.register(r'tags', views.TagViewSet)
 
 urlpatterns = [
-    path('admin/filebrowser/', site.urls),
-    path('admin/', admin.site.urls),
+    path('filebrowser/', site.urls),
+    path('', admin.site.urls),
     re_path(r'^tinymce/', include('tinymce.urls')),
-    path('', include('website.urls')),
     path('api/', include(router.urls)),
     path('robots.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

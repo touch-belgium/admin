@@ -30,7 +30,8 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', 'touch-belgium.be']
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
     'localhost',
-    'localhost:8000'
+    'localhost:8000',
+    'touchb.shop'
 )
 
 # Application definition

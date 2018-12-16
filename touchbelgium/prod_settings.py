@@ -33,5 +33,7 @@ LOGGING = {
     }
 }
 
+MEDIA_URL = 'https://touchb.shop/media/'
+
 ALLOWED_HOSTS.append(os.environ.get('PROD_MACHINE'))
 DEBUG = False
