@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.core.validators import MinValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator
 from filebrowser.fields import FileBrowseField
 from tinymce import HTMLField
 
@@ -58,6 +58,7 @@ class Venue(models.Model):
 
 
 class Match(models.Model):
+    competition = models.ForeignKey('Competition', on_delete=models.PROTECT)
     home_team = models.ForeignKey('Team', on_delete=models.PROTECT,
                                   related_name="home_team")
     away_team = models.ForeignKey('Team', on_delete=models.PROTECT,
@@ -67,6 +68,7 @@ class Match(models.Model):
 
     home_touchdowns = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(0)])
     away_touchdowns = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(0)])
+    invitational_match = models.BooleanField()
 
     def __str__(self):
         return self.when.strftime("%d %b %H:%M") + " | " + \
@@ -88,12 +90,12 @@ class BoardMember(models.Model):
 
 class Competition(models.Model):
     name = models.CharField(max_length=50)
-    teams = models.ManyToManyField('Team')
     win_value = models.IntegerField(default=3, validators=[MinValueValidator(0)])
     defeat_value = models.IntegerField(default=0, validators=[MinValueValidator(0)])
     tie_value = models.IntegerField(default=1, validators=[MinValueValidator(0)])
     venue = models.ForeignKey('Venue', on_delete=models.PROTECT,
                               blank=True, null=True)
+    rating = models.IntegerField(default=2, validators=[MinValueValidator(1), MaxValueValidator(5)])
 
     def __str__(self):
         return self.name

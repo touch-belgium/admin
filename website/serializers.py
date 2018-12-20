@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from .models import Post, Tag
+from .models import Post, Tag, Venue, Competition, Match, Team
 from rest_framework import serializers
 
 
@@ -27,3 +27,30 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
         model = Post
         fields = ('id', 'title', 'picture', 'body', 'created_at',
                   'author', 'tags', 'slug')
+
+
+class VenueSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Venue
+        fields = '__all__'
+
+
+class TeamSerializer(serializers.HyperlinkedModelSerializer):
+    logo = serializers.SerializerMethodField()
+
+    def get_logo(self, obj):
+        return self.context['request'].build_absolute_uri(obj.logo.url)
+
+    class Meta:
+        model = Team
+        fields = '__all__'
+
+class CompetitionSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Competition
+        fields = '__all__'
+
+class MatchSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Match
+        fields = '__all__'

@@ -8,33 +8,14 @@ from rest_framework import generics
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from .models import Post, Tag
-from .serializers import UserSerializer, PostSerializer, TagSerializer
+from .models import Post, Tag, Venue, Team, Competition, Match
+from .serializers import UserSerializer, PostSerializer, TagSerializer, TeamSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer
 # Create your views here.
-
-
-def index(request):
-    return render(request, 'index.html')
-
-
-def news(request):
-    posts = Post.objects.order_by('-pk')
-    paginator = Paginator(posts, 5)
-
-    page = request.GET.get('page')
-    first_posts = paginator.get_page(page)
-    context = {"posts": first_posts}
-    return render(request, 'news.html', context)
-
-
-def new(request, id, slug=""):
-    return render(request, 'new.html', {"post": Post.objects.get(pk=id)})
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
-
 
 class PostViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = PostSerializer
@@ -47,7 +28,23 @@ class PostViewSet(viewsets.ReadOnlyModelViewSet):
 
         return queryset
 
-
 class TagViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
+
+
+class VenueViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Venue.objects.all()
+    serializer_class = VenueSerializer
+
+class TeamViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Team.objects.all()
+    serializer_class = TeamSerializer
+
+class CompetitionViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Competition.objects.all()
+    serializer_class = CompetitionSerializer
+
+class MatchViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Match.objects.all()
+    serializer_class = MatchSerializer

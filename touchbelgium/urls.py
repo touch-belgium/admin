@@ -29,6 +29,11 @@ router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'posts', views.PostViewSet, basename="posts")
 router.register(r'tags', views.TagViewSet)
+router.register(r'venues', views.VenueViewSet)
+router.register(r'teams', views.TeamViewSet)
+router.register(r'competitions', views.CompetitionViewSet)
+router.register(r'matches', views.MatchViewSet)
+
 
 urlpatterns = [
     path('filebrowser/', site.urls),
