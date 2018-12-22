@@ -99,3 +99,11 @@ class Competition(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Player(models.Model):
+    name = models.CharField(max_length=100)
+    license_no = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
