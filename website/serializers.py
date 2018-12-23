@@ -26,7 +26,7 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Post
         fields = ('id', 'title', 'picture', 'body', 'created_at',
-                  'author', 'tags', 'slug')
+                  'author', 'tags')
 
 
 class VenueSerializer(serializers.HyperlinkedModelSerializer):
@@ -45,12 +45,16 @@ class TeamSerializer(serializers.HyperlinkedModelSerializer):
         model = Team
         fields = '__all__'
 
+
 class CompetitionSerializer(serializers.HyperlinkedModelSerializer):
+    id = serializers.ReadOnlyField() # makes the id appear as well
+
     class Meta:
         model = Competition
         fields = '__all__'
 
+
 class MatchSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Match
-        fields = '__all__'
+        fields = ('id', '__all__')

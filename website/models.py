@@ -14,7 +14,6 @@ class Tag(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=80)
-    slug = models.SlugField(max_length=100, blank=True, null=True)
     picture = FileBrowseField(max_length=500, default="base/news_placeholder.png",
                               directory="/")
     author = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
