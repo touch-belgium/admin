@@ -17,16 +17,34 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
 
+    @action(detail=False)
+    def recent(self, request):
+        recent_users = User.objects.all().order_by('date_joined')
+        page = self.paginate_queryset(recent_users)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(recent_users, many=True)
+        return Response(serializer.data)
+
+
 class PostViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = PostSerializer
+    queryset = Post.objects.all()
+    RECENT = 6
 
-    def get_queryset(self):
-        queryset = Post.objects.all()
-        number = self.request.query_params.get('number', None)
-        if number:
-            queryset = queryset[:int(number)]
+    @action(detail=False)
+    def recent(self, request):
+        recent_posts = self.queryset[:self.RECENT]
+        page = self.paginate_queryset(recent_posts)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
 
-        return queryset
+        serializer = self.get_serializer(recent_posts, many=True)
+        return Response(serializer.data)
+
 
 class TagViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Tag.objects.all()
@@ -37,14 +55,25 @@ class VenueViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Venue.objects.all()
     serializer_class = VenueSerializer
 
+
 class TeamViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
+
 
 class CompetitionViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Competition.objects.all()
     serializer_class = CompetitionSerializer
 
+
 class MatchViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Match.objects.all()
     serializer_class = MatchSerializer
+
+
+class MatchCompetitionViewSet(viewsets.ReadOnlyModelViewSet):
+    serializer_class = MatchSerializer
+
+    def get_queryset(self):
+        comp = self.kwargs['competition']
+        return Match.objects.filter(competition=comp)

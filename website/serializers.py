@@ -57,4 +57,4 @@ class CompetitionSerializer(serializers.HyperlinkedModelSerializer):
 class MatchSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Match
-        fields = ('id', '__all__')
+        fields = '__all__'

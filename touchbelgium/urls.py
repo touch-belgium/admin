@@ -27,12 +27,13 @@ from website import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
-router.register(r'posts', views.PostViewSet, basename="posts")
+router.register(r'posts', views.PostViewSet, basename="post")
 router.register(r'tags', views.TagViewSet)
 router.register(r'venues', views.VenueViewSet)
 router.register(r'teams', views.TeamViewSet)
 router.register(r'competitions', views.CompetitionViewSet)
-router.register(r'matches', views.MatchViewSet)
+router.register(r'matches', views.MatchViewSet, basename="match")
+router.register(r'matches/c/(?P<competition>.+)', views.MatchCompetitionViewSet, basename="match")
 
 
 urlpatterns = [
