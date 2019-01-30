@@ -52,9 +52,13 @@ class CompetitionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Competition
         fields = '__all__'
+        depth = 1
 
 
 class MatchSerializer(serializers.HyperlinkedModelSerializer):
+    home_team = TeamSerializer()
+    away_team = TeamSerializer()
+
     class Meta:
         model = Match
         fields = '__all__'
