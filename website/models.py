@@ -64,14 +64,18 @@ class Match(models.Model):
                                   related_name="away_team")
     when = models.DateTimeField(help_text="Type the time in HH:MM format")
     pitch = models.CharField(max_length=50, blank=True, null=True)
+    refs = models.CharField(max_length=100, blank=True, null=True)
 
     home_touchdowns = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(0)])
+    home_bonus = models.IntegerField(blank=True, default=0)
     away_touchdowns = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(0)])
+    away_bonus = models.IntegerField(blank=True, default=0)
     invitational_match = models.BooleanField()
 
     def __str__(self):
-        return self.when.strftime("%d %b %H:%M") + " | " + \
-            self.home_team.name + ' - ' + self.away_team.name
+        return self.competition.name + ", "  + self.home_team.name + \
+            ' - ' + self.away_team.name + " | " + \
+            self.when.strftime("%d %b %H:%M")
 
     class Meta:
         verbose_name_plural = "matches"
@@ -95,6 +99,7 @@ class Competition(models.Model):
     tie_value = models.IntegerField(default=1, validators=[MinValueValidator(0)])
     venue = models.ForeignKey('Venue', on_delete=models.PROTECT,
                               blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
     rating = models.IntegerField(default=2, validators=[MinValueValidator(1), MaxValueValidator(5)])
 
     def __str__(self):
