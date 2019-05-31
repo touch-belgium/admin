@@ -32,7 +32,7 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
 class PostViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = PostSerializer
     queryset = Post.objects.all()
-    RECENT = 6
+    RECENT = 4
 
     @action(detail=False)
     def recent(self, request):
