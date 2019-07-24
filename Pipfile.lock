@@ -1,12 +1,10 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7fee0d976f58fb9323f317940cf42f1565d313488874411fea00b7dc78a399c7"
+            "sha256": "3408441b50b26d6bcaf8d579f3fc10de360970301f867a1f3b2b902ee24e10ab"
         },
         "pipfile-spec": 6,
-        "requires": {
-            "python_version": "3.7.4"
-        },
+        "requires": {},
         "sources": [
             {
                 "name": "pypi",
@@ -73,12 +71,11 @@
         },
         "docutils": {
             "hashes": [
-                "sha256:02aec4bd92ab067f6ff27a38a38a41173bf01bed8f89157768c1573f53e474a6",
-                "sha256:51e64ef2ebfb29cae1faa133b3710143496eca21c530f3f71424d77687764274",
-                "sha256:7a4bd47eaf6596e1295ecb11361139febe29b084a87bf005bf899f9a42edc3c6"
+                "sha256:554158db07870b514e8df93800e95ee8fbf2a2388eb453c7f69206532a8a6fa5",
+                "sha256:82725b1051b92aaa42e240a4e5d6fafa2f6f5a2b5023b23a51c941dd7d863369"
             ],
             "index": "pypi",
-            "version": "==0.14"
+            "version": "==0.15.1"
         },
         "gunicorn": {
             "hashes": [
