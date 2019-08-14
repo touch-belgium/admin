@@ -100,7 +100,6 @@ class Competition(models.Model):
     venue = models.ForeignKey('Venue', on_delete=models.PROTECT,
                               blank=True, null=True)
     description = models.TextField(blank=True, null=True)
-    rating = models.IntegerField(default=2, validators=[MinValueValidator(1), MaxValueValidator(5)])
 
     def __str__(self):
         return self.name
