@@ -82,16 +82,6 @@ class Match(models.Model):
         ordering = ['-when']
 
 
-class BoardMember(models.Model):
-    name = models.CharField(max_length=50)
-    position = models.CharField(max_length=50)
-    email = models.EmailField(blank=True)
-    phone_number = models.CharField(max_length=20, blank=True)
-
-    def __str__(self):
-        return self.name + ' - ' + self.position
-
-
 class Competition(models.Model):
     name = models.CharField(max_length=50)
     win_value = models.IntegerField(default=3, validators=[MinValueValidator(0)])
@@ -105,9 +95,27 @@ class Competition(models.Model):
         return self.name
 
 
-class Player(models.Model):
+class TBMember(models.Model):
     name = models.CharField(max_length=100)
-    license_no = models.CharField(max_length=30)
+    picture = FileBrowseField(max_length=500, default="base/person_placeholder.png",
+                              directory="/", blank=True)
+    license_no = models.CharField(max_length=30, blank=True)
+    team = models.ForeignKey('Team', on_delete=models.PROTECT, blank=True, null=True)
+
+    # Committee
+    board_member = models.BooleanField()
+    board_position = models.CharField(max_length=50, blank=True)
+    email = models.EmailField(blank=True)
+    phone_number = models.CharField(max_length=20, blank=True)
+
+    # Ref
+    referee = models.BooleanField()
+    referee_board_member = models.BooleanField()
+    referee_level = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(6)], blank=True, null=True, default=1)
 
     def __str__(self):
-        return self.name
+        return self.name if not self.referee else self.name + " (ref)"
+
+    class Meta:
+        verbose_name = "Touch Belgium member"
+        verbose_name_plural = "Touch Belgium members"

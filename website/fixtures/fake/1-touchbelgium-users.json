@@ -178,5 +178,23 @@
     "groups": [],
     "user_permissions": []
   }
+},
+{
+  "model": "auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$1IpKjOWfIwaj$HkrEF5zgsWfzPz1jdNBVgJhU1cUMA+iumOEAx/Mvhug=",
+    "last_login": "2019-08-16T21:21:42.470Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-08-16T21:21:34.179Z",
+    "groups": [],
+    "user_permissions": []
+  }
 }
 ]

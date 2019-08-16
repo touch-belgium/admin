@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Team, BoardMember, Match, Competition, Venue, Tag, Player
+from .models import Post, Team, Match, Competition, Venue, Tag, TBMember
 
 admin.site.site_header = 'Touch Belgium Administration'
 
@@ -20,9 +20,8 @@ class PostAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Team)
-admin.site.register(BoardMember)
 admin.site.register(Match)
 admin.site.register(Competition)
 admin.site.register(Venue)
 admin.site.register(Tag)
-admin.site.register(Player)
+admin.site.register(TBMember)
