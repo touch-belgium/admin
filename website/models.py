@@ -99,14 +99,14 @@ class TBMember(models.Model):
     name = models.CharField(max_length=100)
     picture = FileBrowseField(max_length=500, default="base/person_placeholder.png",
                               directory="/", blank=True)
-    license_no = models.CharField(max_length=30, blank=True)
+    license_number = models.CharField(max_length=30, blank=True)
     team = models.ForeignKey('Team', on_delete=models.PROTECT, blank=True, null=True)
 
     # Committee
     board_member = models.BooleanField()
-    board_position = models.CharField(max_length=50, blank=True)
-    email = models.EmailField(blank=True)
-    phone_number = models.CharField(max_length=20, blank=True)
+    board_position = models.CharField(max_length=50, blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
+    phone_number = models.CharField(max_length=20, blank=True, null=True)
 
     # Ref
     referee = models.BooleanField()
