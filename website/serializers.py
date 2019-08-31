@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from .models import Post, Tag, Venue, Competition, Match, Team
+from .models import Post, Tag, Match, Competition, Venue, Team, TBMember, Event, File
 from rest_framework import serializers
 
 
@@ -61,4 +61,24 @@ class MatchSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Match
+        fields = '__all__'
+
+
+class TBMemberSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = TBMember
+        fields = '__all__'
+
+
+class EventSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Event
+        fields = '__all__'
+
+
+class FileSerializer(serializers.HyperlinkedModelSerializer):
+    tag = TagSerializer(read_only=True)
+
+    class Meta:
+        model = File
         fields = '__all__'

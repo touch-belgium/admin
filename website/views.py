@@ -8,8 +8,11 @@ from rest_framework import generics
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from .models import Post, Tag, Venue, Team, Competition, Match
-from .serializers import UserSerializer, PostSerializer, TagSerializer, TeamSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer
+from .models import Post, Tag, Venue, Team, Competition, Match, TBMember, \
+    Event, File
+from .serializers import UserSerializer, PostSerializer, TagSerializer, \
+    TeamSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer,\
+    TBMemberSerializer, EventSerializer, FileSerializer
 # Create your views here.
 
 
@@ -30,12 +33,17 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class PostViewSet(viewsets.ReadOnlyModelViewSet):
-    serializer_class = PostSerializer
     queryset = Post.objects.all()
+    serializer_class = PostSerializer
     RECENT = 4
 
     @action(detail=False)
     def recent(self, request):
+        """Limits the response to 4 posts, useful for not having to send the
+        whole blog to the landing page. Called like: 'posts/recent' in
+        the API
+
+        """
         recent_posts = self.queryset[:self.RECENT]
         page = self.paginate_queryset(recent_posts)
         if page is not None:
@@ -77,3 +85,14 @@ class MatchCompetitionViewSet(viewsets.ReadOnlyModelViewSet):
     def get_queryset(self):
         comp = self.kwargs['competition']
         return Match.objects.filter(competition=comp)
+
+
+class EventViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+
+
+class FileViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = File.objects.all()
+    serializer_class = FileSerializer
+    paginator = None

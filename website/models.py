@@ -110,8 +110,10 @@ class TBMember(models.Model):
 
     # Ref
     referee = models.BooleanField()
-    referee_board_member = models.BooleanField()
     referee_level = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(6)], blank=True, null=True, default=1)
+
+    referee_board_member = models.BooleanField()
+    referee_board_position = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
         return self.name if not self.referee else self.name + " (ref)"
@@ -119,3 +121,20 @@ class TBMember(models.Model):
     class Meta:
         verbose_name = "Touch Belgium member"
         verbose_name_plural = "Touch Belgium members"
+
+
+class Event(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
+    start = models.DateTimeField()
+    end = models.DateTimeField()
+    tag = models.ForeignKey('Tag', on_delete=models.PROTECT, blank=True, null=True)
+
+
+class File(models.Model):
+    title = models.CharField(max_length=100)
+    file = FileBrowseField(max_length=500, default="base/base_document.pdf", directory="/")
+    tag = models.ForeignKey('Tag', on_delete=models.PROTECT, blank=True, null=True)
+
+    def __str__(self):
+        return self.title

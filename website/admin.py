@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Team, Match, Competition, Venue, Tag, TBMember
+from .models import Post, Tag, Match, Competition, Venue, Team, TBMember, Event, File
 
 admin.site.site_header = 'Touch Belgium Administration'
 
@@ -25,3 +25,5 @@ admin.site.register(Competition)
 admin.site.register(Venue)
 admin.site.register(Tag)
 admin.site.register(TBMember)
+admin.site.register(Event)
+admin.site.register(File)
