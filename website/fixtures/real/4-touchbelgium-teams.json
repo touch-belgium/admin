@@ -1,0 +1,128 @@
+[
+{
+  "model": "website.team",
+  "pk": 1,
+  "fields": {
+    "name": "Kituro",
+    "logo": "team_logos/kituro_logo.jpg",
+    "founded": "1961",
+    "website": "http://www.kituro.be/",
+    "facebook": "https://www.facebook.com/KituroTouch.Rugby/",
+    "instagram": "",
+    "address": "Avenue des Jardins 50 bis, 1030 Schaerbeek, Belgium",
+    "main_belgian_club": true
+  }
+},
+{
+  "model": "website.team",
+  "pk": 2,
+  "fields": {
+    "name": "BBRFC Celtic",
+    "logo": "team_logos/bbrfcceltic_logo.png",
+    "founded": "",
+    "website": "https://bbrfcceltic.eu/",
+    "facebook": "https://www.facebook.com/BBRFCCelticTouch",
+    "instagram": "",
+    "address": "Boulevard du Triomphe 40, 1050 Ixelles, Belgium",
+    "main_belgian_club": true
+  }
+},
+{
+  "model": "website.team",
+  "pk": 3,
+  "fields": {
+    "name": "Boitsfort",
+    "logo": "team_logos/boitsfort_logo.jpg",
+    "founded": "",
+    "website": "http://www.brclub.org/?oid=736&pid=7481",
+    "facebook": "https://www.facebook.com/BRCTouch",
+    "instagram": "",
+    "address": "Avenue de la Foresterie 2, 1170 Bruxelles, Belgium",
+    "main_belgian_club": true
+  }
+},
+{
+  "model": "website.team",
+  "pk": 4,
+  "fields": {
+    "name": "Hamme",
+    "logo": "team_logos/hamme_logo.jpg",
+    "founded": "",
+    "website": "http://www.rugbyclubhamme.be/touch.php",
+    "facebook": "",
+    "instagram": "",
+    "address": "Kaaiplein 29, 9220 Hamme, Belgium",
+    "main_belgian_club": true
+  }
+},
+{
+  "model": "website.team",
+  "pk": 5,
+  "fields": {
+    "name": "Brussels Citizens",
+    "logo": "team_logos/citizens_logo.jpg",
+    "founded": "",
+    "website": "http://www.citizensrugby.be/touch",
+    "facebook": "https://www.facebook.com/brusselscitizens/",
+    "instagram": "",
+    "address": "Chauss\u00e9e de Wavre 1854, 1160 Auderghem, Belgium",
+    "main_belgian_club": true
+  }
+},
+{
+  "model": "website.team",
+  "pk": 6,
+  "fields": {
+    "name": "Gent",
+    "logo": "team_logos/gent_logo.png",
+    "founded": "",
+    "website": "https://www.gent-rugby.be/teams/touch/",
+    "facebook": "https://www.facebook.com/Genttouchrugby/",
+    "instagram": "",
+    "address": "Strandlaan 18, 9000 Gent, Belgium",
+    "main_belgian_club": true
+  }
+},
+{
+  "model": "website.team",
+  "pk": 7,
+  "fields": {
+    "name": "Antwerp",
+    "logo": "team_logos/antwerp_logo.png",
+    "founded": "",
+    "website": "https://www.antwerprugbyclub.be/teams/touch-team/",
+    "facebook": "",
+    "instagram": "",
+    "address": "Vogelzanglaan 6, 2020 Antwerpen, Belgium",
+    "main_belgian_club": true
+  }
+},
+{
+  "model": "website.team",
+  "pk": 8,
+  "fields": {
+    "name": "Oudenaarde",
+    "logo": "team_logos/oudenaarde_logo.jpg",
+    "founded": "",
+    "website": "https://www.rugby-oudenaarde.be/touch-rugby",
+    "facebook": "",
+    "instagram": "",
+    "address": "Rodelos 2, 9700 Oudenaarde, Belgium",
+    "main_belgian_club": true
+  }
+},
+{
+  "model": "website.team",
+  "pk": 9,
+  "fields": {
+    "name": "BUC St Josse",
+    "logo": "team_logos/buc_logo.png",
+    "founded": "",
+    "website": "https://www.bucrugby.be/touch",
+    "facebook": "",
+    "instagram": "",
+    "address": "Avenue des Communaut\u00e9s 6, 1140 Evere, Belgium",
+    "main_belgian_club": true
+  }
+}
+]

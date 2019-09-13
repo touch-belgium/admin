@@ -67,6 +67,7 @@ class VenueViewSet(viewsets.ReadOnlyModelViewSet):
 class TeamViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
+    paginator = None
 
 
 class CompetitionViewSet(viewsets.ReadOnlyModelViewSet):

@@ -38,9 +38,10 @@ class Team(models.Model):
     name = models.CharField(max_length=50)
     logo = FileBrowseField(max_length=500, default="base/team_placeholder.png",
                            directory="/")
-    created = models.CharField(max_length=4, blank=True, help_text="Year in YYYY format")
+    founded = models.CharField(max_length=4, blank=True, help_text="Year in YYYY format")
     website = models.URLField(blank=True)
     facebook = models.URLField(blank=True)
+    instagram = models.URLField(blank=True)
     address = models.CharField(max_length=100, blank=True)
     main_belgian_club = models.BooleanField(default=False)
 
