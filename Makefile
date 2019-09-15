@@ -1,14 +1,20 @@
 .PHONY: clean_db load_fixtures reset_migrations_and_db
 
-mock: clean_db load_fake_data
+mock: clean_db load_fake
 
 load_users:
 	python manage.py loaddata website/fixtures/fake/1-touchbelgium-users.json
 
+load_real:
+	for file in website/fixtures/real/*.json; do \
+		echo "Loading " $$file ;\
+		python manage.py loaddata $$file; \
+	done
+
 clean_db:
 	python manage.py flush
 
-load_fake_data:
+load_fake:
 	for file in website/fixtures/fake/*.json; do \
 		echo "Loading " $$file ;\
 		python manage.py loaddata $$file; \
