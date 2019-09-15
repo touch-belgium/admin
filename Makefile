@@ -2,6 +2,9 @@
 
 mock: clean_db load_fake_data
 
+load_users:
+	python manage.py loaddata website/fixtures/fake/1-touchbelgium-users.json
+
 clean_db:
 	python manage.py flush
 
