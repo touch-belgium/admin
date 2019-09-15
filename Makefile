@@ -1,6 +1,7 @@
 .PHONY: clean_db load_fixtures reset_migrations_and_db
 
 mock: clean_db load_fake
+mack: clean_db load_real
 
 load_users:
 	python manage.py loaddata website/fixtures/fake/1-touchbelgium-users.json

@@ -35,6 +35,9 @@ router.register(r'competitions', views.CompetitionViewSet)
 router.register(r'matches', views.MatchViewSet, basename="match")
 router.register(r'matches/c/(?P<competition>.+)', views.MatchCompetitionViewSet, basename="match")
 router.register(r'files', views.FileViewSet)
+router.register(r'members', views.TBMemberViewSet, basename="member")
+router.register(r'referees', views.RefereeViewSet, basename="referee")
+router.register(r'coaches', views.CoachViewSet)
 
 
 urlpatterns = [

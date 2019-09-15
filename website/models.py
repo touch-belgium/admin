@@ -112,11 +112,16 @@ class TBMember(models.Model):
     phone_number = models.CharField(max_length=20, blank=True, null=True)
 
     # Ref
-    referee = models.BooleanField()
+    referee = models.BooleanField(blank=True, null=True)
     referee_level = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(6)], blank=True, null=True, default=1)
 
-    referee_board_member = models.BooleanField()
+    referee_board_member = models.BooleanField(blank=True, null=True)
     referee_board_position = models.CharField(max_length=50, blank=True, null=True)
+
+    # Coach
+    coach = models.BooleanField(blank=True, null=True)
+    coach_level = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)], blank=True, null=True)
+    coach_position = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
         return self.name if not self.referee else self.name + " (ref)"

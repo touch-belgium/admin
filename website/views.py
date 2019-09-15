@@ -73,7 +73,7 @@ class TeamViewSet(viewsets.ReadOnlyModelViewSet):
 class CompetitionViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Competition.objects.all()
     serializer_class = CompetitionSerializer
-
+    paginator = None
 
 class MatchViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Match.objects.all()
@@ -96,4 +96,22 @@ class EventViewSet(viewsets.ReadOnlyModelViewSet):
 class FileViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = File.objects.all()
     serializer_class = FileSerializer
+    paginator = None
+
+
+class TBMemberViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = TBMember.objects.all()
+    serializer_class = TBMemberSerializer
+    paginator = None
+
+
+class RefereeViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = TBMember.objects.filter(referee=True)
+    serializer_class = TBMemberSerializer
+    paginator = None
+
+
+class CoachViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = TBMember.objects.filter(coach=True)
+    serializer_class = TBMemberSerializer
     paginator = None
