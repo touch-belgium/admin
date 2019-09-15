@@ -10,7 +10,9 @@
     "facebook": "https://www.facebook.com/KituroTouch.Rugby/",
     "instagram": "",
     "address": "Avenue des Jardins 50 bis, 1030 Schaerbeek, Belgium",
-    "main_belgian_club": true
+    "main_belgian_club": true,
+    "lat": "50.8605955000000000",
+    "lng": "4.3991514000000000"
   }
 },
 {
@@ -24,7 +26,9 @@
     "facebook": "https://www.facebook.com/BBRFCCelticTouch",
     "instagram": "",
     "address": "Boulevard du Triomphe 40, 1050 Ixelles, Belgium",
-    "main_belgian_club": true
+    "main_belgian_club": true,
+    "lat": "50.8239964000000000",
+    "lng": "4.3988538000000000"
   }
 },
 {
@@ -38,7 +42,9 @@
     "facebook": "https://www.facebook.com/BRCTouch",
     "instagram": "",
     "address": "Avenue de la Foresterie 2, 1170 Bruxelles, Belgium",
-    "main_belgian_club": true
+    "main_belgian_club": true,
+    "lat": "50.7936815000000000",
+    "lng": "4.4186864000000000"
   }
 },
 {
@@ -52,7 +58,9 @@
     "facebook": "",
     "instagram": "",
     "address": "Kaaiplein 29, 9220 Hamme, Belgium",
-    "main_belgian_club": true
+    "main_belgian_club": true,
+    "lat": "51.1042877000000000",
+    "lng": "4.1343842000000000"
   }
 },
 {
@@ -66,7 +74,9 @@
     "facebook": "https://www.facebook.com/brusselscitizens/",
     "instagram": "",
     "address": "Chauss\u00e9e de Wavre 1854, 1160 Auderghem, Belgium",
-    "main_belgian_club": true
+    "main_belgian_club": true,
+    "lat": "50.8118601000000000",
+    "lng": "4.4403763000000000"
   }
 },
 {
@@ -80,7 +90,9 @@
     "facebook": "https://www.facebook.com/Genttouchrugby/",
     "instagram": "",
     "address": "Strandlaan 18, 9000 Gent, Belgium",
-    "main_belgian_club": true
+    "main_belgian_club": true,
+    "lat": "51.0459870000000000",
+    "lng": "3.6876020000000000"
   }
 },
 {
@@ -94,7 +106,9 @@
     "facebook": "",
     "instagram": "",
     "address": "Vogelzanglaan 6, 2020 Antwerpen, Belgium",
-    "main_belgian_club": true
+    "main_belgian_club": true,
+    "lat": "51.1894327000000000",
+    "lng": "4.3984894000000000"
   }
 },
 {
@@ -108,7 +122,9 @@
     "facebook": "",
     "instagram": "",
     "address": "Rodelos 2, 9700 Oudenaarde, Belgium",
-    "main_belgian_club": true
+    "main_belgian_club": true,
+    "lat": "50.8515374000000000",
+    "lng": "3.6157095000000000"
   }
 },
 {
@@ -122,7 +138,9 @@
     "facebook": "",
     "instagram": "",
     "address": "Avenue des Communaut\u00e9s 6, 1140 Evere, Belgium",
-    "main_belgian_club": true
+    "main_belgian_club": true,
+    "lat": "50.8594467000000000",
+    "lng": "4.4222958000000000"
   }
 }
 ]
