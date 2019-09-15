@@ -1,0 +1,38 @@
+[
+{
+  "model": "website.file",
+  "pk": 51,
+  "fields": {
+    "title": "Simplified rules (English)",
+    "file": "documents/simplified_rules_en.pdf",
+    "tag": 7
+  }
+},
+{
+  "model": "website.file",
+  "pk": 52,
+  "fields": {
+    "title": "Simplified rules (Fran\u00e7ais)",
+    "file": "documents/simplified_rules_fr.pdf",
+    "tag": 7
+  }
+},
+{
+  "model": "website.file",
+  "pk": 53,
+  "fields": {
+    "title": "Simplified rules (Nederlands)",
+    "file": "documents/simplified_rules_nl.pdf",
+    "tag": 7
+  }
+},
+{
+  "model": "website.file",
+  "pk": 54,
+  "fields": {
+    "title": "Referee Accreditation System - 2018",
+    "file": "documents/ref_accr_system.pdf",
+    "tag": 7
+  }
+}
+]

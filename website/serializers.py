@@ -65,6 +65,15 @@ class MatchSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class TBMemberSerializer(serializers.HyperlinkedModelSerializer):
+    picture = serializers.SerializerMethodField()
+    team = serializers.SlugRelatedField(
+        read_only=True,
+        slug_field="name"
+    )
+
+    def get_picture(self, obj):
+        return self.context['request'].build_absolute_uri(obj.picture.url)
+
     class Meta:
         model = TBMember
         fields = '__all__'
@@ -77,6 +86,11 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class FileSerializer(serializers.HyperlinkedModelSerializer):
+    file = serializers.SerializerMethodField()
+
+    def get_file(self, obj):
+        return self.context['request'].build_absolute_uri(obj.file.url)
+
     tag = TagSerializer(read_only=True)
 
     class Meta:
