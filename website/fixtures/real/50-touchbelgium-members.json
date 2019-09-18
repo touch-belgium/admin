@@ -69,7 +69,7 @@
   "model": "website.tbmember",
   "pk": 404,
   "fields": {
-    "name": "Joanthan Chevalier",
+    "name": "Jonathan Chevalier",
     "picture": "player_pictures/jonathanchevalier.jpg",
     "license_number": "",
     "team": 5,
