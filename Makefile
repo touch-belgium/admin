@@ -4,7 +4,7 @@ mock: clean_db load_fake
 mack: clean_db load_real
 
 load_users:
-	python manage.py loaddata website/fixtures/fake/1-touchbelgium-users.json
+	python manage.py loaddata website/fixtures/real/1-touchbelgium-users.json
 
 load_real:
 	for file in website/fixtures/real/*.json; do \

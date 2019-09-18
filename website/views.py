@@ -9,10 +9,10 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from .models import Post, Tag, Venue, Team, Competition, Match, TBMember, \
-    Event, File
+    Event, File, Link
 from .serializers import UserSerializer, PostSerializer, TagSerializer, \
     TeamSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer,\
-    TBMemberSerializer, EventSerializer, FileSerializer
+    TBMemberSerializer, EventSerializer, FileSerializer, LinkSerializer
 # Create your views here.
 
 
@@ -96,6 +96,12 @@ class EventViewSet(viewsets.ReadOnlyModelViewSet):
 class FileViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = File.objects.all()
     serializer_class = FileSerializer
+    paginator = None
+
+
+class LinkViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Link.objects.all()
+    serializer_class = LinkSerializer
     paginator = None
 
 

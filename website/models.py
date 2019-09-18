@@ -123,6 +123,9 @@ class TBMember(models.Model):
     coach_level = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)], blank=True, null=True)
     coach_position = models.CharField(max_length=50, blank=True, null=True)
 
+    # Misc
+    more = models.TextField(blank=True, null=True)
+
     def __str__(self):
         return self.name if not self.referee else self.name + " (ref)"
 
@@ -146,3 +149,12 @@ class File(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Link(models.Model):
+    title = models.CharField(max_length=100)
+    link = models.URLField()
+    tag = models.ForeignKey('Tag', on_delete=models.PROTECT, blank=True, null=True)
+
+    def __str__(self):
+        return self.title + " - (" + self.tag.word + ")"
