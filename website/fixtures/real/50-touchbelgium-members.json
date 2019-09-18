@@ -1,0 +1,178 @@
+[
+{
+  "model": "website.tbmember",
+  "pk": 401,
+  "fields": {
+    "name": "Phil Holliday",
+    "picture": "player_pictures/phil.jpg",
+    "license_number": "",
+    "team": 2,
+    "board_member": false,
+    "board_position": null,
+    "email": null,
+    "phone_number": null,
+    "referee": true,
+    "referee_level": 3,
+    "referee_board_member": true,
+    "referee_board_position": "National Director of Referees",
+    "coach": null,
+    "coach_level": null,
+    "coach_position": null,
+    "more": "I\u2019m the National Director of Referees for Touch Belgium and I have overall management of referee activities in Belgium. I work closely with the Touch Belgium Committee on strategic referee planning for Belgium and I have fantastic support from Steph and Karla on working with developing referees from Belgium and referee organisation at tournaments in Belgium. I started refereeing in 2012 and I hold a L3 badge, which I obtained at the Euros in 2016. I am also a L1 referee coach and a L2 referee presenter."
+  }
+},
+{
+  "model": "website.tbmember",
+  "pk": 402,
+  "fields": {
+    "name": "Karla Brincat",
+    "picture": "player_pictures/karla.jpg",
+    "license_number": "",
+    "team": null,
+    "board_member": false,
+    "board_position": null,
+    "email": null,
+    "phone_number": null,
+    "referee": true,
+    "referee_level": 2,
+    "referee_board_member": true,
+    "referee_board_position": "Referee development",
+    "coach": null,
+    "coach_level": null,
+    "coach_position": null,
+    "more": "My role within Touch Belgium is to help referees develop and progress through the different referee levels. I will help organise Level 1,2 and 3 courses in Belgium as well as regularly advertise courses taking place outside Belgium. I am here to answer any questions you may have on the referee pathway. I currently hold a L2 badge which I obtained at the Euros 2018. I am working towards obtaining my L3."
+  }
+},
+{
+  "model": "website.tbmember",
+  "pk": 403,
+  "fields": {
+    "name": "St\u00e9phanie Horeau",
+    "picture": "player_pictures/stephanie.jpg",
+    "license_number": "",
+    "team": 3,
+    "board_member": false,
+    "board_position": null,
+    "email": null,
+    "phone_number": null,
+    "referee": true,
+    "referee_level": 2,
+    "referee_board_member": true,
+    "referee_board_position": null,
+    "coach": null,
+    "coach_level": null,
+    "coach_position": null,
+    "more": "I am playing touch since 2016 and referring since 2017. I am holding a level 2 badge, that I got at the Euros in Nottingham in 2018.\r\n\r\nWithin Touch Belgium, I am helping with referee-related organization, and especially for tournaments : referee allocation, external refs coordination, etc."
+  }
+},
+{
+  "model": "website.tbmember",
+  "pk": 404,
+  "fields": {
+    "name": "Joanthan Chevalier",
+    "picture": "player_pictures/jonathanchevalier.jpg",
+    "license_number": "",
+    "team": 5,
+    "board_member": false,
+    "board_position": null,
+    "email": null,
+    "phone_number": null,
+    "referee": true,
+    "referee_level": 1,
+    "referee_board_member": null,
+    "referee_board_position": null,
+    "coach": null,
+    "coach_level": null,
+    "coach_position": null,
+    "more": ""
+  }
+},
+{
+  "model": "website.tbmember",
+  "pk": 405,
+  "fields": {
+    "name": "Vincent Lebacq",
+    "picture": "player_pictures/vincentlebacq.jpg",
+    "license_number": "",
+    "team": 2,
+    "board_member": false,
+    "board_position": null,
+    "email": null,
+    "phone_number": null,
+    "referee": true,
+    "referee_level": 2,
+    "referee_board_member": null,
+    "referee_board_position": null,
+    "coach": null,
+    "coach_level": null,
+    "coach_position": null,
+    "more": ""
+  }
+},
+{
+  "model": "website.tbmember",
+  "pk": 406,
+  "fields": {
+    "name": "Mari Detragiache",
+    "picture": "player_pictures/maridetragiache.jpg",
+    "license_number": "",
+    "team": 3,
+    "board_member": false,
+    "board_position": null,
+    "email": null,
+    "phone_number": null,
+    "referee": true,
+    "referee_level": 1,
+    "referee_board_member": null,
+    "referee_board_position": null,
+    "coach": null,
+    "coach_level": null,
+    "coach_position": null,
+    "more": ""
+  }
+},
+{
+  "model": "website.tbmember",
+  "pk": 407,
+  "fields": {
+    "name": "Claudia Nagels",
+    "picture": "player_pictures/claudianagels.jpg",
+    "license_number": "",
+    "team": 3,
+    "board_member": false,
+    "board_position": null,
+    "email": null,
+    "phone_number": null,
+    "referee": true,
+    "referee_level": 1,
+    "referee_board_member": null,
+    "referee_board_position": null,
+    "coach": null,
+    "coach_level": null,
+    "coach_position": null,
+    "more": ""
+  }
+},
+{
+  "model": "website.tbmember",
+  "pk": 408,
+  "fields": {
+    "name": "Benjamin Devaux",
+    "picture": "player_pictures/benjamindevaux.jpg",
+    "license_number": "",
+    "team": 3,
+    "board_member": false,
+    "board_position": null,
+    "email": null,
+    "phone_number": null,
+    "referee": true,
+    "referee_level": 1,
+    "referee_board_member": null,
+    "referee_board_position": null,
+    "coach": null,
+    "coach_level": null,
+    "coach_position": null,
+    "more": ""
+  }
+}
+]
