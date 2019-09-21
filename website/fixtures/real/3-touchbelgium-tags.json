@@ -1,11 +1,93 @@
-[{"model":"website.tag","pk":1,"fields":{"word":"euros"}},
- {"model":"website.tag","pk":2,"fields":{"word":"international"}},
- {"model":"website.tag","pk":3,"fields":{"word":"info"}},
- {"model":"website.tag","pk":4,"fields":{"word":"tournaments"}},
-{"model":"website.tag","pk":5,"fields":{"word":"youth"}},
-{"model":"website.tag","pk":6,"fields":{"word":"world cup"}},
-{"model":"website.tag","pk":7,"fields":{"word":"referees"}},
-{"model":"website.tag","pk":8,"fields":{"word":"training"}},
-{"model":"website.tag","pk":9,"fields":{"word":"rules"}},
-{"model":"website.tag","pk":10,"fields":{"word":"members"}},
-{"model":"website.tag","pk":11,"fields":{"word":"championship"}}]
+[
+{
+  "model": "website.tag",
+  "pk": 1,
+  "fields": {
+    "word": "euros"
+  }
+},
+{
+  "model": "website.tag",
+  "pk": 2,
+  "fields": {
+    "word": "international"
+  }
+},
+{
+  "model": "website.tag",
+  "pk": 3,
+  "fields": {
+    "word": "info"
+  }
+},
+{
+  "model": "website.tag",
+  "pk": 4,
+  "fields": {
+    "word": "tournaments"
+  }
+},
+{
+  "model": "website.tag",
+  "pk": 5,
+  "fields": {
+    "word": "youth"
+  }
+},
+{
+  "model": "website.tag",
+  "pk": 6,
+  "fields": {
+    "word": "world cup"
+  }
+},
+{
+  "model": "website.tag",
+  "pk": 7,
+  "fields": {
+    "word": "referees"
+  }
+},
+{
+  "model": "website.tag",
+  "pk": 8,
+  "fields": {
+    "word": "training"
+  }
+},
+{
+  "model": "website.tag",
+  "pk": 9,
+  "fields": {
+    "word": "rules"
+  }
+},
+{
+  "model": "website.tag",
+  "pk": 10,
+  "fields": {
+    "word": "members"
+  }
+},
+{
+  "model": "website.tag",
+  "pk": 11,
+  "fields": {
+    "word": "championship"
+  }
+},
+{
+  "model": "website.tag",
+  "pk": 12,
+  "fields": {
+    "word": "sponsorship"
+  }
+},
+{
+  "model": "website.tag",
+  "pk": 13,
+  "fields": {
+    "word": "agm"
+  }
+}
+]
