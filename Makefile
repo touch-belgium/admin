@@ -35,3 +35,6 @@ reset_migrations_and_db: delete_migrations delete_sqlite_db
 migrations_and_migrate:
 	python manage.py makemigrations
 	python manage.py migrate
+
+migrate:
+	python manage.py migrate

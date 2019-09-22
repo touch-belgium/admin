@@ -17,6 +17,16 @@ somehow, in the `activate` script, .env file, etc.
 The folder `MEDIA_ROOT` (also an env variable) has to be created in
 the local filesystem. FileBrowser will not create it.
 
+**On macOS:**
+
+`pipenv install` might fail because `psycopg2` can't be compiled
+without the SSL library (which can't be found inside the virtual
+env). Therefore, the command should be:
+
+```bash
+$ LDFLAGS="-L/usr/local/opt/openssl/lib" pipenv install
+```
+
 ## On Dokku
 
 ### Media serving
