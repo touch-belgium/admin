@@ -36,6 +36,7 @@ class VenueSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class TeamSerializer(serializers.HyperlinkedModelSerializer):
+    id = serializers.ReadOnlyField() # makes the id appear as well
     logo = serializers.SerializerMethodField()
 
     def get_logo(self, obj):

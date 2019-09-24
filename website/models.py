@@ -93,6 +93,7 @@ class Competition(models.Model):
     venue = models.ForeignKey('Venue', on_delete=models.PROTECT,
                               blank=True, null=True)
     description = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
@@ -148,7 +149,7 @@ class File(models.Model):
     tag = models.ForeignKey('Tag', on_delete=models.PROTECT, blank=True, null=True)
 
     def __str__(self):
-        return self.title
+        return self.tag.word.upper() + " - " + self.title
 
 
 class Link(models.Model):
