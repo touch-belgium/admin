@@ -159,3 +159,11 @@ class Link(models.Model):
 
     def __str__(self):
         return self.title + " - (" + self.tag.word + ")"
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.name

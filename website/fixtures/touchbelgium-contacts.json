@@ -1,0 +1,74 @@
+[
+{
+  "model": "website.contact",
+  "pk": 1,
+  "fields": {
+    "name": "Tournament information",
+    "email": "tournament@touch-belgium.be"
+  }
+},
+{
+  "model": "website.contact",
+  "pk": 2,
+  "fields": {
+    "name": "Referee enquiries",
+    "email": "referee@touch-belgium.be"
+  }
+},
+{
+  "model": "website.contact",
+  "pk": 3,
+  "fields": {
+    "name": "Tournament enquiries for referees",
+    "email": "stephanie.horeau@gmail.com"
+  }
+},
+{
+  "model": "website.contact",
+  "pk": 4,
+  "fields": {
+    "name": "Referee upgrade / training opportunities",
+    "email": "refereetraining@touch-belgium.be"
+  }
+},
+{
+  "model": "website.contact",
+  "pk": 5,
+  "fields": {
+    "name": "Coaching enquiries",
+    "email": "coaching@touch-belgium.be"
+  }
+},
+{
+  "model": "website.contact",
+  "pk": 6,
+  "fields": {
+    "name": "Sponsorship opportunities",
+    "email": "sponsorship@touch-belgium.be"
+  }
+},
+{
+  "model": "website.contact",
+  "pk": 7,
+  "fields": {
+    "name": "Youth touch enquiries",
+    "email": "youth@touch-belgium.be"
+  }
+},
+{
+  "model": "website.contact",
+  "pk": 8,
+  "fields": {
+    "name": "Development and membership opportunities",
+    "email": "president@touch-belgium.be"
+  }
+},
+{
+  "model": "website.contact",
+  "pk": 9,
+  "fields": {
+    "name": "General enquiries",
+    "email": "secretary@touch-belgium.be"
+  }
+}
+]

@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from .models import Post, Tag, Match, Competition, Venue, Team, TBMember, Event, File, Link
+from .models import Post, Tag, Match, Competition, Venue, Team, TBMember, Event, File, Link, Contact
 from rest_framework import serializers
 
 
@@ -104,4 +104,10 @@ class LinkSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Link
+        fields = '__all__'
+
+
+class ContactSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Contact
         fields = '__all__'

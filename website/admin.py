@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Tag, Match, Competition, Venue, Team, TBMember, Event, File, Link
+from .models import Post, Tag, Match, Competition, Venue, Team, TBMember, Event, File, Link, Contact
 import os
 import googlemaps
 
@@ -62,3 +62,4 @@ admin.site.register(TBMember)
 admin.site.register(Event)
 admin.site.register(File)
 admin.site.register(Link)
+admin.site.register(Contact)

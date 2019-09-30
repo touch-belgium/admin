@@ -9,10 +9,11 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from .models import Post, Tag, Venue, Team, Competition, Match, TBMember, \
-    Event, File, Link
+    Event, File, Link, Contact
 from .serializers import UserSerializer, PostSerializer, TagSerializer, \
     TeamSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer,\
-    TBMemberSerializer, EventSerializer, FileSerializer, LinkSerializer
+    TBMemberSerializer, EventSerializer, FileSerializer, LinkSerializer, \
+    ContactSerializer
 # Create your views here.
 
 
@@ -120,4 +121,10 @@ class RefereeViewSet(viewsets.ReadOnlyModelViewSet):
 class CoachViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = TBMember.objects.filter(coach=True)
     serializer_class = TBMemberSerializer
+    paginator = None
+
+
+class ContactViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
     paginator = None

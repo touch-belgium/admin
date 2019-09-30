@@ -1,8 +1,0 @@
-[{"model":"website.venue","pk":1,"fields":{"name":"Brigham Young University","address":"3614 Westridge Court"}},
-{"model":"website.venue","pk":2,"fields":{"name":"Katholische Fachhochschule Nordrhein-Westfalen","address":"3 Vera Way"}},
-{"model":"website.venue","pk":3,"fields":{"name":"University of Geneva","address":"8625 Tomscot Way"}},
-{"model":"website.venue","pk":4,"fields":{"name":"China Three Gorges University","address":"816 Glendale Center"}},
-{"model":"website.venue","pk":5,"fields":{"name":"Fujian University of Traditional Chinese Medicine","address":"9876 North Pass"}},
-{"model":"website.venue","pk":6,"fields":{"name":"Karnatak University","address":"57360 Pleasure Drive"}},
-{"model":"website.venue","pk":7,"fields":{"name":"Pacific University","address":"704 Menomonie Plaza"}},
-{"model":"website.venue","pk":8,"fields":{"name":"Centro Universitario Ixtlahuaca","address":"6295 West Circle"}}]
