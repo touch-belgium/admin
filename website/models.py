@@ -107,10 +107,11 @@ class TBMember(models.Model):
     team = models.ForeignKey('Team', on_delete=models.PROTECT, blank=True, null=True)
 
     # Committee
-    board_member = models.BooleanField()
-    board_position = models.CharField(max_length=50, blank=True, null=True)
+    committee_member = models.BooleanField()
+    committee_position = models.CharField(max_length=50, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     phone_number = models.CharField(max_length=20, blank=True, null=True)
+    committee_text = models.TextField(blank=True, null=True)
 
     # Ref
     referee = models.BooleanField(blank=True, null=True)
@@ -118,14 +119,13 @@ class TBMember(models.Model):
 
     referee_board_member = models.BooleanField(blank=True, null=True)
     referee_board_position = models.CharField(max_length=50, blank=True, null=True)
+    referee_text = models.TextField(blank=True, null=True)
 
     # Coach
     coach = models.BooleanField(blank=True, null=True)
     coach_level = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)], blank=True, null=True)
     coach_position = models.CharField(max_length=50, blank=True, null=True)
 
-    # Misc
-    more = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.name if not self.referee else self.name + " (ref)"

@@ -47,6 +47,12 @@ class TeamSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 
+class TeamStatsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Team
+        fields = ["name"]
+
+
 class CompetitionSerializer(serializers.HyperlinkedModelSerializer):
     id = serializers.ReadOnlyField() # makes the id appear as well
 

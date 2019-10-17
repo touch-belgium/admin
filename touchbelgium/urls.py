@@ -33,7 +33,7 @@ router.register(r'venues', views.VenueViewSet)
 router.register(r'teams', views.TeamViewSet)
 router.register(r'competitions', views.CompetitionViewSet)
 router.register(r'matches', views.MatchViewSet, basename="match")
-router.register(r'matches/c/(?P<competition>.+)', views.MatchCompetitionViewSet, basename="match")
+# router.register(r'matches/c/(?P<competition>.+)', views.MatchCompetitionViewSet, basename="match")
 router.register(r'files', views.FileViewSet)
 router.register(r'members', views.TBMemberViewSet, basename="member")
 router.register(r'referees', views.RefereeViewSet, basename="referee")
@@ -52,4 +52,4 @@ urlpatterns = [
 
 # That last + static line allows media to be served during development
 # see
-# https://docs.djangoproject.com/en/2.1/howto/static-files/#serving-files-uploaded-by-a-user-during-development
+# https://docs.djangoproject.com/en/2.2/howto/static-files/#serving-files-uploaded-by-a-user-during-development

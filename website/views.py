@@ -13,22 +13,18 @@ from .models import Post, Tag, Venue, Team, Competition, Match, TBMember, \
 from .serializers import UserSerializer, PostSerializer, TagSerializer, \
     TeamSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer,\
     TBMemberSerializer, EventSerializer, FileSerializer, LinkSerializer, \
-    ContactSerializer
+    ContactSerializer, TeamStatsSerializer
 # Create your views here.
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
+    paginator = None
 
     @action(detail=False)
     def recent(self, request):
         recent_users = User.objects.all().order_by('date_joined')
-        page = self.paginate_queryset(recent_users)
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
-
         serializer = self.get_serializer(recent_users, many=True)
         return Response(serializer.data)
 
@@ -36,21 +32,17 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
 class PostViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    paginator = None
     RECENT = 4
 
     @action(detail=False)
-    def recent(self, request):
+    def recent(self, request, *arg, **kwargs):
         """Limits the response to 4 posts, useful for not having to send the
         whole blog to the landing page. Called like: 'posts/recent' in
         the API
 
         """
         recent_posts = self.queryset[:self.RECENT]
-        page = self.paginate_queryset(recent_posts)
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
-
         serializer = self.get_serializer(recent_posts, many=True)
         return Response(serializer.data)
 
@@ -58,6 +50,7 @@ class PostViewSet(viewsets.ReadOnlyModelViewSet):
 class TagViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
+    paginator = None
 
 
 class VenueViewSet(viewsets.ReadOnlyModelViewSet):
@@ -70,19 +63,34 @@ class TeamViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = TeamSerializer
     paginator = None
 
+    @action(detail=True)
+    def stats(self, request, *arg, **kwargs):
+        team = Team.objects.get(pk=kwargs["pk"])
+        serializer = TeamStatsSerializer(team, many=False)
+        return Response(serializer.data)
+
 
 class CompetitionViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Competition.objects.all()
     serializer_class = CompetitionSerializer
     paginator = None
 
+    @action(detail=True)
+    def matches(self, request, *arg, **kwargs):
+        matches = Match.objects.filter(competition=kwargs["pk"])
+        serializer = MatchSerializer(matches, many=True, context={"request": request})
+        return Response(serializer.data)
+
+
 class MatchViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Match.objects.all()
     serializer_class = MatchSerializer
+    paginator = None
 
 
 class MatchCompetitionViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = MatchSerializer
+    paginator = None
 
     def get_queryset(self):
         comp = self.kwargs['competition']
