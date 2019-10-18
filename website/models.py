@@ -158,7 +158,7 @@ class Link(models.Model):
     tag = models.ForeignKey('Tag', on_delete=models.PROTECT, blank=True, null=True)
 
     def __str__(self):
-        return self.title + " - (" + self.tag.word + ")"
+        return "{} - ({})".format(self.title, self.tag.word)
 
 
 class Contact(models.Model):
@@ -167,3 +167,11 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class BannerPicture(models.Model):
+    picture = FileBrowseField(max_length=500)
+    tag = models.ForeignKey('Tag', on_delete=models.PROTECT, blank=True, null=True)
+
+    def __str__(self):
+        return "{} banner picture - #{}".format(self.tag.word.upper(), self.id)

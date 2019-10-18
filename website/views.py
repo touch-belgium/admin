@@ -9,11 +9,11 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from .models import Post, Tag, Venue, Team, Competition, Match, TBMember, \
-    Event, File, Link, Contact
+    Event, File, Link, Contact, BannerPicture
 from .serializers import UserSerializer, PostSerializer, TagSerializer, \
     TeamSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer,\
     TBMemberSerializer, EventSerializer, FileSerializer, LinkSerializer, \
-    ContactSerializer, TeamStatsSerializer
+    ContactSerializer, TeamStatsSerializer, BannerPictureSerializer
 # Create your views here.
 
 
@@ -135,4 +135,10 @@ class CoachViewSet(viewsets.ReadOnlyModelViewSet):
 class ContactViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
+    paginator = None
+
+
+class BannerPictureViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = BannerPicture.objects.all()
+    serializer_class = BannerPictureSerializer
     paginator = None

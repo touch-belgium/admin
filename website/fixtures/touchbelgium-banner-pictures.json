@@ -1,0 +1,18 @@
+[
+{
+  "model": "website.bannerpicture",
+  "pk": 2,
+  "fields": {
+    "picture": "banner_pictures/referees_banner1.jpg",
+    "tag": 7
+  }
+},
+{
+  "model": "website.bannerpicture",
+  "pk": 3,
+  "fields": {
+    "picture": "banner_pictures/banner_tournaments1.jpg",
+    "tag": 4
+  }
+}
+]

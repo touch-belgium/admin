@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from .models import Post, Tag, Match, Competition, Venue, Team, TBMember, Event, File, Link, Contact
+from .models import Post, Tag, Match, Competition, Venue, Team, TBMember, Event, File, Link, Contact, BannerPicture
 from rest_framework import serializers
 
 
@@ -116,4 +116,16 @@ class LinkSerializer(serializers.HyperlinkedModelSerializer):
 class ContactSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Contact
+        fields = '__all__'
+
+
+class BannerPictureSerializer(serializers.HyperlinkedModelSerializer):
+    tag = TagSerializer(read_only=True)
+    picture = serializers.SerializerMethodField()
+
+    def get_picture(self, obj):
+        return self.context['request'].build_absolute_uri(obj.picture.url)
+
+    class Meta:
+        model = BannerPicture
         fields = '__all__'
