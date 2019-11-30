@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Tag, Match, Competition, Venue, Team, TBMember, Event, File, Link, Contact, BannerPicture
+from .models import Post, Tag, Venue, Team, TBMember, Event, File, Link, Contact, BannerPicture, League, Tournament, LeagueMatch, TournamentMatch
 import os
 import googlemaps
 
@@ -9,6 +9,8 @@ gmaps = googlemaps.Client(key=os.environ.get('GMAPS_API_KEY'))
 # Overloading
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
+    list_display = ("title", "author", "created_at")
+    list_filter = ("author",)
     exclude = ('author', 'slug')
 
     # Method override
@@ -46,21 +48,46 @@ class TeamAdmin(admin.ModelAdmin):
         Geocoding API and saves them.
 
         """
-        # TODO: exception handling
-        if hasattr(obj, "address"):
-            geocode_result = gmaps.geocode(getattr(obj, "address"), region="BE")
-            obj.lat = geocode_result[0]["geometry"]["location"]["lat"]
-            obj.lng = geocode_result[0]["geometry"]["location"]["lng"]
-            obj.save()
+        if getattr(obj, "venue", None) is not None:
+            print("aqui")
+            geocode_result = gmaps.geocode(getattr(obj, "venue").address, region="BE")
+            print(geocode_result)
+            if geocode_result:
+                obj.lat = geocode_result[0]["geometry"]["location"]["lat"]
+                obj.lng = geocode_result[0]["geometry"]["location"]["lng"]
+        obj.save()
 
 
-admin.site.register(Match)
-admin.site.register(Competition)
+@admin.register(TBMember)
+class TBMemberAdmin(admin.ModelAdmin):
+    list_display = ("name", "team", "referee", "referee_level", "coach")
+    list_filter = ("team", "referee", "referee_level", "coach")
+
+
+@admin.register(League)
+class LeagueAdmin(admin.ModelAdmin):
+    list_display = ("name", "venue")
+
+@admin.register(LeagueMatch)
+class LeagueMatchAdmin(admin.ModelAdmin):
+    list_display = ("match", "league", "when")
+    list_filter = ("league", "home_team", "away_team")
+
+
+@admin.register(Link)
+class LinkAdmin(admin.ModelAdmin):
+    list_display = ("title", "tag", "link")
+    list_filter = ("tag",)
+
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ("name", "email")
+
+admin.site.register(TournamentMatch)
+admin.site.register(Tournament)
 admin.site.register(Venue)
 admin.site.register(Tag)
-admin.site.register(TBMember)
 admin.site.register(Event)
 admin.site.register(File)
-admin.site.register(Link)
-admin.site.register(Contact)
 admin.site.register(BannerPicture)

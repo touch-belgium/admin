@@ -42,7 +42,7 @@ class Team(models.Model):
     website = models.URLField(blank=True)
     facebook = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
-    address = models.CharField(max_length=100, blank=True)
+    venue = models.ForeignKey("Venue", on_delete=models.PROTECT, blank=True, null=True)
     main_belgian_club = models.BooleanField(default=False)
     lat = models.DecimalField(max_digits=22, decimal_places=16, blank=True, null=True)
     lng = models.DecimalField(max_digits=22, decimal_places=16, blank=True, null=True)
@@ -53,14 +53,13 @@ class Team(models.Model):
 
 class Venue(models.Model):
     name = models.CharField(max_length=100)
-    address = models.CharField(max_length=100, blank=True)
+    address = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
 
 class Match(models.Model):
-    competition = models.ForeignKey('Competition', on_delete=models.PROTECT)
     home_team = models.ForeignKey('Team', on_delete=models.PROTECT,
                                   related_name="home_team")
     away_team = models.ForeignKey('Team', on_delete=models.PROTECT,
@@ -73,16 +72,48 @@ class Match(models.Model):
     home_bonus = models.IntegerField(blank=True, default=0)
     away_touchdowns = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(0)])
     away_bonus = models.IntegerField(blank=True, default=0)
-    invitational_match = models.BooleanField()
+
+    def str_name(self):
+        return self.home_team.name + ' vs ' + self.away_team.name
+
+    match = property(str_name)
 
     def __str__(self):
-        return self.competition.name + ", "  + self.home_team.name + \
+        return self.home_team.name + \
             ' - ' + self.away_team.name + " | " + \
             self.when.strftime("%d %b %H:%M")
 
     class Meta:
         verbose_name_plural = "matches"
         ordering = ['-when']
+
+
+class LeagueMatch(Match):
+    league = models.ForeignKey("League", on_delete=models.CASCADE)
+    invitational_match = models.BooleanField()
+
+
+    class Meta:
+        verbose_name_plural = "League matches"
+
+class TournamentMatch(Match):
+    tournament = models.ForeignKey("Tournament", on_delete=models.CASCADE)
+    POOL_STAGE = "PS"
+    PLAYOFF = "PO"
+    QUARTER_FINAL = "QF"
+    SEMI_FINAL = "SF"
+    FINAL = "FF"
+    MATCH_CHOICES = [
+        (POOL_STAGE, "Pool match"),
+        (PLAYOFF, "Playoff"),
+        (QUARTER_FINAL, "Quarter final"),
+        (SEMI_FINAL, "Semi final"),
+        (FINAL, "Final")
+    ]
+    match_type = models.CharField(max_length=2, choices=MATCH_CHOICES, default=POOL_STAGE)
+
+    class Meta:
+        verbose_name_plural = "Tournament matches"
 
 
 class Competition(models.Model):
@@ -97,6 +128,14 @@ class Competition(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Tournament(Competition):
+    pass
+
+
+class League(Competition):
+    pass
 
 
 class TBMember(models.Model):
@@ -128,7 +167,7 @@ class TBMember(models.Model):
 
 
     def __str__(self):
-        return self.name if not self.referee else self.name + " (ref)"
+        return self.name
 
     class Meta:
         verbose_name = "Touch Belgium member"

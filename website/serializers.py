@@ -38,6 +38,7 @@ class VenueSerializer(serializers.HyperlinkedModelSerializer):
 class TeamSerializer(serializers.HyperlinkedModelSerializer):
     id = serializers.ReadOnlyField() # makes the id appear as well
     logo = serializers.SerializerMethodField()
+    venue = VenueSerializer()
 
     def get_logo(self, obj):
         return self.context['request'].build_absolute_uri(obj.logo.url)
