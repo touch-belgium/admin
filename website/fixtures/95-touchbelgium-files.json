@@ -34,5 +34,32 @@
     "file": "documents/ref_accr_system.pdf",
     "tag": 7
   }
+},
+{
+  "model": "website.file",
+  "pk": 55,
+  "fields": {
+    "title": "Sponsorship brochure - EN",
+    "file": "documents/sponsoring-en.pdf",
+    "tag": 12
+  }
+},
+{
+  "model": "website.file",
+  "pk": 56,
+  "fields": {
+    "title": "Sponsorship brochure - NL",
+    "file": "documents/sponsoring-nl.pdf",
+    "tag": 12
+  }
+},
+{
+  "model": "website.file",
+  "pk": 57,
+  "fields": {
+    "title": "Sponsorship brochure - FR",
+    "file": "documents/sponsoring-fr.pdf",
+    "tag": 12
+  }
 }
 ]
