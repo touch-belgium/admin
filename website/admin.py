@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Tag, Venue, Team, TBMember, Event, File, Link, Contact, BannerPicture, League, Tournament, LeagueMatch, TournamentMatch
+from .models import Post, Tag, Venue, Team, Match, TBMember, Event, File, Link, Contact, BannerPicture, League, Tournament, Pool
 import os
 import googlemaps
 
@@ -64,16 +64,6 @@ class TBMemberAdmin(admin.ModelAdmin):
     list_filter = ("team", "referee", "referee_level", "coach")
 
 
-@admin.register(League)
-class LeagueAdmin(admin.ModelAdmin):
-    list_display = ("name", "venue")
-
-@admin.register(LeagueMatch)
-class LeagueMatchAdmin(admin.ModelAdmin):
-    list_display = ("match", "league", "when")
-    list_filter = ("league", "home_team", "away_team")
-
-
 @admin.register(Link)
 class LinkAdmin(admin.ModelAdmin):
     list_display = ("title", "tag", "link")
@@ -84,8 +74,28 @@ class LinkAdmin(admin.ModelAdmin):
 class ContactAdmin(admin.ModelAdmin):
     list_display = ("name", "email")
 
-admin.site.register(TournamentMatch)
-admin.site.register(Tournament)
+
+class MatchAdmin(admin.TabularInline):
+    model = Match
+
+
+class PoolAdmin(admin.StackedInline):
+    model = Pool
+    extra = 1
+
+
+@admin.register(League)
+class LeagueAdmin(admin.ModelAdmin):
+    inlines = [MatchAdmin]
+    list_display = ("name", "venue")
+
+
+@admin.register(Tournament)
+class TournamentAdmin(admin.ModelAdmin):
+    inlines = [PoolAdmin, MatchAdmin]
+    list_display = ("name", "venue")
+
+
 admin.site.register(Venue)
 admin.site.register(Tag)
 admin.site.register(Event)

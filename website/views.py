@@ -8,8 +8,8 @@ from rest_framework import generics
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from .models import Post, Tag, Venue, Team, Competition, Match, TBMember, \
-    Event, File, Link, Contact, BannerPicture
+from .models import Post, Tag, Venue, Team, Match, TBMember, \
+    Event, File, Link, Contact, BannerPicture, Tournament
 from .serializers import UserSerializer, PostSerializer, TagSerializer, \
     TeamSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer,\
     TBMemberSerializer, EventSerializer, FileSerializer, LinkSerializer, \
@@ -71,7 +71,7 @@ class TeamViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class CompetitionViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Competition.objects.all()
+    queryset = Tournament.objects.all()
     serializer_class = CompetitionSerializer
     paginator = None
 
