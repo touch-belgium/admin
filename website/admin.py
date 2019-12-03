@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Post, Tag, Venue, Team, Match, TBMember, Event, File, Link, Contact, BannerPicture, League, Tournament, Pool
+from .models import Post, Tag, Venue, Team, Match, TBMember, Event, File, Link, Contact, BannerPicture, League, Tournament, Pool, Bonus
+from .forms import BonusForm, MatchForm
 import os
 import googlemaps
 
@@ -77,6 +78,7 @@ class ContactAdmin(admin.ModelAdmin):
 
 class MatchAdmin(admin.TabularInline):
     model = Match
+    form = MatchForm
 
 
 class PoolAdmin(admin.StackedInline):
@@ -90,9 +92,14 @@ class LeagueAdmin(admin.ModelAdmin):
     list_display = ("name", "venue")
 
 
+class BonusAdmin(admin.TabularInline):
+    model = Bonus
+    form = BonusForm
+
+
 @admin.register(Tournament)
 class TournamentAdmin(admin.ModelAdmin):
-    inlines = [PoolAdmin, MatchAdmin]
+    inlines = [PoolAdmin, MatchAdmin, BonusAdmin]
     list_display = ("name", "venue")
 
 

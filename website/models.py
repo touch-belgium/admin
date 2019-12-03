@@ -72,8 +72,6 @@ class Match(models.Model):
 
     home_touchdowns = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(0)])
     away_touchdowns = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(0)])
-    home_bonus = models.IntegerField(blank=True, default=0)
-    away_bonus = models.IntegerField(blank=True, default=0)
 
     POOL_STAGE = "PS"
     PLAYOFF = "PO"
@@ -116,7 +114,7 @@ class Competition(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     @property
-    def participating_teams(self):
+    def n_participating_teams(self):
         matches = Match.objects.filter(competition=self)
         different_teams = set()
         for match in matches:
@@ -124,15 +122,27 @@ class Competition(models.Model):
             different_teams.add(match.away_team)
         return len(different_teams)
 
+    @property
+    def participating_teams(self):
+        matches = Match.objects.filter(competition=self)
+        different_teams = set()
+        for match in matches:
+            different_teams.add(match.home_team)
+            different_teams.add(match.away_team)
+        return different_teams
+
+
     def __str__(self):
         return self.name
 
 
 class Bonus(models.Model):
     competition = models.ForeignKey("Competition", on_delete=models.CASCADE)
-    team = models.ForeignKey("Team")
+    team = models.ForeignKey("Team", on_delete=models.CASCADE)
+    points = models.IntegerField(help_text="Bonus points can be negative")
 
-
+    class Meta:
+        verbose_name_plural = "Bonuses"
 
 
 class Pool(models.Model):
