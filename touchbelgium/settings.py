@@ -38,7 +38,6 @@ CORS_ORIGIN_WHITELIST = (
 INSTALLED_APPS = [
     'dal',
     'dal_select2',
-    'dal_queryset_sequence',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

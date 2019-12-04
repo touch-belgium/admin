@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "34b61a93fc19a1d28bc248655653a92aa53177d14b90020207dbae416e0a884c"
+            "sha256": "dcf02774d38739842e6066241e0f01deb4eb0993e56c22cfc2a8d4ab876f967a"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -14,6 +14,13 @@
         ]
     },
     "default": {
+        "asgiref": {
+            "hashes": [
+                "sha256:7e06d934a7718bf3975acbf87780ba678957b87c7adc056f13b6215d610695a0",
+                "sha256:ea448f92fc35a0ef4b1508f53a04c4670255a3f33d22a81c8fc9c872036adbe5"
+            ],
+            "version": "==3.2.3"
+        },
         "certifi": {
             "hashes": [
                 "sha256:017c25db2a153ce562900032d5bc68e9f191e44e9a0f762f373977de9df1fbb3",
@@ -37,11 +44,11 @@
         },
         "django": {
             "hashes": [
-                "sha256:a4ad4f6f9c6a4b7af7e2deec8d0cbff28501852e5010d6c2dc695d3d1fae7ca0",
-                "sha256:fa98ec9cc9bf5d72a08ebf3654a9452e761fbb8566e3f80de199cbc15477e891"
+                "sha256:6f857bd4e574442ba35a7172f1397b303167dae964cf18e53db5e85fe248d000",
+                "sha256:d98c9b6e5eed147bc51f47c014ff6826bd1ab50b166956776ee13db5a58804ae"
             ],
             "index": "pypi",
-            "version": "==2.2.8"
+            "version": "==3.0"
         },
         "django-autocomplete-light": {
             "hashes": [
@@ -60,11 +67,11 @@
         },
         "django-filebrowser-no-grappelli": {
             "hashes": [
-                "sha256:2caa575d0c78133ec126e40350722a951d56f18908446f836688e697215df998",
-                "sha256:548cc2cd3f441c05a4884787eae9fca9e6da201717d9ce4e39a0afaadc4e63e8"
+                "sha256:5760c0b8b537c675f07eed7b31cbc6b95f93c83989602b720efb5832a57019c8",
+                "sha256:8af11ff221e67d7fb07e189971d027c663a243d2ac09e0ae6a1ac634c2ce439f"
             ],
             "index": "pypi",
-            "version": "==3.7.8"
+            "version": "==3.8.0"
         },
         "django-heroku": {
             "hashes": [
@@ -73,13 +80,6 @@
             ],
             "index": "pypi",
             "version": "==0.3.1"
-        },
-        "django-querysetsequence": {
-            "hashes": [
-                "sha256:3d6f11f983daa8e82a0ebdfa0fb853ed9ee959fbacbe7f74b66280424803d72d"
-            ],
-            "index": "pypi",
-            "version": "==0.11"
         },
         "django-tinymce4-lite": {
             "hashes": [
