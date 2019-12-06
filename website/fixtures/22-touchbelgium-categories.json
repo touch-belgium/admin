@@ -1,0 +1,10 @@
+[
+{
+  "model": "website.category",
+  "pk": 1,
+  "fields": {
+    "category": "XO",
+    "competition": 1
+  }
+}
+]

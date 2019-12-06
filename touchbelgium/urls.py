@@ -31,6 +31,8 @@ router.register(r'posts', views.PostViewSet, basename="post")
 router.register(r'tags', views.TagViewSet)
 router.register(r'venues', views.VenueViewSet)
 router.register(r'teams', views.TeamViewSet)
+router.register(r'belgian_teams', views.BelgianTeamViewSet, basename="belgian_teams")
+router.register(r'categories', views.CategoryViewSet)
 router.register(r'competitions', views.CompetitionViewSet)
 router.register(r'matches', views.MatchViewSet, basename="match")
 # router.register(r'matches/c/(?P<competition>.+)', views.MatchCompetitionViewSet, basename="match")
@@ -44,11 +46,13 @@ router.register(r'banner_pictures', views.BannerPictureViewSet)
 
 
 urlpatterns = [
+
     path('filebrowser/', site.urls),
     path('', admin.site.urls),
     re_path(r'^tinymce/', include('tinymce.urls')),
     path('api/', include(router.urls)),
     path('robots.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+    re_path(r'^nested_admin/', include('nested_admin.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # That last + static line allows media to be served during development

@@ -17,7 +17,7 @@ class Post(models.Model):
     title = models.CharField(max_length=80)
     picture = FileBrowseField(max_length=500, default="base/news_placeholder.png",
                               directory="/")
-    author = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    author = models.ForeignKey(User, on_delete=models.PROTECT, blank=True, null=True)
     body = HTMLField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -51,6 +51,9 @@ class Team(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['name']
+
 
 class Venue(models.Model):
     name = models.CharField(max_length=100)
@@ -61,10 +64,10 @@ class Venue(models.Model):
 
 
 class Match(models.Model):
-    competition = models.ForeignKey("Competition", on_delete=models.CASCADE)
-    home_team = models.ForeignKey('Team', on_delete=models.PROTECT,
+    category = models.ForeignKey("Category", on_delete=models.CASCADE, related_name="matches")
+    home_team = models.ForeignKey("Team", on_delete=models.PROTECT,
                                   related_name="home_team")
-    away_team = models.ForeignKey('Team', on_delete=models.PROTECT,
+    away_team = models.ForeignKey("Team", on_delete=models.PROTECT,
                                   related_name="away_team")
     when = models.DateTimeField(help_text="Type the time in HH:MM format")
     pitch = models.CharField(max_length=50, blank=True, null=True)
@@ -74,19 +77,21 @@ class Match(models.Model):
     away_touchdowns = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(0)])
 
     POOL_STAGE = "PS"
+    RANK_STAGE = "RS"
     PLAYOFF = "PO"
     QUARTER_FINAL = "QF"
     SEMI_FINAL = "SF"
     FINAL = "FF"
     MATCH_CHOICES = [
         (POOL_STAGE, "Pool match"),
+        (RANK_STAGE, "Ranking match"),
         (PLAYOFF, "Playoff"),
         (QUARTER_FINAL, "Quarter final"),
         (SEMI_FINAL, "Semi final"),
         (FINAL, "Final")
     ]
-    match_type = models.CharField(max_length=2, choices=MATCH_CHOICES, blank=True)
-    invitational_match = models.BooleanField(blank=True, default=False)
+    match_type = models.CharField(max_length=2, choices=MATCH_CHOICES, blank=True, help_text="Leave blank for league style competitions")
+    invitational_match = models.BooleanField(default=False, verbose_name="invitational match ?")
 
     @property
     def match(self):
@@ -105,13 +110,23 @@ class Match(models.Model):
 
 class Competition(models.Model):
     name = models.CharField(max_length=50)
-    win_value = models.IntegerField(default=3, validators=[MinValueValidator(0)])
+    POOL_AND_RANK = "PR"
+    POOL_AND_PLAYOFF = "PP"
+    LEAGUE = "LL"
+    COMPETITION_CHOICES = [
+        (POOL_AND_RANK, "Two stages: pools and rank"),
+        (POOL_AND_PLAYOFF, "Two stages: pools and playoff matches"),
+        (LEAGUE, "League: point based system")
+    ]
+    competition_type = models.CharField(max_length=2, choices=COMPETITION_CHOICES)
+    win_value = models.IntegerField(default=4, validators=[MinValueValidator(0)])
+    tie_value = models.IntegerField(default=2, validators=[MinValueValidator(0)])
     defeat_value = models.IntegerField(default=0, validators=[MinValueValidator(0)])
-    tie_value = models.IntegerField(default=1, validators=[MinValueValidator(0)])
     venue = models.ForeignKey('Venue', on_delete=models.PROTECT,
                               blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    belgian_championship = models.BooleanField(default=False, verbose_name="belgian national championship ?")
 
     @property
     def n_participating_teams(self):
@@ -137,7 +152,7 @@ class Competition(models.Model):
 
 
 class Bonus(models.Model):
-    competition = models.ForeignKey("Competition", on_delete=models.CASCADE)
+    category = models.ForeignKey("Category", on_delete=models.CASCADE)
     team = models.ForeignKey("Team", on_delete=models.CASCADE)
     points = models.IntegerField(help_text="Bonus points can be negative")
 
@@ -145,20 +160,53 @@ class Bonus(models.Model):
         verbose_name_plural = "Bonuses"
 
 
+class Category(models.Model):
+    MEN_OPEN = "MO"
+    WOMEN_OPEN = "WO"
+    MIXED_OPEN = "XO"
+    MEN_27 = "M27"
+    WOMEN_27 = "W27"
+    MIXED_27 = "X27"
+    MEN_30 = "M30"
+    WOMEN_30 = "W30"
+    MIXED_30 = "X30"
+    MEN_40 = "M30"
+    WOMEN_40 = "W30"
+    MIXED_40 = "X40"
+    JUNIOR = "JO"
+
+    CATEGORY_CHOICES = [
+        (MEN_OPEN, "MO"),
+        (WOMEN_OPEN, "WO"),
+        (MIXED_OPEN, "XO"),
+        (MEN_27, "M27"),
+        (WOMEN_27, "W27"),
+        (MIXED_27, "X27"),
+        (MEN_30, "M30"),
+        (WOMEN_30, "W30"),
+        (MIXED_30, "X30"),
+        (MEN_40, "M40"),
+        (WOMEN_40, "W40"),
+        (MIXED_40, "X40"),
+        (JUNIOR, "JO")
+    ]
+    category = models.CharField(max_length=3, choices=CATEGORY_CHOICES, help_text="Men open, women open, mixed open...")
+    competition = models.ForeignKey("Competition", on_delete=models.CASCADE, related_name="categories")
+
+    def __str__(self):
+        return self.category
+
+    class Meta:
+        verbose_name_plural = "Categories"
+
+
 class Pool(models.Model):
-    tournament = models.ForeignKey("Tournament", on_delete=models.CASCADE)
-    name = models.CharField(max_length=50)
+    category = models.ForeignKey("Category", on_delete=models.CASCADE, related_name="pools")
+    name = models.CharField(max_length=50, help_text="Do not create any pools for a league type competition")
     teams = models.ManyToManyField("Team")
 
     def __str__(self):
         return self.name
-
-
-class Tournament(Competition):
-    pass
-
-class League(Competition):
-    pass
 
 
 class TBMember(models.Model):

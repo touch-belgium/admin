@@ -115,7 +115,7 @@
   "model": "website.team",
   "pk": 8,
   "fields": {
-    "name": "Oudenaarde",
+    "name": "Oudenaarde Rhinos",
     "logo": "team_logos/oudenaarde_logo.jpg",
     "founded": "",
     "website": "https://www.rugby-oudenaarde.be/touch-rugby",
@@ -141,6 +141,134 @@
     "main_belgian_club": true,
     "lat": "50.8594467000000000",
     "lng": "4.4222958000000000"
+  }
+},
+{
+  "model": "website.team",
+  "pk": 10,
+  "fields": {
+    "name": "Old Wesley",
+    "logo": "base/team_placeholder.png",
+    "founded": "",
+    "website": "",
+    "facebook": "",
+    "instagram": "",
+    "venue": null,
+    "main_belgian_club": false,
+    "lat": null,
+    "lng": null
+  }
+},
+{
+  "model": "website.team",
+  "pk": 11,
+  "fields": {
+    "name": "Fluffy Dragons",
+    "logo": "base/team_placeholder.png",
+    "founded": "",
+    "website": "",
+    "facebook": "",
+    "instagram": "",
+    "venue": null,
+    "main_belgian_club": false,
+    "lat": null,
+    "lng": null
+  }
+},
+{
+  "model": "website.team",
+  "pk": 12,
+  "fields": {
+    "name": "Exeter Eagle Owls",
+    "logo": "base/team_placeholder.png",
+    "founded": "",
+    "website": "",
+    "facebook": "",
+    "instagram": "",
+    "venue": null,
+    "main_belgian_club": false,
+    "lat": null,
+    "lng": null
+  }
+},
+{
+  "model": "website.team",
+  "pk": 13,
+  "fields": {
+    "name": "Donnybrook",
+    "logo": "base/team_placeholder.png",
+    "founded": "",
+    "website": "",
+    "facebook": "",
+    "instagram": "",
+    "venue": null,
+    "main_belgian_club": false,
+    "lat": null,
+    "lng": null
+  }
+},
+{
+  "model": "website.team",
+  "pk": 14,
+  "fields": {
+    "name": "Eindhoven",
+    "logo": "base/team_placeholder.png",
+    "founded": "",
+    "website": "",
+    "facebook": "",
+    "instagram": "",
+    "venue": null,
+    "main_belgian_club": false,
+    "lat": null,
+    "lng": null
+  }
+},
+{
+  "model": "website.team",
+  "pk": 15,
+  "fields": {
+    "name": "Excellium",
+    "logo": "base/team_placeholder.png",
+    "founded": "",
+    "website": "",
+    "facebook": "",
+    "instagram": "",
+    "venue": null,
+    "main_belgian_club": false,
+    "lat": null,
+    "lng": null
+  }
+},
+{
+  "model": "website.team",
+  "pk": 16,
+  "fields": {
+    "name": "Touch Belgium Juniors",
+    "logo": "base/team_placeholder.png",
+    "founded": "",
+    "website": "",
+    "facebook": "",
+    "instagram": "",
+    "venue": null,
+    "main_belgian_club": false,
+    "lat": null,
+    "lng": null
+  }
+},
+{
+  "model": "website.team",
+  "pk": 17,
+  "fields": {
+    "name": "XXX Amsterdam",
+    "logo": "base/team_placeholder.png",
+    "founded": "",
+    "website": "",
+    "facebook": "",
+    "instagram": "",
+    "venue": null,
+    "main_belgian_club": false,
+    "lat": null,
+    "lng": null
   }
 }
 ]

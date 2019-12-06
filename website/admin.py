@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import Post, Tag, Venue, Team, Match, TBMember, Event, File, Link, Contact, BannerPicture, League, Tournament, Pool, Bonus
-from .forms import BonusForm, MatchForm
+from .models import Post, Tag, Venue, Team, Match, TBMember, Event, File, Link, Contact, BannerPicture, Pool, Bonus, Category, Competition
+from .forms import BonusForm, MatchForm, PoolForm
 import os
 import googlemaps
+import nested_admin
 
 admin.site.site_header = 'Touch Belgium Administration'
 gmaps = googlemaps.Client(key=os.environ.get('GMAPS_API_KEY'))
@@ -35,6 +36,7 @@ class PostAdmin(admin.ModelAdmin):
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
+    list_display = ("name", "venue", "main_belgian_club")
     # Lat and long will be given by the Geocoding API, no need to show
     # them on the admin interface
     exclude = ('lat', 'lng')
@@ -76,30 +78,33 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ("name", "email")
 
 
-class MatchAdmin(admin.TabularInline):
+class MatchAdmin(nested_admin.NestedStackedInline):
     model = Match
     form = MatchForm
+    extra = 2
 
 
-class PoolAdmin(admin.StackedInline):
+class PoolAdmin(nested_admin.NestedStackedInline):
     model = Pool
+    form = PoolForm
     extra = 1
 
 
-@admin.register(League)
-class LeagueAdmin(admin.ModelAdmin):
-    inlines = [MatchAdmin]
-    list_display = ("name", "venue")
-
-
-class BonusAdmin(admin.TabularInline):
+class BonusAdmin(nested_admin.NestedStackedInline):
     model = Bonus
     form = BonusForm
+    extra = 1
 
 
-@admin.register(Tournament)
-class TournamentAdmin(admin.ModelAdmin):
+class CategoryAdmin(nested_admin.NestedStackedInline):
+    model = Category
     inlines = [PoolAdmin, MatchAdmin, BonusAdmin]
+    extra = 1
+
+
+@admin.register(Competition)
+class Competition(nested_admin.NestedModelAdmin):
+    inlines = [CategoryAdmin]
     list_display = ("name", "venue")
 
 

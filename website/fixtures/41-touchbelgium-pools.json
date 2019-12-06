@@ -1,0 +1,44 @@
+[
+{
+  "model": "website.pool",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "X",
+    "teams": [
+      3,
+      14,
+      15,
+      12
+    ]
+  }
+},
+{
+  "model": "website.pool",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "Y",
+    "teams": [
+      1,
+      10,
+      16,
+      17
+    ]
+  }
+},
+{
+  "model": "website.pool",
+  "pk": 3,
+  "fields": {
+    "category": 1,
+    "name": "Z",
+    "teams": [
+      2,
+      13,
+      11,
+      8
+    ]
+  }
+}
+]

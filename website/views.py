@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.contrib.auth.models import User
@@ -9,11 +9,13 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from .models import Post, Tag, Venue, Team, Match, TBMember, \
-    Event, File, Link, Contact, BannerPicture, Tournament
+    Event, File, Link, Contact, BannerPicture, Competition, \
+    Category
 from .serializers import UserSerializer, PostSerializer, TagSerializer, \
     TeamSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer,\
     TBMemberSerializer, EventSerializer, FileSerializer, LinkSerializer, \
-    ContactSerializer, TeamStatsSerializer, BannerPictureSerializer
+    ContactSerializer, TeamStatsSerializer, BannerPictureSerializer, \
+    CompetitionDetailSerializer, CategorySerializer
 # Create your views here.
 
 
@@ -56,6 +58,7 @@ class TagViewSet(viewsets.ReadOnlyModelViewSet):
 class VenueViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Venue.objects.all()
     serializer_class = VenueSerializer
+    paginator = None
 
 
 class TeamViewSet(viewsets.ReadOnlyModelViewSet):
@@ -70,10 +73,30 @@ class TeamViewSet(viewsets.ReadOnlyModelViewSet):
         return Response(serializer.data)
 
 
+class BelgianTeamViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Team.objects.filter(main_belgian_club=True)
+    serializer_class = TeamSerializer
+    paginator = None
+
+
+class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    paginator = None
+
+
 class CompetitionViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Tournament.objects.all()
+    queryset = Competition.objects.all()
     serializer_class = CompetitionSerializer
     paginator = None
+
+
+    def retrieve(self, request, pk=None):
+        queryset = Competition.objects.all()
+        competition = get_object_or_404(queryset, pk=pk)
+        serializer = CompetitionDetailSerializer(competition, context={"request": request})
+        return Response(serializer.data)
+
 
     @action(detail=True)
     def matches(self, request, *arg, **kwargs):

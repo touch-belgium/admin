@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "dcf02774d38739842e6066241e0f01deb4eb0993e56c22cfc2a8d4ab876f967a"
+            "sha256": "b56c329ece6c4cb4b555d5f92b07273479921fc093639652c5889f4b144b9770"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -80,6 +80,14 @@
             ],
             "index": "pypi",
             "version": "==0.3.1"
+        },
+        "django-nested-admin": {
+            "hashes": [
+                "sha256:4a1189b57a85496fb319045e5b6db71a1242bc539721179aa3e4f54aae56fe0f",
+                "sha256:f6175d2fec1c883e9335695119b020267c69796cc95f5f2c9b7a315ad522b2c1"
+            ],
+            "index": "pypi",
+            "version": "==3.2.4"
         },
         "django-tinymce4-lite": {
             "hashes": [
@@ -188,6 +196,13 @@
                 "sha256:f898e5cc0a662a9e12bde6f931263a1bbd350cfb18e1d5336a12927851825bb6"
             ],
             "version": "==2.8.4"
+        },
+        "python-monkey-business": {
+            "hashes": [
+                "sha256:6d4cf47f011945db838ccf04643acd49b82f7ad6ab7ecba4c8165385687a828a",
+                "sha256:9976522989766f00b2aaa24ec96eacb91a6de7b7001d1452079323b071988e0e"
+            ],
+            "version": "==1.0.0"
         },
         "pytz": {
             "hashes": [

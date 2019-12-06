@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from .models import Post, Tag, Match, Competition, Venue, Team, TBMember, Event, File, Link, Contact, BannerPicture
+from .models import Post, Tag, Match, Competition, Venue, Team, TBMember, Event, File, Link, Contact, BannerPicture, Category
 from rest_framework import serializers
 
 
@@ -48,10 +48,31 @@ class TeamSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 
+class TeamSummarySerializer(serializers.HyperlinkedModelSerializer):
+    logo = serializers.SerializerMethodField()
+
+    def get_logo(self, obj):
+        return self.context['request'].build_absolute_uri(obj.logo.url)
+
+    class Meta:
+        model = Team
+        fields = ["name", "logo"]
+
+
+
 class TeamStatsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Team
         fields = ["name"]
+
+
+class MatchSerializer(serializers.HyperlinkedModelSerializer):
+    home_team = TeamSummarySerializer()
+    away_team = TeamSummarySerializer()
+
+    class Meta:
+        model = Match
+        exclude = ["url", "category"]
 
 
 class CompetitionSerializer(serializers.HyperlinkedModelSerializer):
@@ -63,13 +84,26 @@ class CompetitionSerializer(serializers.HyperlinkedModelSerializer):
         depth = 1
 
 
-class MatchSerializer(serializers.HyperlinkedModelSerializer):
-    home_team = TeamSerializer()
-    away_team = TeamSerializer()
+class CategorySerializer(serializers.HyperlinkedModelSerializer):
+    matches = MatchSerializer(
+        many=True,
+        read_only=True
+    )
+    class Meta:
+        model = Category
+        fields = ["category", "matches"]
+
+
+class CompetitionDetailSerializer(serializers.HyperlinkedModelSerializer):
+    categories = CategorySerializer(
+        many=True,
+        read_only=True
+    )
 
     class Meta:
-        model = Match
-        fields = '__all__'
+        model = Competition
+        fields = ["name", "competition_type", "categories"]
+        depth = 2
 
 
 class TBMemberSerializer(serializers.HyperlinkedModelSerializer):
