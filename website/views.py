@@ -85,11 +85,10 @@ class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     paginator = None
 
 
-class CompetitionViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Competition.objects.all()
+class NationalChampionshipsViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Competition.objects.filter(belgian_championship=True)
     serializer_class = CompetitionSerializer
     paginator = None
-
 
     def retrieve(self, request, pk=None):
         queryset = Competition.objects.all()
@@ -98,11 +97,23 @@ class CompetitionViewSet(viewsets.ReadOnlyModelViewSet):
         return Response(serializer.data)
 
 
-    @action(detail=True)
-    def matches(self, request, *arg, **kwargs):
-        matches = Match.objects.filter(competition=kwargs["pk"])
-        serializer = MatchSerializer(matches, many=True, context={"request": request})
+class CompetitionViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Competition.objects.filter(belgian_championship=False)
+    serializer_class = CompetitionSerializer
+    paginator = None
+
+    def retrieve(self, request, pk=None):
+        queryset = Competition.objects.all()
+        competition = get_object_or_404(queryset, pk=pk)
+        serializer = CompetitionDetailSerializer(competition, context={"request": request})
         return Response(serializer.data)
+
+
+    # @action(detail=True)
+    # def matches(self, request, *arg, **kwargs):
+    #     matches = Match.objects.filter(competition=kwargs["pk"])
+    #     serializer = MatchSerializer(matches, many=True, context={"request": request})
+    #     return Response(serializer.data)
 
 
 class MatchViewSet(viewsets.ReadOnlyModelViewSet):
