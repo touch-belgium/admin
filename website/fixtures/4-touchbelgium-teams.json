@@ -270,5 +270,21 @@
     "lat": null,
     "lng": null
   }
+},
+{
+  "model": "website.team",
+  "pk": 18,
+  "fields": {
+    "name": "Luxembourg",
+    "logo": "base/team_placeholder.png",
+    "founded": "",
+    "website": "",
+    "facebook": "",
+    "instagram": "",
+    "venue": null,
+    "main_belgian_club": false,
+    "lat": null,
+    "lng": null
+  }
 }
 ]

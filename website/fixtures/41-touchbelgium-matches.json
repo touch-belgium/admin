@@ -478,5 +478,133 @@
     "match_type": "RS",
     "invitational_match": false
   }
+},
+{
+  "model": "website.match",
+  "pk": 31,
+  "fields": {
+    "category": 2,
+    "home_team": 5,
+    "away_team": 3,
+    "when": "2019-10-12T10:30:00Z",
+    "pitch": "1",
+    "refs": "Barbara, Manu, Ref Celtics",
+    "home_touchdowns": null,
+    "away_touchdowns": null,
+    "match_type": "",
+    "invitational_match": false
+  }
+},
+{
+  "model": "website.match",
+  "pk": 32,
+  "fields": {
+    "category": 2,
+    "home_team": 2,
+    "away_team": 6,
+    "when": "2019-10-12T11:30:00Z",
+    "pitch": "1",
+    "refs": "Karla, Manu, Ref Citizens",
+    "home_touchdowns": null,
+    "away_touchdowns": null,
+    "match_type": "",
+    "invitational_match": false
+  }
+},
+{
+  "model": "website.match",
+  "pk": 33,
+  "fields": {
+    "category": 2,
+    "home_team": 1,
+    "away_team": 8,
+    "when": "2019-10-12T11:30:00Z",
+    "pitch": "2",
+    "refs": "Phil, Barbara, Ref Luxembourg",
+    "home_touchdowns": null,
+    "away_touchdowns": null,
+    "match_type": "",
+    "invitational_match": false
+  }
+},
+{
+  "model": "website.match",
+  "pk": 34,
+  "fields": {
+    "category": 2,
+    "home_team": 18,
+    "away_team": 5,
+    "when": "2019-10-12T12:30:00Z",
+    "pitch": "1",
+    "refs": "Loic, Ref Boitsfort, Ref Gent",
+    "home_touchdowns": null,
+    "away_touchdowns": null,
+    "match_type": "",
+    "invitational_match": false
+  }
+},
+{
+  "model": "website.match",
+  "pk": 35,
+  "fields": {
+    "category": 2,
+    "home_team": 2,
+    "away_team": 9,
+    "when": "2019-10-12T13:00:00Z",
+    "pitch": "2",
+    "refs": "Ref Gent, Ref Boitsfort, Ref Boitsfort",
+    "home_touchdowns": null,
+    "away_touchdowns": null,
+    "match_type": "",
+    "invitational_match": false
+  }
+},
+{
+  "model": "website.match",
+  "pk": 36,
+  "fields": {
+    "category": 2,
+    "home_team": 6,
+    "away_team": 3,
+    "when": "2019-10-12T14:00:00Z",
+    "pitch": "1",
+    "refs": "Phil, Loic, Manu",
+    "home_touchdowns": null,
+    "away_touchdowns": null,
+    "match_type": "",
+    "invitational_match": false
+  }
+},
+{
+  "model": "website.match",
+  "pk": 37,
+  "fields": {
+    "category": 2,
+    "home_team": 18,
+    "away_team": 1,
+    "when": "2019-10-12T14:00:00Z",
+    "pitch": "2",
+    "refs": "Barbara, Karla, Ref Oudenaarde",
+    "home_touchdowns": null,
+    "away_touchdowns": null,
+    "match_type": "",
+    "invitational_match": false
+  }
+},
+{
+  "model": "website.match",
+  "pk": 38,
+  "fields": {
+    "category": 2,
+    "home_team": 8,
+    "away_team": 9,
+    "when": "2019-10-12T15:00:00Z",
+    "pitch": "2",
+    "refs": "Karla, Loic, Phil",
+    "home_touchdowns": null,
+    "away_touchdowns": null,
+    "match_type": "",
+    "invitational_match": false
+  }
 }
 ]

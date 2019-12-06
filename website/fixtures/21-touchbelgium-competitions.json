@@ -13,5 +13,20 @@
     "created_at": "2019-12-06T17:18:00.385Z",
     "belgian_championship": false
   }
+},
+{
+  "model": "website.competition",
+  "pk": 2,
+  "fields": {
+    "name": "National Championships 2019/2020",
+    "competition_type": "LL",
+    "win_value": 4,
+    "tie_value": 2,
+    "defeat_value": 0,
+    "venue": 11,
+    "description": "",
+    "created_at": "2019-12-06T21:43:38.842Z",
+    "belgian_championship": true
+  }
 }
 ]

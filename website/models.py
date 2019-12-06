@@ -101,7 +101,7 @@ class Match(models.Model):
     def __str__(self):
         return self.home_team.name + \
             ' - ' + self.away_team.name + " | " + \
-            self.when.strftime("%d %b %H:%M")
+            self.match_type
 
     class Meta:
         verbose_name_plural = "matches"
