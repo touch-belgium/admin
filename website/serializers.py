@@ -72,7 +72,8 @@ class TeamStatsSerializer(serializers.ModelSerializer):
                   "instagram", "venue", "main_belgian_club",
                   "lat", "lng", "n_registered_members", "n_refs",
                   "avg_ref_level", "matches_won", "matches_lost",
-                  "matches_tied"]
+                  "matches_tied", "form", "avg_touchdowns_scored",
+                  "avg_touchdowns_conceded"]
 
 
 class MatchSerializer(serializers.HyperlinkedModelSerializer):

@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models import Sum, Avg, Value as V
+from django.db.models.functions import Coalesce
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
@@ -66,8 +68,8 @@ class Team(models.Model):
 
     @property
     def avg_ref_level(self):
-        agg = self.refs.aggregate(models.Avg("referee_level"))
-        return 0 if agg["referee_level__avg"] is None else round(agg["referee_level__avg"], 2)
+        agg = self.refs.aggregate(avg_level=Coalesce(Avg("referee_level"), V(0)))
+        return round(agg["referee_level__avg"], 2)
 
     @property
     def home_matches(self):
@@ -81,8 +83,6 @@ class Team(models.Model):
     def matches_won(self):
         as_home = self.home_matches.filter(home_touchdowns__gt=models.F("away_touchdowns")).count()
         as_away = self.away_matches.filter(away_touchdowns__gt=models.F("home_touchdowns")).count()
-        print(as_home)
-        print(as_away)
         return as_home + as_away
 
     @property
@@ -101,8 +101,17 @@ class Team(models.Model):
     def form(self):
         return 1
 
+    @property
+    def avg_touchdowns_scored(self):
+        as_home_agg = self.home_matches.aggregate(avg_td=Coalesce(Avg("home_touchdowns"), V(0)))
+        as_away_agg = self.away_matches.aggregate(avg_td=Coalesce(Avg("away_touchdowns"), V(0)))
+        return round(as_home_agg["avg_td"] + as_away_agg["avg_td"], 2)
 
-
+    @property
+    def avg_touchdowns_conceded(self):
+        as_home_agg = self.home_matches.aggregate(avg_td=Coalesce(Avg("away_touchdowns"), V(0)))
+        as_away_agg = self.away_matches.aggregate(avg_td=Coalesce(Avg("home_touchdowns"), V(0)))
+        return round(as_home_agg["avg_td"] + as_away_agg["avg_td"], 2)
 
     def __str__(self):
         return self.name
