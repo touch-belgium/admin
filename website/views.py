@@ -69,7 +69,7 @@ class TeamViewSet(viewsets.ReadOnlyModelViewSet):
     @action(detail=True)
     def stats(self, request, *arg, **kwargs):
         team = Team.objects.get(pk=kwargs["pk"])
-        serializer = TeamStatsSerializer(team, many=False)
+        serializer = TeamStatsSerializer(team, many=False, context={"request": request})
         return Response(serializer.data)
 
 

@@ -48,6 +48,62 @@ class Team(models.Model):
     lat = models.DecimalField(max_digits=22, decimal_places=16, blank=True, null=True)
     lng = models.DecimalField(max_digits=22, decimal_places=16, blank=True, null=True)
 
+    @property
+    def registered_members(self):
+        return TBMember.objects.filter(team=self)
+
+    @property
+    def refs(self):
+        return self.registered_members.filter(referee=True)
+
+    @property
+    def n_registered_members(self):
+        return self.registered_members.count()
+
+    @property
+    def n_refs(self):
+        return self.refs.count()
+
+    @property
+    def avg_ref_level(self):
+        agg = self.refs.aggregate(models.Avg("referee_level"))
+        return 0 if agg["referee_level__avg"] is None else round(agg["referee_level__avg"], 2)
+
+    @property
+    def home_matches(self):
+        return Match.objects.filter(home_team=self)
+
+    @property
+    def away_matches(self):
+        return Match.objects.filter(away_team=self)
+
+    @property
+    def matches_won(self):
+        as_home = self.home_matches.filter(home_touchdowns__gt=models.F("away_touchdowns")).count()
+        as_away = self.away_matches.filter(away_touchdowns__gt=models.F("home_touchdowns")).count()
+        print(as_home)
+        print(as_away)
+        return as_home + as_away
+
+    @property
+    def matches_lost(self):
+        as_home = self.home_matches.filter(away_touchdowns__gt=models.F("home_touchdowns")).count()
+        as_away = self.away_matches.filter(home_touchdowns__gt=models.F("away_touchdowns")).count()
+        return as_home + as_away
+
+    @property
+    def matches_tied(self):
+        as_home = self.home_matches.filter(away_touchdowns=models.F("home_touchdowns")).count()
+        as_away = self.away_matches.filter(home_touchdowns=models.F("away_touchdowns")).count()
+        return as_home + as_away
+
+    @property
+    def form(self):
+        return 1
+
+
+
+
     def __str__(self):
         return self.name
 
@@ -217,22 +273,22 @@ class TBMember(models.Model):
     team = models.ForeignKey('Team', on_delete=models.PROTECT, blank=True, null=True)
 
     # Committee
-    committee_member = models.BooleanField()
+    committee_member = models.BooleanField(default=False)
     committee_position = models.CharField(max_length=50, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     phone_number = models.CharField(max_length=20, blank=True, null=True)
     committee_text = models.TextField(blank=True, null=True)
 
     # Ref
-    referee = models.BooleanField(blank=True, null=True)
-    referee_level = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(6)], blank=True, null=True, default=1)
+    referee = models.BooleanField(default=False)
+    referee_level = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(6)], blank=True, null=True)
 
-    referee_board_member = models.BooleanField(blank=True, null=True)
+    referee_board_member = models.BooleanField(default=False)
     referee_board_position = models.CharField(max_length=50, blank=True, null=True)
     referee_text = models.TextField(blank=True, null=True)
 
     # Coach
-    coach = models.BooleanField(blank=True, null=True)
+    coach = models.BooleanField(default=False)
     coach_level = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)], blank=True, null=True)
     coach_position = models.CharField(max_length=50, blank=True, null=True)
 
@@ -241,6 +297,7 @@ class TBMember(models.Model):
         return self.name
 
     class Meta:
+        ordering = ["name"]
         verbose_name = "Touch Belgium member"
         verbose_name_plural = "Touch Belgium members"
 

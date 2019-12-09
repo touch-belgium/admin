@@ -17,7 +17,7 @@
     "referee_board_member": true,
     "referee_board_position": "National Director of Referees",
     "referee_text": "I\u2019m the National Director of Referees for Touch Belgium and I have overall management of referee activities in Belgium. I work closely with the Touch Belgium Committee on strategic referee planning for Belgium and I have fantastic support from Steph and Karla on working with developing referees from Belgium and referee organisation at tournaments in Belgium. I started refereeing in 2012 and I hold a L3 badge, which I obtained at the Euros in 2016. I am also a L1 referee coach and a L2 referee presenter.",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -40,7 +40,7 @@
     "referee_board_member": true,
     "referee_board_position": "Referee development",
     "referee_text": "My role within Touch Belgium is to help referees develop and progress through the different referee levels. I will help organise Level 1,2 and 3 courses in Belgium as well as regularly advertise courses taking place outside Belgium. I am here to answer any questions you may have on the referee pathway. I currently hold a L2 badge which I obtained at the Euros 2018. I am working towards obtaining my L3.",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -63,7 +63,7 @@
     "referee_board_member": true,
     "referee_board_position": null,
     "referee_text": "I am playing touch since 2016 and referring since 2017. I am holding a level 2 badge, that I got at the Euros in Nottingham in 2018.\r\n\r\nWithin Touch Belgium, I am helping with referee-related organization, and especially for tournaments : referee allocation, external refs coordination, etc.",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -83,10 +83,10 @@
     "committee_text": null,
     "referee": true,
     "referee_level": 1,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -103,13 +103,13 @@
     "committee_position": null,
     "email": null,
     "phone_number": null,
-    "committee_text": null,
+    "committee_text": "",
     "referee": true,
-    "referee_level": 2,
-    "referee_board_member": null,
+    "referee_level": 3,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -129,10 +129,10 @@
     "committee_text": null,
     "referee": true,
     "referee_level": 1,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -152,10 +152,10 @@
     "committee_text": null,
     "referee": true,
     "referee_level": 1,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -175,10 +175,10 @@
     "committee_text": null,
     "referee": true,
     "referee_level": 1,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -198,10 +198,10 @@
     "committee_text": null,
     "referee": true,
     "referee_level": 1,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -221,10 +221,10 @@
     "committee_text": null,
     "referee": true,
     "referee_level": 1,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -244,10 +244,10 @@
     "committee_text": null,
     "referee": true,
     "referee_level": 1,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -267,10 +267,10 @@
     "committee_text": null,
     "referee": true,
     "referee_level": 1,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -290,10 +290,10 @@
     "committee_text": null,
     "referee": true,
     "referee_level": 2,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -313,10 +313,10 @@
     "committee_text": null,
     "referee": true,
     "referee_level": 1,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -336,10 +336,10 @@
     "committee_text": "",
     "referee": true,
     "referee_level": 2,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -359,10 +359,10 @@
     "committee_text": "",
     "referee": true,
     "referee_level": 2,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -382,10 +382,10 @@
     "committee_text": "",
     "referee": true,
     "referee_level": 1,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -403,12 +403,12 @@
     "email": "tournament@touch-belgium.be",
     "phone_number": null,
     "committee_text": "",
-    "referee": null,
-    "referee_level": 1,
-    "referee_board_member": null,
+    "referee": false,
+    "referee_level": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -426,12 +426,12 @@
     "email": "youth@touch-belgium.be",
     "phone_number": null,
     "committee_text": "",
-    "referee": null,
-    "referee_level": 1,
-    "referee_board_member": null,
+    "referee": false,
+    "referee_level": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -449,12 +449,12 @@
     "email": "president@touch-belgium.be",
     "phone_number": null,
     "committee_text": "",
-    "referee": null,
-    "referee_level": 1,
-    "referee_board_member": null,
+    "referee": false,
+    "referee_level": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -474,10 +474,10 @@
     "committee_text": "",
     "referee": true,
     "referee_level": 1,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -497,10 +497,10 @@
     "committee_text": "",
     "referee": true,
     "referee_level": 1,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }
@@ -520,10 +520,33 @@
     "committee_text": "",
     "referee": true,
     "referee_level": 1,
-    "referee_board_member": null,
+    "referee_board_member": false,
     "referee_board_position": null,
     "referee_text": "",
-    "coach": null,
+    "coach": false,
+    "coach_level": null,
+    "coach_position": null
+  }
+},
+{
+  "model": "website.tbmember",
+  "pk": 24,
+  "fields": {
+    "name": "Ivo Broucke",
+    "picture": "base/person_placeholder.png",
+    "license_number": "",
+    "team": 6,
+    "committee_member": false,
+    "committee_position": null,
+    "email": null,
+    "phone_number": null,
+    "committee_text": "",
+    "referee": true,
+    "referee_level": 3,
+    "referee_board_member": false,
+    "referee_board_position": null,
+    "referee_text": "",
+    "coach": false,
     "coach_level": null,
     "coach_position": null
   }

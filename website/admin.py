@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Post, Tag, Venue, Team, Match, TBMember, Event, File, Link, Contact, BannerPicture, Pool, Bonus, Category, Competition
-from .forms import BonusForm, MatchForm, PoolForm
+from .forms import BonusForm, MatchForm, PoolForm, TBMemberForm
 import os
 import googlemaps
 import nested_admin
@@ -63,6 +63,7 @@ class TeamAdmin(admin.ModelAdmin):
 
 @admin.register(TBMember)
 class TBMemberAdmin(admin.ModelAdmin):
+    form = TBMemberForm
     list_display = ("name", "team", "referee", "referee_level", "coach")
     list_filter = ("team", "referee", "referee_level", "coach")
 

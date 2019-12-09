@@ -29,10 +29,10 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
                   'author', 'tags')
 
 
-class VenueSerializer(serializers.HyperlinkedModelSerializer):
+class VenueSerializer(serializers.ModelSerializer):
     class Meta:
         model = Venue
-        fields = '__all__'
+        exclude = ["id"]
 
 
 class TeamSerializer(serializers.HyperlinkedModelSerializer):
@@ -59,11 +59,20 @@ class TeamSummarySerializer(serializers.HyperlinkedModelSerializer):
         fields = ["name", "logo"]
 
 
-
 class TeamStatsSerializer(serializers.ModelSerializer):
+    logo = serializers.SerializerMethodField()
+    venue = VenueSerializer()
+
+    def get_logo(self, obj):
+        return self.context['request'].build_absolute_uri(obj.logo.url)
+
     class Meta:
         model = Team
-        fields = ["name"]
+        fields = ["name", "logo", "founded", "website", "facebook",
+                  "instagram", "venue", "main_belgian_club",
+                  "lat", "lng", "n_registered_members", "n_refs",
+                  "avg_ref_level", "matches_won", "matches_lost",
+                  "matches_tied"]
 
 
 class MatchSerializer(serializers.HyperlinkedModelSerializer):
