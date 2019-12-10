@@ -3,8 +3,11 @@
   "model": "website.competition",
   "pk": 1,
   "fields": {
-    "name": "St Nicolas Touch Tournament",
+    "name": "St Nicolas Touch Tournament 2019",
     "competition_type": "PR",
+    "social": false,
+    "start_date": "2019-11-30",
+    "end_date": "2019-11-30",
     "win_value": 4,
     "tie_value": 2,
     "defeat_value": 0,
@@ -20,6 +23,9 @@
   "fields": {
     "name": "National Championships 2019/2020",
     "competition_type": "LL",
+    "social": false,
+    "start_date": "2019-10-10",
+    "end_date": "2020-06-17",
     "win_value": 4,
     "tie_value": 2,
     "defeat_value": 0,

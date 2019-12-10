@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
-from django.contrib.auth.models import User
 
 from rest_framework import viewsets
 from rest_framework import generics
@@ -11,24 +10,12 @@ from rest_framework.response import Response
 from .models import Post, Tag, Venue, Team, Match, TBMember, \
     Event, File, Link, Contact, BannerPicture, Competition, \
     Category
-from .serializers import UserSerializer, PostSerializer, TagSerializer, \
+from .serializers import PostSerializer, TagSerializer, \
     TeamSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer,\
     TBMemberSerializer, EventSerializer, FileSerializer, LinkSerializer, \
     ContactSerializer, TeamStatsSerializer, BannerPictureSerializer, \
     CompetitionDetailSerializer, CategorySerializer
 # Create your views here.
-
-
-class UserViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
-    paginator = None
-
-    @action(detail=False)
-    def recent(self, request):
-        recent_users = User.objects.all().order_by('date_joined')
-        serializer = self.get_serializer(recent_users, many=True)
-        return Response(serializer.data)
 
 
 class PostViewSet(viewsets.ReadOnlyModelViewSet):
@@ -85,20 +72,8 @@ class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     paginator = None
 
 
-class NationalChampionshipsViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Competition.objects.filter(belgian_championship=True)
-    serializer_class = CompetitionSerializer
-    paginator = None
-
-    def retrieve(self, request, pk=None):
-        queryset = Competition.objects.all()
-        competition = get_object_or_404(queryset, pk=pk)
-        serializer = CompetitionDetailSerializer(competition, context={"request": request})
-        return Response(serializer.data)
-
-
 class CompetitionViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Competition.objects.filter(belgian_championship=False)
+    queryset = Competition.objects.all()
     serializer_class = CompetitionSerializer
     paginator = None
 

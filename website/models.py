@@ -184,6 +184,9 @@ class Competition(models.Model):
         (LEAGUE, "League: point based system")
     ]
     competition_type = models.CharField(max_length=2, choices=COMPETITION_CHOICES)
+    social = models.BooleanField(default=False, verbose_name="social ?")
+    start_date = models.DateField()
+    end_date = models.DateField()
     win_value = models.IntegerField(default=4, validators=[MinValueValidator(0)])
     tie_value = models.IntegerField(default=2, validators=[MinValueValidator(0)])
     defeat_value = models.IntegerField(default=0, validators=[MinValueValidator(0)])
@@ -214,6 +217,9 @@ class Competition(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ["-created_at"]
 
 
 class Bonus(models.Model):

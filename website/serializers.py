@@ -3,12 +3,6 @@ from .models import Post, Tag, Match, Competition, Venue, Team, TBMember, Event,
 from rest_framework import serializers
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ('username', 'url')
-
-
 class TagSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Tag
@@ -17,7 +11,7 @@ class TagSerializer(serializers.HyperlinkedModelSerializer):
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
     tags = TagSerializer(many=True, read_only=True)
-    author = UserSerializer()
+    author = serializers.StringRelatedField(many=False)
     picture = serializers.SerializerMethodField()
 
     def get_picture(self, obj):

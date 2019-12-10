@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Post, Tag, Venue, Team, Match, TBMember, Event, File, Link, Contact, BannerPicture, Pool, Bonus, Category, Competition
-from .forms import BonusForm, MatchForm, PoolForm, TBMemberForm
+from .forms import BonusForm, MatchForm, PoolForm, TBMemberForm, \
+    PostForm
 import os
 import googlemaps
 import nested_admin
@@ -11,9 +12,9 @@ gmaps = googlemaps.Client(key=os.environ.get('GMAPS_API_KEY'))
 # Overloading
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
+    form = PostForm
     list_display = ("title", "author", "created_at")
     list_filter = ("author",)
-    exclude = ('author', 'slug')
 
     # Method override
     def save_model(self, request, obj, form, change):

@@ -78,5 +78,13 @@
     "name": "Stade Nelson Mandela",
     "address": "Ransbeekstraat, 1120 Brussel"
   }
+},
+{
+  "model": "website.venue",
+  "pk": 11,
+  "fields": {
+    "name": "Different locations",
+    "address": "Belgium"
+  }
 }
 ]

@@ -26,17 +26,14 @@ from website import views
 
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
 router.register(r'posts', views.PostViewSet, basename="post")
 router.register(r'tags', views.TagViewSet)
 router.register(r'venues', views.VenueViewSet)
 router.register(r'teams', views.TeamViewSet)
 router.register(r'belgian_teams', views.BelgianTeamViewSet, basename="belgian_teams")
 router.register(r'categories', views.CategoryViewSet)
-router.register(r'national_championships', views.NationalChampionshipsViewSet, basename="national_championships")
 router.register(r'competitions', views.CompetitionViewSet)
 router.register(r'matches', views.MatchViewSet, basename="match")
-# router.register(r'matches/c/(?P<competition>.+)', views.MatchCompetitionViewSet, basename="match")
 router.register(r'files', views.FileViewSet)
 router.register(r'members', views.TBMemberViewSet, basename="member")
 router.register(r'referees', views.RefereeViewSet, basename="referee")
