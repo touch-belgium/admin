@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from .models import Post, Tag, Match, Competition, Venue, Team, TBMember, Event, File, Link, Contact, BannerPicture, Category
+from .models import Post, Tag, Match, Competition, Venue, Team, TBMember, Event, File, Link, Contact, BannerPicture, Category, Pool
 from rest_framework import serializers
 
 
@@ -88,17 +88,32 @@ class CompetitionSerializer(serializers.HyperlinkedModelSerializer):
         depth = 1
 
 
+class PoolSerializer(serializers.ModelSerializer):
+    teams = TeamSummarySerializer(
+        many=True,
+        read_only=True
+    )
+    class Meta:
+        model = Pool
+        fields = ["name", "teams"]
+
+
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
     matches = MatchSerializer(
         many=True,
         read_only=True
     )
+    pools = PoolSerializer(
+        many=True,
+        read_only=True
+    )
+
     class Meta:
         model = Category
-        fields = ["category", "matches"]
+        fields = ["category", "pools", "matches"]
 
 
-class CompetitionDetailSerializer(serializers.HyperlinkedModelSerializer):
+class CompetitionDetailSerializer(serializers.ModelSerializer):
     categories = CategorySerializer(
         many=True,
         read_only=True
@@ -106,7 +121,9 @@ class CompetitionDetailSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Competition
-        fields = ["name", "competition_type", "categories"]
+        fields = ["name", "competition_type", "social", "start_date",
+                  "end_date", "win_value", "tie_value", "defeat_value",
+                  "venue", "description", "belgian_championship", "categories"]
         depth = 2
 
 

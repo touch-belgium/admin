@@ -138,6 +138,21 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 40,
 }
 
+# Config for TinyMCE4 widget
+TINYMCE_DEFAULT_CONFIG = {
+    'selector': 'textarea',
+    'theme': 'modern',
+    'plugins': 'link image preview contextmenu table lists textcolor colorpicker emoticons',
+    'toolbar1': 'formatselect | bold italic underline | alignleft aligncenter alignright alignjustify '
+               '| bullist numlist | outdent indent | table | link image | preview code | forecolor backcolor | emoticons',
+    'contextmenu': 'formats | link image',
+    'menubar': True,
+    'inline': False,
+    'statusbar': True,
+    'width': 'auto',
+    'height': 360,
+}
+
 MEDIA_ROOT = os.environ.get('MEDIA_ROOT')
 MEDIA_URL = '/media/'
 

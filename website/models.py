@@ -192,7 +192,7 @@ class Competition(models.Model):
     defeat_value = models.IntegerField(default=0, validators=[MinValueValidator(0)])
     venue = models.ForeignKey('Venue', on_delete=models.PROTECT,
                               blank=True, null=True)
-    description = models.TextField(blank=True, null=True)
+    description = HTMLField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     belgian_championship = models.BooleanField(default=False, verbose_name="belgian national championship ?")
 
@@ -219,7 +219,7 @@ class Competition(models.Model):
         return self.name
 
     class Meta:
-        ordering = ["-created_at"]
+        ordering = ["-end_date"]
 
 
 class Bonus(models.Model):

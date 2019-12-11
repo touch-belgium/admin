@@ -9,12 +9,12 @@ from rest_framework.response import Response
 
 from .models import Post, Tag, Venue, Team, Match, TBMember, \
     Event, File, Link, Contact, BannerPicture, Competition, \
-    Category
+    Category, Pool
 from .serializers import PostSerializer, TagSerializer, \
     TeamSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer,\
     TBMemberSerializer, EventSerializer, FileSerializer, LinkSerializer, \
     ContactSerializer, TeamStatsSerializer, BannerPictureSerializer, \
-    CompetitionDetailSerializer, CategorySerializer
+    CompetitionDetailSerializer, CategorySerializer, PoolSerializer
 # Create your views here.
 
 
@@ -63,6 +63,12 @@ class TeamViewSet(viewsets.ReadOnlyModelViewSet):
 class BelgianTeamViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Team.objects.filter(main_belgian_club=True)
     serializer_class = TeamSerializer
+    paginator = None
+
+
+class PoolViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Pool.objects.all()
+    serializer_class = PoolSerializer
     paginator = None
 
 
