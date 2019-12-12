@@ -37,11 +37,3 @@ class TBMemberForm(forms.ModelForm):
         widgets = {
             "team": autocomplete.ModelSelect2()
         }
-
-class PostForm(forms.ModelForm):
-    class Meta:
-        model = TBMember
-        exclude = ('author', 'slug')
-        widgets = {
-            "tags": autocomplete.ModelSelect2Multiple()
-        }

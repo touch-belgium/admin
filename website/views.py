@@ -7,33 +7,15 @@ from rest_framework import generics
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from .models import Post, Tag, Venue, Team, Match, TBMember, \
+from .models import Tag, Venue, Team, Match, TBMember, \
     Event, File, Link, Contact, BannerPicture, Competition, \
     Category, Pool
-from .serializers import PostSerializer, TagSerializer, \
+from .serializers import TagSerializer, \
     TeamSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer,\
     TBMemberSerializer, EventSerializer, FileSerializer, LinkSerializer, \
     ContactSerializer, TeamStatsSerializer, BannerPictureSerializer, \
     CompetitionDetailSerializer, CategorySerializer, PoolSerializer
 # Create your views here.
-
-
-class PostViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
-    paginator = None
-    RECENT = 4
-
-    @action(detail=False)
-    def recent(self, request, *arg, **kwargs):
-        """Limits the response to 4 posts, useful for not having to send the
-        whole blog to the landing page. Called like: 'posts/recent' in
-        the API
-
-        """
-        recent_posts = self.queryset[:self.RECENT]
-        serializer = self.get_serializer(recent_posts, many=True)
-        return Response(serializer.data)
 
 
 class TagViewSet(viewsets.ReadOnlyModelViewSet):

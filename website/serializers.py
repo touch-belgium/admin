@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from .models import Post, Tag, Match, Competition, Venue, Team, TBMember, Event, File, Link, Contact, BannerPicture, Category, Pool
+from .models import Tag, Match, Competition, Venue, Team, TBMember, Event, File, Link, Contact, BannerPicture, Category, Pool
 from rest_framework import serializers
 
 
@@ -7,20 +7,6 @@ class TagSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Tag
         fields = '__all__'
-
-
-class PostSerializer(serializers.HyperlinkedModelSerializer):
-    tags = TagSerializer(many=True, read_only=True)
-    author = serializers.StringRelatedField(many=False)
-    picture = serializers.SerializerMethodField()
-
-    def get_picture(self, obj):
-        return self.context['request'].build_absolute_uri(obj.picture.url)
-
-    class Meta:
-        model = Post
-        fields = ('id', 'title', 'picture', 'body', 'created_at',
-                  'author', 'tags')
 
 
 class VenueSerializer(serializers.ModelSerializer):

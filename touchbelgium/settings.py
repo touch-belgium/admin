@@ -25,12 +25,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', 'touch-belgium.be']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8080',
-    'https://touchb.shop',
-    'https://staging.touchb.shop',
+    'https://touchb.fun'
 )
 
 # Application definition

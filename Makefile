@@ -36,7 +36,6 @@ dump_db:
 	python manage.py dumpdata website.Tag > 1-touchbelgium-tags.json --indent 2
 	python manage.py dumpdata website.Contact > 1-touchbelgium-contacts.json --indent 2
 	python manage.py dumpdata website.BannerPicture > 2-touchbelgium-banner-pictures.json --indent 2
-	python manage.py dumpdata website.Post > 2-touchbelgium-posts.json --indent 2
 	python manage.py dumpdata website.Team > 2-touchbelgium-teams.json --indent 2
 	python manage.py dumpdata website.Link > 2-touchbelgium-links.json --indent 2
 	python manage.py dumpdata website.File > 2-touchbelgium-files.json --indent 2

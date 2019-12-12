@@ -15,28 +15,6 @@ class Tag(models.Model):
         return self.word
 
 
-class Post(models.Model):
-    title = models.CharField(max_length=80)
-    picture = FileBrowseField(max_length=500, default="base/news_placeholder.png",
-                              directory="/")
-    author = models.ForeignKey(User, on_delete=models.PROTECT, blank=True, null=True)
-    body = HTMLField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    tags = models.ManyToManyField(Tag, blank=True)
-
-    def __str__(self):
-        out = self.title
-        if self.author is not None:
-            out += ", by "
-            out += self.author.username
-        return out
-
-    class Meta:
-        get_latest_by = ['-created_at']
-        ordering = ['-created_at']
-
-
 class Team(models.Model):
     name = models.CharField(max_length=50)
     logo = FileBrowseField(max_length=500, default="base/team_placeholder.png",
