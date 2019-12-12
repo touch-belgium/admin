@@ -118,6 +118,7 @@ class Match(models.Model):
 
     home_touchdowns = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(0)])
     away_touchdowns = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(0)])
+    forfeit = models.BooleanField(default=False, verbose_name="forfeit ?")
 
     POOL_STAGE = "PS"
     RANK_STAGE = "RS"

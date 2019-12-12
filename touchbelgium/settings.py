@@ -29,7 +29,8 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8080',
-    'https://touchb.fun'
+    'https://beta.touch-belgium.be',
+    'https://touch-belgium.be'
 )
 
 # Application definition
@@ -166,5 +167,5 @@ FILEBROWSER_VERSIONS_BASEDIR = '.versions'
 
 # WhiteNoise does not serve media files ! Nginx or Apache do that. It
 # is not the best approach (S3 would be better) but
-# TinyMCE/FileBrowser do not work with django-storages/S3Boto3
+# TinyMCE and FileBrowser do not work with django-storages/S3Boto3
 django_heroku.settings(locals())
