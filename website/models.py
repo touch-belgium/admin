@@ -47,7 +47,7 @@ class Team(models.Model):
     @property
     def avg_ref_level(self):
         agg = self.refs.aggregate(avg_level=Coalesce(Avg("referee_level"), V(0)))
-        return round(agg["referee_level__avg"], 2)
+        return round(agg["avg_level"], 2)
 
     @property
     def home_matches(self):
@@ -174,6 +174,7 @@ class Competition(models.Model):
     description = HTMLField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     belgian_championship = models.BooleanField(default=False, verbose_name="belgian national championship ?")
+    picture = FileBrowseField(max_length=500, blank=True, null=True)
 
     @property
     def n_participating_teams(self):

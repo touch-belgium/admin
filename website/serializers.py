@@ -105,11 +105,20 @@ class CompetitionDetailSerializer(serializers.ModelSerializer):
         read_only=True
     )
 
+    picture = serializers.SerializerMethodField()
+
+    def get_picture(self, obj):
+        full_url = obj.picture
+        if obj.picture is not None:
+            full_url = self.context['request'].build_absolute_uri(obj.picture.url)
+        return full_url
+
     class Meta:
         model = Competition
         fields = ["name", "competition_type", "social", "start_date",
                   "end_date", "win_value", "tie_value", "defeat_value",
-                  "venue", "description", "belgian_championship", "categories"]
+                  "venue", "description", "belgian_championship", "picture",
+                  "categories"]
         depth = 2
 
 

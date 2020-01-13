@@ -26,9 +26,7 @@ class TeamAdmin(admin.ModelAdmin):
 
         """
         if getattr(obj, "venue", None) is not None:
-            print("aqui")
             geocode_result = gmaps.geocode(getattr(obj, "venue").address, region="BE")
-            print(geocode_result)
             if geocode_result:
                 obj.lat = geocode_result[0]["geometry"]["location"]["lat"]
                 obj.lng = geocode_result[0]["geometry"]["location"]["lng"]
