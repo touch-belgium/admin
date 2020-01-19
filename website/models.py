@@ -14,6 +14,9 @@ class Tag(models.Model):
     def __str__(self):
         return self.word
 
+    class Meta:
+        ordering = ['word']
+
 
 class Team(models.Model):
     name = models.CharField(max_length=50)
@@ -171,6 +174,7 @@ class Competition(models.Model):
     defeat_value = models.IntegerField(default=0, validators=[MinValueValidator(0)])
     venue = models.ForeignKey('Venue', on_delete=models.PROTECT,
                               blank=True, null=True)
+    short_description = HTMLField(blank=True, null=True)
     description = HTMLField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     belgian_championship = models.BooleanField(default=False, verbose_name="belgian national championship ?")

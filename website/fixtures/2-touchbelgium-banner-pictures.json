@@ -3,7 +3,7 @@
   "model": "website.bannerpicture",
   "pk": 2,
   "fields": {
-    "picture": "banner_pictures/referees_banner1.jpg",
+    "picture": "banner_pictures/referees/referees_banner1.jpg",
     "tag": 7
   }
 },
@@ -11,8 +11,104 @@
   "model": "website.bannerpicture",
   "pk": 3,
   "fields": {
-    "picture": "banner_pictures/banner_tournaments1.jpg",
+    "picture": "banner_pictures/domestic-events/tournaments3.JPG",
     "tag": 4
+  }
+},
+{
+  "model": "website.bannerpicture",
+  "pk": 4,
+  "fields": {
+    "picture": "banner_pictures/domestic-events/tournaments4.JPG",
+    "tag": 4
+  }
+},
+{
+  "model": "website.bannerpicture",
+  "pk": 5,
+  "fields": {
+    "picture": "banner_pictures/domestic-events/tournaments2.jpeg",
+    "tag": 4
+  }
+},
+{
+  "model": "website.bannerpicture",
+  "pk": 6,
+  "fields": {
+    "picture": "banner_pictures/championship/nationals1.jpg",
+    "tag": 11
+  }
+},
+{
+  "model": "website.bannerpicture",
+  "pk": 7,
+  "fields": {
+    "picture": "banner_pictures/championship/nationals2.jpg",
+    "tag": 11
+  }
+},
+{
+  "model": "website.bannerpicture",
+  "pk": 8,
+  "fields": {
+    "picture": "banner_pictures/championship/nationals3.jpg",
+    "tag": 11
+  }
+},
+{
+  "model": "website.bannerpicture",
+  "pk": 9,
+  "fields": {
+    "picture": "banner_pictures/championship/nationals4.jpg",
+    "tag": 11
+  }
+},
+{
+  "model": "website.bannerpicture",
+  "pk": 10,
+  "fields": {
+    "picture": "banner_pictures/national-teams/wo.jpg",
+    "tag": 14
+  }
+},
+{
+  "model": "website.bannerpicture",
+  "pk": 11,
+  "fields": {
+    "picture": "banner_pictures/national-teams/coach.jpg",
+    "tag": 14
+  }
+},
+{
+  "model": "website.bannerpicture",
+  "pk": 12,
+  "fields": {
+    "picture": "banner_pictures/national-teams/m40s.jpg",
+    "tag": 14
+  }
+},
+{
+  "model": "website.bannerpicture",
+  "pk": 13,
+  "fields": {
+    "picture": "banner_pictures/national-teams/wo2.jpg",
+    "tag": 14
+  }
+},
+{
+  "model": "website.bannerpicture",
+  "pk": 14,
+  "fields": {
+    "picture": "banner_pictures/youth/youth2.JPG",
+    "tag": 5
+  }
+},
+{
+  "model": "website.bannerpicture",
+  "pk": 15,
+  "fields": {
+    "picture": "banner_pictures/youth/youth.JPG",
+    "tag": 5
   }
 }
 ]

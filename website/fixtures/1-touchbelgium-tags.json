@@ -24,7 +24,7 @@
   "model": "website.tag",
   "pk": 4,
   "fields": {
-    "word": "tournaments"
+    "word": "domestic events"
   }
 },
 {
@@ -88,6 +88,20 @@
   "pk": 13,
   "fields": {
     "word": "agm"
+  }
+},
+{
+  "model": "website.tag",
+  "pk": 14,
+  "fields": {
+    "word": "national teams"
+  }
+},
+{
+  "model": "website.tag",
+  "pk": 15,
+  "fields": {
+    "word": "international events"
   }
 }
 ]

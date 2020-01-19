@@ -40,7 +40,7 @@
   "pk": 55,
   "fields": {
     "title": "Sponsorship brochure - EN",
-    "file": "documents/sponsoring-en.pdf",
+    "file": "documents/sponsorship-booklet-en.pdf",
     "tag": 12
   }
 },
@@ -49,7 +49,7 @@
   "pk": 56,
   "fields": {
     "title": "Sponsorship brochure - NL",
-    "file": "documents/sponsoring-nl.pdf",
+    "file": "documents/sponsorship-booklet-nl.pdf",
     "tag": 12
   }
 },
@@ -58,7 +58,7 @@
   "pk": 57,
   "fields": {
     "title": "Sponsorship brochure - FR",
-    "file": "documents/sponsoring-fr.pdf",
+    "file": "documents/sponsorship-booklet-fr.pdf",
     "tag": 12
   }
 }
