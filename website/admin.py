@@ -1,12 +1,35 @@
 from django.contrib import admin
-from .models import Tag, Venue, Team, Match, TBMember, Event, File, Link, Contact, BannerPicture, Pool, Bonus, Category, Competition
-from .forms import BonusForm, MatchForm, PoolForm, TBMemberForm
+from .models import Tag, Post, Venue, Team, Match, TBMember, Event, File, Link, Contact, BannerPicture, Pool, Bonus, Category, Competition
+from .forms import PostForm, BonusForm, MatchForm, PoolForm, TBMemberForm
 import os
 import googlemaps
 import nested_admin
 
 admin.site.site_header = 'Touch Belgium Administration'
 gmaps = googlemaps.Client(key=os.environ.get('GMAPS_API_KEY'))
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    form = PostForm
+    list_display = ("title", "author", "created_at")
+    list_filter = ("author",)
+
+    # Method override
+    def save_model(self, request, obj, form, change):
+        """request - The HTTP request
+        obj - The model instance
+        form - a ModelForm instance
+        change - boolean set to True if updating instead of creating the object
+        This override will auto-save the author (the one who made the
+        request)
+        """
+        if not hasattr(obj, "author"):
+            obj.author = request.user
+        # if getattr(obj, 'slug', None) is None:
+        #     obj.slug = slugify(getattr(obj, 'title', None))
+        # I am using client side slugs so commenting above
+        obj.save()
+
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):

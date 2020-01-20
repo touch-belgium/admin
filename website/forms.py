@@ -1,7 +1,7 @@
 from django import forms
 from dal import autocomplete
 
-from .models import Bonus, Match, Pool, TBMember
+from .models import Post, Bonus, Match, Pool, TBMember
 
 class MatchForm(forms.ModelForm):
     class Meta:
@@ -36,4 +36,13 @@ class TBMemberForm(forms.ModelForm):
         fields = ('__all__')
         widgets = {
             "team": autocomplete.ModelSelect2()
+        }
+
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        exclude = ('author', 'slug')
+        widgets = {
+            "tags": autocomplete.ModelSelect2Multiple()
         }
