@@ -12,8 +12,8 @@
     "tie_value": 2,
     "defeat_value": 0,
     "venue": 4,
-    "short_description": "<p>&nbsp;</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">Want to play some festive Touch? St Nicolas is a one-day social tournament, that takes place at the beginning of December, around the festival of St Nicolas.</p>\r\n<p></p>",
-    "description": "<p>&nbsp;</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">Want to play some festive Touch? St Nicolas is a one-day social tournament, that takes place at the beginning of December, around the festival of St Nicolas.</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">&nbsp;</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">All teams are welcome to join. With a great atmosphere, plenty of Touch to play to keep everyone warm and a fun and friendly after party, this is one not to be missed.</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\"></p>\r\n<p></p>",
+    "short_description": "The Saint Nicolas Touch tournament is back in 2019 for some great fun !!\r\nMake sure you send an email to tournament@touch-belgium.be to secure a spot for your team",
+    "description": "<p style=\"margin-bottom: 0.11in; line-height: 108%;\">Want to play some festive Touch? St Nicolas is a one-day social tournament, that takes place at the beginning of December, around the festival of St Nicolas.</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">All teams are welcome to join. With a great atmosphere, plenty of Touch to play to keep everyone warm and a fun and friendly after party, this is one not to be missed.</p>",
     "created_at": "2019-12-06T17:18:00.385Z",
     "belgian_championship": false,
     "picture": null
@@ -33,8 +33,68 @@
     "defeat_value": 0,
     "venue": 11,
     "short_description": "This edition will be held over four days throughout the year and at different locations across Flanders, Wallonia and Brussels and will be played in a league format. The overall winner will be announced at the end of the final leg in June.",
-    "description": "<p>&nbsp;</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">The next leg of the 2019-2020 national championship will take place on February 2<sup>nd</sup> at Gent Rugby Club.</p>\r\n<h2 style=\"margin-bottom: 0.11in; line-height: 108%;\">Dates:</h2>\r\n<ul>\r\n<li style=\"line-height: 108%;\">First leg &ndash; 12<sup>th</sup> October 2019, Oudenaarde</li>\r\n<li style=\"line-height: 108%;\">Second leg &ndash; February 2<sup>nd</sup> 2020, Gent</li>\r\n<li style=\"line-height: 108%;\">Third leg &ndash; April 26<sup>th</sup> 2020, BUC</li>\r\n<li style=\"line-height: 108%;\">Fourth leg &ndash; June 14<sup>th</sup> 2020, Kituro</li>\r\n</ul>\r\n<h2>Schedule</h2>\r\n<p><img src=\"../../../../media/other_content/leg2-schedule.jpg\" alt=\"\" /></p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">The results will come in live on the day.</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "description": "<p>&nbsp;</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">The next leg of the 2019-2020 national championship will take place on February 2<sup>nd</sup> at Gent Rugby Club.</p>\r\n<h2 style=\"margin-bottom: 0.11in; line-height: 108%;\">Dates:</h2>\r\n<ul>\r\n<li style=\"line-height: 108%;\">First leg &ndash; 12<sup>th</sup> October 2019, Oudenaarde</li>\r\n<li style=\"line-height: 108%;\">Second leg &ndash; February 2<sup>nd</sup> 2020, Gent</li>\r\n<li style=\"line-height: 108%;\">Third leg &ndash; April 26<sup>th</sup> 2020, BUC</li>\r\n<li style=\"line-height: 108%;\">Fourth leg &ndash; June 14<sup>th</sup> 2020, Kituro</li>\r\n</ul>\r\n<h2>Schedule</h2>\r\n<p><img src=\"https://admin.touch-belgium.be/media/other_content/leg2-schedule.jpg\" alt=\"\" width=\"960\" height=\"540\" /></p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">The results will come in live on the day.</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">&nbsp;</p>\r\n<p>&nbsp;</p>",
     "created_at": "2019-12-06T21:43:38.842Z",
+    "belgian_championship": true,
+    "picture": null
+  }
+},
+{
+  "model": "website.competition",
+  "pk": 3,
+  "fields": {
+    "name": "BMWI 2020",
+    "competition_type": "PP",
+    "social": false,
+    "start_date": "2020-05-23",
+    "end_date": "2020-05-23",
+    "win_value": 4,
+    "tie_value": 2,
+    "defeat_value": 0,
+    "venue": 10,
+    "short_description": "On the 23rd May 2020, the fifth edition of the Belgian Men\u2019s and Women\u2019s International tournament will take place. \r\n\r\nThis is the largest annual tournament in the Belgian Touch calendar. It brings together more than 15 teams from all over Europe.",
+    "description": "<p style=\"margin-bottom: 0.11in; line-height: 108%;\"><strong>On the 23<sup>rd</sup> May 2020, the fifth edition of the Belgian Men&rsquo;s and Women&rsquo;s International tournament will take place.</strong></p>\r\n<p style=\"margin-bottom: 0in; line-height: 100%;\">This is the largest annual tournament in the Belgian Touch calendar. It brings together more than 15 teams from all over Europe, constituting 230 players, 15 full-time referees and more than 70 volunteers and spectators. It will be held at the Nelson Mandela stadium, the training ground of the national Belgian rugby teams.</p>\r\n<p style=\"margin-bottom: 0in; line-height: 100%;\">&nbsp;</p>\r\n<p style=\"margin-bottom: 0in; line-height: 100%;\">There will be a Level 2 referee assessor present and available to assess any referees who would like to go for an upgrade. The tournament will be followed by an after party in the same location, so the party will come to you!</p>\r\n<p style=\"margin-bottom: 0in; line-height: 100%;\">&nbsp;</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">Spaces are filling up fast! To secure your teams spot, email <a href=\"mailto:tournament@touch-belgium.be\">tournament@touch-belgium.be</a>. For any referees who would like to referee at the BMWI, please contact <a href=\"mailto:stephanie.horeau@gmail.com\">stephanie.horeau@gmail.com</a>.</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">&nbsp;</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">If you need to secure your spot via payment, the Touch Belgium account details are below:</p>\r\n<ul>\r\n<li style=\"line-height: 100%;\">Bank: ING</li>\r\n<li style=\"line-height: 100%;\">Account number: BE10 3101 4040 9004</li>\r\n</ul>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">All other information relating to the BMWI can be found <a title=\"BMWI brochure\" href=\"https://admin.touch-belgium.be/media/documents/bmwi-brochure.pdf\" target=\"_blank\" rel=\"noopener\">in this brochure</a>.</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\"><strong>Date:</strong> 23<sup>rd</sup> May 2020</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\"><strong>Location:</strong> Nelson Mandela stadium, Ransbeekstraat, 1120 Brussel</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\"><strong>Time:</strong> 8.45am &ndash; 6.00pm</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\"><strong>After party:</strong> 6.00pm &ndash; the early hours!</p>",
+    "created_at": "2020-01-25T17:33:55.614Z",
+    "belgian_championship": false,
+    "picture": "banner_pictures/domestic-events/nelson-mandela-stadium.jpg"
+  }
+},
+{
+  "model": "website.competition",
+  "pk": 4,
+  "fields": {
+    "name": "Winter Thaw 2020",
+    "competition_type": "PR",
+    "social": false,
+    "start_date": "2020-03-21",
+    "end_date": "2020-03-21",
+    "win_value": 4,
+    "tie_value": 2,
+    "defeat_value": 0,
+    "venue": 3,
+    "short_description": "The next edition of Winter Thaw will take place in on 21st March 2020. Individual players sign up for the tournament, and teams are made up on the day so bring your Touch shoes and come and join us!",
+    "description": "<p style=\"margin-bottom: 0.11in; line-height: 108%;\">The next edition of Winter Thaw will take place in on 21<sup>st</sup> March 2020. Individual players sign up for the tournament, and teams are made up on the day so bring your Touch shoes and come and join us!</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">&nbsp;</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">Player registration will be open from 14.30 and the first games will start at 15.00. Games will last for a couple of hours, with hot and cold drinks available from the bar afterwards.</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">&nbsp;</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\"><strong>Location</strong>: BUC rugby club</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\"><strong>Start time:</strong> 14.30</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\"><strong>First game</strong>: 15.00</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">&nbsp;</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">&nbsp;</p>\r\n<p style=\"margin-bottom: 0.11in; line-height: 108%;\">&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "created_at": "2020-01-25T18:10:08.292Z",
+    "belgian_championship": false,
+    "picture": "banner_pictures/domestic-events/winter-thaw.jpg"
+  }
+},
+{
+  "model": "website.competition",
+  "pk": 5,
+  "fields": {
+    "name": "National Championships 2018/2019",
+    "competition_type": "LL",
+    "social": false,
+    "start_date": "2018-10-20",
+    "end_date": "2019-07-20",
+    "win_value": 4,
+    "tie_value": 2,
+    "defeat_value": 0,
+    "venue": 11,
+    "short_description": "",
+    "description": "",
+    "created_at": "2020-01-25T18:24:28.532Z",
     "belgian_championship": true,
     "picture": null
   }

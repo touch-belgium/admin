@@ -102,6 +102,7 @@ class CategoryAdmin(nested_admin.NestedStackedInline):
 class CompetitionAdmin(nested_admin.NestedModelAdmin):
     inlines = [CategoryAdmin]
     list_display = ("name", "venue")
+    list_filter = ("belgian_championship",)
 
 
 class PictureAdmin(nested_admin.NestedStackedInline):

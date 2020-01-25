@@ -14,5 +14,29 @@
     "category": "XO",
     "competition": 2
   }
+},
+{
+  "model": "website.category",
+  "pk": 3,
+  "fields": {
+    "category": "MO",
+    "competition": 3
+  }
+},
+{
+  "model": "website.category",
+  "pk": 4,
+  "fields": {
+    "category": "XO",
+    "competition": 5
+  }
+},
+{
+  "model": "website.category",
+  "pk": 5,
+  "fields": {
+    "category": "XO",
+    "competition": 4
+  }
 }
 ]
