@@ -35,7 +35,7 @@
   "model": "website.bannerpicture",
   "pk": 6,
   "fields": {
-    "picture": "banner_pictures/championship/nationals1.jpg",
+    "picture": "banner_pictures/championship/tish-score.jpg",
     "tag": 11
   }
 },
@@ -43,23 +43,7 @@
   "model": "website.bannerpicture",
   "pk": 7,
   "fields": {
-    "picture": "banner_pictures/championship/nationals2.jpg",
-    "tag": 11
-  }
-},
-{
-  "model": "website.bannerpicture",
-  "pk": 8,
-  "fields": {
-    "picture": "banner_pictures/championship/nationals3.jpg",
-    "tag": 11
-  }
-},
-{
-  "model": "website.bannerpicture",
-  "pk": 9,
-  "fields": {
-    "picture": "banner_pictures/championship/nationals4.jpg",
+    "picture": "banner_pictures/championship/trent-etc2018.jpg",
     "tag": 11
   }
 },
@@ -67,7 +51,7 @@
   "model": "website.bannerpicture",
   "pk": 10,
   "fields": {
-    "picture": "banner_pictures/national-teams/wo.jpg",
+    "picture": "banner_pictures/national-teams/m40-team-photo.jpg",
     "tag": 14
   }
 },
@@ -91,7 +75,7 @@
   "model": "website.bannerpicture",
   "pk": 13,
   "fields": {
-    "picture": "banner_pictures/national-teams/wo2.jpg",
+    "picture": "banner_pictures/national-teams/wo-team-photo.jpg",
     "tag": 14
   }
 },
@@ -109,6 +93,22 @@
   "fields": {
     "picture": "banner_pictures/youth/youth.JPG",
     "tag": 5
+  }
+},
+{
+  "model": "website.bannerpicture",
+  "pk": 16,
+  "fields": {
+    "picture": "banner_pictures/national-teams/bram.jpg",
+    "tag": 14
+  }
+},
+{
+  "model": "website.bannerpicture",
+  "pk": 17,
+  "fields": {
+    "picture": "banner_pictures/national-teams/wo-circle.jpg",
+    "tag": 14
   }
 }
 ]

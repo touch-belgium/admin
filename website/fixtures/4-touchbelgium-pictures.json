@@ -1,0 +1,34 @@
+[
+{
+  "model": "website.picture",
+  "pk": 1,
+  "fields": {
+    "picture": "other_content/nationals1.jpg",
+    "in_gallery": 1
+  }
+},
+{
+  "model": "website.picture",
+  "pk": 2,
+  "fields": {
+    "picture": "other_content/nationals2.jpg",
+    "in_gallery": 1
+  }
+},
+{
+  "model": "website.picture",
+  "pk": 3,
+  "fields": {
+    "picture": "other_content/nationals3.jpg",
+    "in_gallery": 1
+  }
+},
+{
+  "model": "website.picture",
+  "pk": 4,
+  "fields": {
+    "picture": "other_content/nationals4.jpg",
+    "in_gallery": 1
+  }
+}
+]

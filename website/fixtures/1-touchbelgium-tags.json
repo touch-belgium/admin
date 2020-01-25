@@ -8,13 +8,6 @@
 },
 {
   "model": "website.tag",
-  "pk": 2,
-  "fields": {
-    "word": "international"
-  }
-},
-{
-  "model": "website.tag",
   "pk": 3,
   "fields": {
     "word": "info"

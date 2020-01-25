@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Tag, Post, Venue, Team, Match, TBMember, Event, File, Link, Contact, BannerPicture, Pool, Bonus, Category, Competition
+from .models import Tag, Post, Venue, Team, Match, TBMember, Event, File, Link, Contact, BannerPicture, Pool, Bonus, Category, Competition, Picture, Gallery
 from .forms import PostForm, BonusForm, MatchForm, PoolForm, TBMemberForm
 import os
 import googlemaps
@@ -99,9 +99,18 @@ class CategoryAdmin(nested_admin.NestedStackedInline):
 
 
 @admin.register(Competition)
-class Competition(nested_admin.NestedModelAdmin):
+class CompetitionAdmin(nested_admin.NestedModelAdmin):
     inlines = [CategoryAdmin]
     list_display = ("name", "venue")
+
+
+class PictureAdmin(nested_admin.NestedStackedInline):
+    model = Picture
+
+
+@admin.register(Gallery)
+class GalleryAdmin(nested_admin.NestedModelAdmin):
+    inlines = [PictureAdmin]
 
 
 admin.site.register(Venue)

@@ -196,7 +196,7 @@ class Competition(models.Model):
     defeat_value = models.IntegerField(default=0, validators=[MinValueValidator(0)])
     venue = models.ForeignKey('Venue', on_delete=models.PROTECT,
                               blank=True, null=True)
-    short_description = HTMLField(blank=True, null=True)
+    short_description = models.TextField(blank=True, null=True)
     description = HTMLField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     belgian_championship = models.BooleanField(default=False, verbose_name="belgian national championship ?")
@@ -362,4 +362,18 @@ class BannerPicture(models.Model):
     tag = models.ForeignKey('Tag', on_delete=models.PROTECT, blank=True, null=True)
 
     def __str__(self):
-        return "{} banner picture - #{}".format(self.tag.word.upper(), self.id)
+        return "{} banner picture - (id #{})".format(self.tag.word.upper(), self.id)
+
+    class Meta:
+        ordering = ["tag", "id"]
+
+
+class Picture(models.Model):
+    picture = FileBrowseField(max_length=500)
+    in_gallery = models.ForeignKey("Gallery", on_delete=models.CASCADE)
+
+
+class Gallery(models.Model):
+
+    class Meta:
+        verbose_name_plural = "galleries"

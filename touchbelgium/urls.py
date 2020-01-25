@@ -41,6 +41,8 @@ router.register(r'coaches', views.CoachViewSet)
 router.register(r'links', views.LinkViewSet)
 router.register(r'contacts', views.ContactViewSet)
 router.register(r'banner_pictures', views.BannerPictureViewSet)
+router.register(r'pictures', views.PictureViewSet)
+router.register(r'galleries', views.GalleryViewSet)
 
 
 urlpatterns = [

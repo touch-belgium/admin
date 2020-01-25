@@ -1,3 +1,5 @@
+import random
+
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
@@ -9,12 +11,13 @@ from rest_framework.response import Response
 
 from .models import Tag, Post, Venue, Team, Match, TBMember, \
     Event, File, Link, Contact, BannerPicture, Competition, \
-    Category, Pool
+    Category, Pool, Picture, Gallery
 from .serializers import TagSerializer, PostSerializer, \
     TeamSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer,\
     TBMemberSerializer, EventSerializer, FileSerializer, LinkSerializer, \
     ContactSerializer, TeamStatsSerializer, BannerPictureSerializer, \
-    CompetitionDetailSerializer, CategorySerializer, PoolSerializer
+    CompetitionDetailSerializer, CategorySerializer, PoolSerializer, \
+    PictureSerializer, GallerySerializer
 # Create your views here.
 
 
@@ -153,6 +156,18 @@ class ContactViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class BannerPictureViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = BannerPicture.objects.all()
+    queryset = BannerPicture.objects.order_by("?")
     serializer_class = BannerPictureSerializer
+    paginator = None
+
+
+class PictureViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Picture.objects.all()
+    serializer_class = PictureSerializer
+    paginator = None
+
+
+class GalleryViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Gallery.objects.all()
+    serializer_class = GallerySerializer
     paginator = None

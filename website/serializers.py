@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from .models import Tag, Post, Match, Competition, Venue, Team, TBMember, Event, File, Link, Contact, BannerPicture, Category, Pool
+from .models import Tag, Post, Match, Competition, Venue, Team, TBMember, Event, File, Link, Contact, BannerPicture, Category, Pool, Picture, Gallery
 from rest_framework import serializers
 
 
@@ -131,8 +131,8 @@ class CompetitionDetailSerializer(serializers.ModelSerializer):
         model = Competition
         fields = ["name", "competition_type", "social", "start_date",
                   "end_date", "win_value", "tie_value", "defeat_value",
-                  "venue", "description", "belgian_championship", "picture",
-                  "categories"]
+                  "venue", "description", "belgian_championship",
+                  "picture", "categories"]
         depth = 2
 
 
@@ -194,3 +194,27 @@ class BannerPictureSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = BannerPicture
         fields = '__all__'
+
+
+class PictureSerializer(serializers.HyperlinkedModelSerializer):
+    picture = serializers.SerializerMethodField()
+
+    def get_picture(self, obj):
+        return self.context['request'].build_absolute_uri(obj.picture.url)
+
+    class Meta:
+        model = Picture
+        exclude = ["url", "in_gallery"]
+
+
+class GallerySerializer(serializers.HyperlinkedModelSerializer):
+    # FIXME
+    pictures = PictureSerializer(
+        many=True,
+        read_only=True
+    )
+
+    class Meta:
+        model = Gallery
+        fields = '__all__'
+        depth = 3
