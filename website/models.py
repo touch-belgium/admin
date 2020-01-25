@@ -21,11 +21,11 @@ class Post(models.Model):
     title = models.CharField(max_length=80)
     picture = FileBrowseField(max_length=500, default="base/news_placeholder.png",
                               directory="/")
-    author = models.ForeignKey(User, on_delete=models.PROTECT, blank=True, null=True)
+    author = models.ForeignKey(User, on_delete=models.PROTECT, blank=True, null=True, editable=False)
     excerpt = models.TextField(blank=True, null=True)
     body = HTMLField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(blank=True)
+    updated_at = models.DateTimeField(blank=True)
     tags = models.ManyToManyField(Tag, blank=True)
 
     def __str__(self):

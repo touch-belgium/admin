@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.utils import timezone
+
 from .models import Tag, Post, Venue, Team, Match, TBMember, Event, File, Link, Contact, BannerPicture, Pool, Bonus, Category, Competition, Picture, Gallery
 from .forms import PostForm, BonusForm, MatchForm, PoolForm, TBMemberForm
 import os
@@ -23,11 +25,12 @@ class PostAdmin(admin.ModelAdmin):
         This override will auto-save the author (the one who made the
         request)
         """
-        if not hasattr(obj, "author"):
+        if getattr(obj, "author", None) is None:
             obj.author = request.user
-        # if getattr(obj, 'slug', None) is None:
-        #     obj.slug = slugify(getattr(obj, 'title', None))
-        # I am using client side slugs so commenting above
+        if getattr(obj, "pk", None) is None:
+            # When first creating the post
+            obj.created_at = timezone.now()
+            obj.updated_at = timezone.now() # TODO: unindent this for prod
         obj.save()
 
 

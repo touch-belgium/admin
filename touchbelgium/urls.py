@@ -26,6 +26,7 @@ from website import views
 
 
 router = routers.DefaultRouter()
+router.register(r'posts', views.PostViewSet)
 router.register(r'tags', views.TagViewSet)
 router.register(r'venues', views.VenueViewSet)
 router.register(r'teams', views.TeamViewSet)
