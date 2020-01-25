@@ -152,6 +152,10 @@ TINYMCE_DEFAULT_CONFIG = {
     'statusbar': True,
     'width': 'auto',
     'height': 360,
+    # For good image serving from the admin domain
+    'relative_urls': False,
+    'remove_script_host': False,
+    'document_base_url': os.environ.get('DOCUMENT_BASE_URL')
 }
 
 MEDIA_ROOT = os.environ.get('MEDIA_ROOT')
