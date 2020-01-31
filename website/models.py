@@ -40,7 +40,7 @@ class Post(models.Model):
         ordering = ['-created_at']
 
 
-class Team(models.Model):
+class Club(models.Model):
     name = models.CharField(max_length=50)
     logo = FileBrowseField(max_length=500, default="base/team_placeholder.png",
                            directory="/")
@@ -50,12 +50,13 @@ class Team(models.Model):
     instagram = models.URLField(blank=True)
     venue = models.ForeignKey("Venue", on_delete=models.PROTECT, blank=True, null=True)
     main_belgian_club = models.BooleanField(default=False)
+    member_club = models.BooleanField(default=False, verbose_name="Touch Belgium member ?")
     lat = models.DecimalField(max_digits=22, decimal_places=16, blank=True, null=True)
     lng = models.DecimalField(max_digits=22, decimal_places=16, blank=True, null=True)
 
     @property
     def registered_members(self):
-        return TBMember.objects.filter(team=self)
+        return TBMember.objects.filter(club=self)
 
     @property
     def refs(self):
@@ -133,9 +134,9 @@ class Venue(models.Model):
 
 class Match(models.Model):
     category = models.ForeignKey("Category", on_delete=models.CASCADE, related_name="matches")
-    home_team = models.ForeignKey("Team", on_delete=models.PROTECT,
+    home_team = models.ForeignKey("Club", on_delete=models.PROTECT,
                                   related_name="home_team")
-    away_team = models.ForeignKey("Team", on_delete=models.PROTECT,
+    away_team = models.ForeignKey("Club", on_delete=models.PROTECT,
                                   related_name="away_team")
     when = models.DateTimeField(help_text="Type the time in HH:MM format")
     pitch = models.CharField(max_length=50, blank=True, null=True)
@@ -230,7 +231,7 @@ class Competition(models.Model):
 
 class Bonus(models.Model):
     category = models.ForeignKey("Category", on_delete=models.CASCADE)
-    team = models.ForeignKey("Team", on_delete=models.CASCADE)
+    team = models.ForeignKey("Club", on_delete=models.CASCADE)
     points = models.IntegerField(help_text="Bonus points can be negative")
 
     class Meta:
@@ -280,7 +281,7 @@ class Category(models.Model):
 class Pool(models.Model):
     category = models.ForeignKey("Category", on_delete=models.CASCADE, related_name="pools")
     name = models.CharField(max_length=50, help_text="Do not create any pools for a league type competition")
-    teams = models.ManyToManyField("Team")
+    teams = models.ManyToManyField("Club")
 
     def __str__(self):
         return self.name
@@ -291,7 +292,7 @@ class TBMember(models.Model):
     picture = FileBrowseField(max_length=500, default="base/person_placeholder.png",
                               directory="/", blank=True)
     license_number = models.CharField(max_length=30, blank=True)
-    team = models.ForeignKey('Team', on_delete=models.PROTECT, blank=True, null=True)
+    club = models.ForeignKey("Club", on_delete=models.PROTECT, blank=True, null=True)
 
     # Committee
     committee_member = models.BooleanField(default=False)

@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from .models import Tag, Post, Match, Competition, Venue, Team, TBMember, Event, File, Link, Contact, BannerPicture, Category, Pool, Picture, Gallery
+from .models import Tag, Post, Match, Competition, Venue, Club, TBMember, Event, File, Link, Contact, BannerPicture, Category, Pool, Picture, Gallery
 from rest_framework import serializers
 
 
@@ -29,7 +29,7 @@ class VenueSerializer(serializers.ModelSerializer):
         exclude = ["id"]
 
 
-class TeamSerializer(serializers.HyperlinkedModelSerializer):
+class ClubSerializer(serializers.HyperlinkedModelSerializer):
     id = serializers.ReadOnlyField() # makes the id appear as well
     logo = serializers.SerializerMethodField()
     venue = VenueSerializer()
@@ -38,22 +38,22 @@ class TeamSerializer(serializers.HyperlinkedModelSerializer):
         return self.context['request'].build_absolute_uri(obj.logo.url)
 
     class Meta:
-        model = Team
-        fields = '__all__'
+        model = Club
+        exclude = ["url"]
 
 
-class TeamSummarySerializer(serializers.HyperlinkedModelSerializer):
+class ClubSummarySerializer(serializers.HyperlinkedModelSerializer):
     logo = serializers.SerializerMethodField()
 
     def get_logo(self, obj):
         return self.context['request'].build_absolute_uri(obj.logo.url)
 
     class Meta:
-        model = Team
+        model = Club
         fields = ["name", "logo"]
 
 
-class TeamStatsSerializer(serializers.ModelSerializer):
+class ClubStatsSerializer(serializers.ModelSerializer):
     logo = serializers.SerializerMethodField()
     venue = VenueSerializer()
 
@@ -61,7 +61,7 @@ class TeamStatsSerializer(serializers.ModelSerializer):
         return self.context['request'].build_absolute_uri(obj.logo.url)
 
     class Meta:
-        model = Team
+        model = Club
         fields = ["name", "logo", "founded", "website", "facebook",
                   "instagram", "venue", "main_belgian_club",
                   "lat", "lng", "n_registered_members", "n_refs",
@@ -71,8 +71,8 @@ class TeamStatsSerializer(serializers.ModelSerializer):
 
 
 class MatchSerializer(serializers.HyperlinkedModelSerializer):
-    home_team = TeamSummarySerializer()
-    away_team = TeamSummarySerializer()
+    home_team = ClubSummarySerializer()
+    away_team = ClubSummarySerializer()
 
     class Meta:
         model = Match
@@ -89,7 +89,7 @@ class CompetitionSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class PoolSerializer(serializers.ModelSerializer):
-    teams = TeamSummarySerializer(
+    teams = ClubSummarySerializer(
         many=True,
         read_only=True
     )

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils import timezone
 
-from .models import Tag, Post, Venue, Team, Match, TBMember, Event, File, Link, Contact, BannerPicture, Pool, Bonus, Category, Competition, Picture, Gallery
+from .models import Tag, Post, Venue, Club, Match, TBMember, Event, File, Link, Contact, BannerPicture, Pool, Bonus, Category, Competition, Picture, Gallery
 from .forms import PostForm, BonusForm, MatchForm, PoolForm, TBMemberForm
 import os
 import googlemaps
@@ -34,8 +34,8 @@ class PostAdmin(admin.ModelAdmin):
         obj.save()
 
 
-@admin.register(Team)
-class TeamAdmin(admin.ModelAdmin):
+@admin.register(Club)
+class ClubAdmin(admin.ModelAdmin):
     list_display = ("name", "venue", "main_belgian_club")
     # Lat and long will be given by the Geocoding API, no need to show
     # them on the admin interface
@@ -62,8 +62,8 @@ class TeamAdmin(admin.ModelAdmin):
 @admin.register(TBMember)
 class TBMemberAdmin(admin.ModelAdmin):
     form = TBMemberForm
-    list_display = ("name", "team", "referee", "referee_level", "coach")
-    list_filter = ("team", "referee", "referee_level", "coach")
+    list_display = ("name", "club", "referee", "referee_level", "coach")
+    list_filter = ("club", "referee", "referee_level", "coach")
 
 
 @admin.register(Link)

@@ -9,13 +9,13 @@ from rest_framework import generics
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from .models import Tag, Post, Venue, Team, Match, TBMember, \
+from .models import Tag, Post, Venue, Club, Match, TBMember, \
     Event, File, Link, Contact, BannerPicture, Competition, \
     Category, Pool, Picture, Gallery
 from .serializers import TagSerializer, PostSerializer, \
-    TeamSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer,\
+    ClubSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer,\
     TBMemberSerializer, EventSerializer, FileSerializer, LinkSerializer, \
-    ContactSerializer, TeamStatsSerializer, BannerPictureSerializer, \
+    ContactSerializer, ClubStatsSerializer, BannerPictureSerializer, \
     CompetitionDetailSerializer, CategorySerializer, PoolSerializer, \
     PictureSerializer, GallerySerializer
 # Create your views here.
@@ -50,21 +50,27 @@ class VenueViewSet(viewsets.ReadOnlyModelViewSet):
     paginator = None
 
 
-class TeamViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Team.objects.all()
-    serializer_class = TeamSerializer
+class ClubViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Club.objects.all()
+    serializer_class = ClubSerializer
     paginator = None
 
     @action(detail=True)
     def stats(self, request, *arg, **kwargs):
-        team = Team.objects.get(pk=kwargs["pk"])
-        serializer = TeamStatsSerializer(team, many=False, context={"request": request})
+        team = Club.objects.get(pk=kwargs["pk"])
+        serializer = ClubStatsSerializer(team, many=False, context={"request": request})
         return Response(serializer.data)
 
 
-class BelgianTeamViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Team.objects.filter(main_belgian_club=True)
-    serializer_class = TeamSerializer
+class BelgianClubViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Club.objects.filter(main_belgian_club=True)
+    serializer_class = ClubSerializer
+    paginator = None
+
+
+class MemberClubViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Club.objects.filter(member_club=True)
+    serializer_class = ClubSerializer
     paginator = None
 
 

@@ -86,5 +86,13 @@
     "name": "Different locations",
     "address": "Belgium"
   }
+},
+{
+  "model": "website.venue",
+  "pk": 12,
+  "fields": {
+    "name": "Anderlecht Rugby Club",
+    "address": "Rue de Neerpede 795, Anderlecht, Belgium"
+  }
 }
 ]

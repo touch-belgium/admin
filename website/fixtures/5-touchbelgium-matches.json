@@ -528,23 +528,6 @@
 },
 {
   "model": "website.match",
-  "pk": 32,
-  "fields": {
-    "category": 2,
-    "home_team": 2,
-    "away_team": 6,
-    "when": "2019-10-12T11:30:00Z",
-    "pitch": "1",
-    "refs": "Karla, Manu, Ref Citizens",
-    "home_touchdowns": 4,
-    "away_touchdowns": 2,
-    "forfeit": false,
-    "match_type": "",
-    "invitational_match": true
-  }
-},
-{
-  "model": "website.match",
   "pk": 33,
   "fields": {
     "category": 2,

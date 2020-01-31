@@ -1,6 +1,6 @@
 [
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 1,
   "fields": {
     "name": "Kituro",
@@ -11,12 +11,13 @@
     "instagram": "",
     "venue": 8,
     "main_belgian_club": true,
+    "member_club": true,
     "lat": "50.8605955000000000",
     "lng": "4.3991514000000000"
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 2,
   "fields": {
     "name": "BBRFC Celtic",
@@ -27,12 +28,13 @@
     "instagram": "",
     "venue": 2,
     "main_belgian_club": true,
+    "member_club": true,
     "lat": "50.8239964000000000",
     "lng": "4.3988538000000000"
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 3,
   "fields": {
     "name": "Boitsfort",
@@ -43,12 +45,13 @@
     "instagram": "",
     "venue": 4,
     "main_belgian_club": true,
+    "member_club": true,
     "lat": "50.7936815000000000",
     "lng": "4.4186864000000000"
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 4,
   "fields": {
     "name": "Hamme",
@@ -59,12 +62,13 @@
     "instagram": "",
     "venue": 7,
     "main_belgian_club": true,
+    "member_club": false,
     "lat": "51.1042877000000000",
     "lng": "4.1343842000000000"
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 5,
   "fields": {
     "name": "Brussels Citizens",
@@ -75,12 +79,13 @@
     "instagram": "",
     "venue": 5,
     "main_belgian_club": true,
+    "member_club": true,
     "lat": "50.8118601000000000",
     "lng": "4.4403763000000000"
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 6,
   "fields": {
     "name": "Gent",
@@ -91,12 +96,13 @@
     "instagram": "",
     "venue": 6,
     "main_belgian_club": true,
+    "member_club": true,
     "lat": "51.0459870000000000",
     "lng": "3.6876020000000000"
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 7,
   "fields": {
     "name": "Antwerp",
@@ -107,12 +113,13 @@
     "instagram": "",
     "venue": 1,
     "main_belgian_club": true,
+    "member_club": false,
     "lat": "51.1894327000000000",
     "lng": "4.3984894000000000"
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 8,
   "fields": {
     "name": "Oudenaarde Rhinos",
@@ -123,12 +130,13 @@
     "instagram": "",
     "venue": 9,
     "main_belgian_club": true,
+    "member_club": true,
     "lat": "50.8465849000000000",
     "lng": "3.6189946000000000"
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 9,
   "fields": {
     "name": "BUC St Josse",
@@ -139,12 +147,13 @@
     "instagram": "",
     "venue": 3,
     "main_belgian_club": true,
+    "member_club": true,
     "lat": "50.8594467000000000",
     "lng": "4.4222958000000000"
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 10,
   "fields": {
     "name": "Old Wesley",
@@ -155,12 +164,13 @@
     "instagram": "",
     "venue": null,
     "main_belgian_club": false,
+    "member_club": false,
     "lat": null,
     "lng": null
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 11,
   "fields": {
     "name": "Fluffy Dragons",
@@ -171,12 +181,13 @@
     "instagram": "",
     "venue": null,
     "main_belgian_club": false,
+    "member_club": false,
     "lat": null,
     "lng": null
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 12,
   "fields": {
     "name": "Exeter Eagle Owls",
@@ -187,12 +198,13 @@
     "instagram": "",
     "venue": null,
     "main_belgian_club": false,
+    "member_club": false,
     "lat": null,
     "lng": null
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 13,
   "fields": {
     "name": "Donnybrook",
@@ -203,12 +215,13 @@
     "instagram": "",
     "venue": null,
     "main_belgian_club": false,
+    "member_club": false,
     "lat": null,
     "lng": null
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 14,
   "fields": {
     "name": "Eindhoven",
@@ -219,12 +232,13 @@
     "instagram": "",
     "venue": null,
     "main_belgian_club": false,
+    "member_club": false,
     "lat": null,
     "lng": null
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 15,
   "fields": {
     "name": "Excellium",
@@ -235,12 +249,13 @@
     "instagram": "",
     "venue": null,
     "main_belgian_club": false,
+    "member_club": false,
     "lat": null,
     "lng": null
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 16,
   "fields": {
     "name": "Touch Belgium Juniors",
@@ -251,12 +266,13 @@
     "instagram": "",
     "venue": null,
     "main_belgian_club": false,
+    "member_club": false,
     "lat": null,
     "lng": null
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 17,
   "fields": {
     "name": "XXX Amsterdam",
@@ -267,12 +283,13 @@
     "instagram": "",
     "venue": null,
     "main_belgian_club": false,
+    "member_club": false,
     "lat": null,
     "lng": null
   }
 },
 {
-  "model": "website.team",
+  "model": "website.club",
   "pk": 18,
   "fields": {
     "name": "Luxembourg",
@@ -283,8 +300,26 @@
     "instagram": "",
     "venue": null,
     "main_belgian_club": false,
+    "member_club": false,
     "lat": null,
     "lng": null
+  }
+},
+{
+  "model": "website.club",
+  "pk": 19,
+  "fields": {
+    "name": "Anderlecht",
+    "logo": "team_logos/anderlecht-logo.png",
+    "founded": "1931",
+    "website": "https://rscarugby.be",
+    "facebook": "https://www.facebook.com/RSCASectionRugby/",
+    "instagram": "",
+    "venue": 12,
+    "main_belgian_club": true,
+    "member_club": false,
+    "lat": "50.8275681000000000",
+    "lng": "4.2720691000000000"
   }
 }
 ]
