@@ -148,7 +148,7 @@ class TBMemberSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = TBMember
-        fields = '__all__'
+        exclude = ["url"]
 
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):

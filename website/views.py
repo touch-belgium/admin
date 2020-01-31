@@ -149,6 +149,12 @@ class CoachViewSet(viewsets.ReadOnlyModelViewSet):
     paginator = None
 
 
+class CommitteeViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = TBMember.objects.filter(committee_member=True)
+    serializer_class = TBMemberSerializer
+    paginator = None
+
+
 class ContactViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
