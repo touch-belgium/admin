@@ -7,7 +7,8 @@ import os
 import googlemaps
 import nested_admin
 
-admin.site.site_header = 'Touch Belgium Administration'
+admin.site.site_title = "Touch Belgium site admin"
+admin.site.site_header = "Touch Belgium Administration"
 gmaps = googlemaps.Client(key=os.environ.get('GMAPS_API_KEY'))
 
 @admin.register(Post)
@@ -30,7 +31,7 @@ class PostAdmin(admin.ModelAdmin):
         if getattr(obj, "pk", None) is None:
             # When first creating the post
             obj.created_at = timezone.now()
-            obj.updated_at = timezone.now() # TODO: unindent this for prod
+        obj.updated_at = timezone.now()
         obj.save()
 
 
