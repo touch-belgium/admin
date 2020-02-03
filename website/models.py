@@ -230,9 +230,12 @@ class Competition(models.Model):
 
 
 class Bonus(models.Model):
-    category = models.ForeignKey("Category", on_delete=models.CASCADE)
+    category = models.ForeignKey("Category", related_name="bonuses", on_delete=models.CASCADE)
     team = models.ForeignKey("Club", on_delete=models.CASCADE)
     points = models.IntegerField(help_text="Bonus points can be negative")
+
+    def __str__(self):
+        return "{}: {}".format(self.team, self.points)
 
     class Meta:
         verbose_name_plural = "Bonuses"

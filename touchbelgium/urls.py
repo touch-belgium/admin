@@ -32,10 +32,7 @@ router.register(r'venues', views.VenueViewSet)
 router.register(r'clubs', views.ClubViewSet)
 router.register(r'belgian_clubs', views.BelgianClubViewSet, basename="belgian_clubs")
 router.register(r'member_clubs', views.MemberClubViewSet, basename="member_clubs")
-router.register(r'categories', views.CategoryViewSet)
-router.register(r'pools', views.PoolViewSet)
 router.register(r'competitions', views.CompetitionViewSet)
-router.register(r'matches', views.MatchViewSet, basename="match")
 router.register(r'files', views.FileViewSet)
 router.register(r'members', views.TBMemberViewSet, basename="member")
 router.register(r'referees', views.RefereeViewSet, basename="referee")
@@ -49,7 +46,6 @@ router.register(r'galleries', views.GalleryViewSet)
 
 
 urlpatterns = [
-
     path('filebrowser/', site.urls),
     path('', admin.site.urls),
     re_path(r'^tinymce/', include('tinymce.urls')),

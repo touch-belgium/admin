@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from .models import Tag, Post, Match, Competition, Venue, Club, TBMember, Event, File, Link, Contact, BannerPicture, Category, Pool, Picture, Gallery
+from .models import Tag, Post, Match, Competition, Venue, Club, TBMember, Event, File, Link, Contact, BannerPicture, Category, Pool, Picture, Gallery, Bonus
 from rest_framework import serializers
 
 
@@ -98,6 +98,14 @@ class PoolSerializer(serializers.ModelSerializer):
         fields = ["name", "teams"]
 
 
+class BonusSerializer(serializers.ModelSerializer):
+    team = serializers.StringRelatedField(read_only=True)
+
+    class Meta:
+        model = Bonus
+        exclude = ["id", "category"]
+
+
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
     matches = MatchSerializer(
         many=True,
@@ -108,9 +116,20 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
         read_only=True
     )
 
+    bonuses = BonusSerializer(
+        many=True,
+        read_only=True
+    )
+
+    # BonusSerializer(
+    #     many=True,
+    #     read_only=True
+    # )
+
     class Meta:
         model = Category
-        fields = ["category", "pools", "matches"]
+        depth = 5
+        fields = ["bonuses", "category", "pools", "matches"]
 
 
 class CompetitionDetailSerializer(serializers.ModelSerializer):

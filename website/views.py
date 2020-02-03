@@ -74,18 +74,6 @@ class MemberClubViewSet(viewsets.ReadOnlyModelViewSet):
     paginator = None
 
 
-class PoolViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Pool.objects.all()
-    serializer_class = PoolSerializer
-    paginator = None
-
-
-class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
-    paginator = None
-
-
 class CompetitionViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Competition.objects.all()
     serializer_class = CompetitionSerializer
@@ -96,28 +84,6 @@ class CompetitionViewSet(viewsets.ReadOnlyModelViewSet):
         competition = get_object_or_404(queryset, pk=pk)
         serializer = CompetitionDetailSerializer(competition, context={"request": request})
         return Response(serializer.data)
-
-
-    # @action(detail=True)
-    # def matches(self, request, *arg, **kwargs):
-    #     matches = Match.objects.filter(competition=kwargs["pk"])
-    #     serializer = MatchSerializer(matches, many=True, context={"request": request})
-    #     return Response(serializer.data)
-
-
-class MatchViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Match.objects.all()
-    serializer_class = MatchSerializer
-    paginator = None
-
-
-class MatchCompetitionViewSet(viewsets.ReadOnlyModelViewSet):
-    serializer_class = MatchSerializer
-    paginator = None
-
-    def get_queryset(self):
-        comp = self.kwargs['competition']
-        return Match.objects.filter(competition=comp)
 
 
 class EventViewSet(viewsets.ReadOnlyModelViewSet):
