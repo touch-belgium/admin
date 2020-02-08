@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8080',
     'http://localhost:3000',
-    'https://beta.touch-belgium.be',
+    'https://staging.touch-belgium.be',
     'https://touch-belgium.be'
 )
 
