@@ -7,6 +7,8 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from filebrowser.fields import FileBrowseField
 from tinymce import HTMLField
 
+import reversion
+
 class Tag(models.Model):
     word = models.CharField(max_length=35)
 
@@ -48,6 +50,8 @@ class Club(models.Model):
     website = models.URLField(blank=True)
     facebook = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
+    # If Venue is deleted -> disallow and protect the club. Has to
+    # delete the Venue first.
     venue = models.ForeignKey("Venue", on_delete=models.PROTECT, blank=True, null=True)
     main_belgian_club = models.BooleanField(default=False)
     member_club = models.BooleanField(default=False, verbose_name="Touch Belgium member ?")
@@ -133,9 +137,12 @@ class Venue(models.Model):
 
 
 class Match(models.Model):
+    # If Category is deleted -> delete match as well
     category = models.ForeignKey("Category", on_delete=models.CASCADE, related_name="matches")
+    # If Home Team is deleted -> disallow and protect the match
     home_team = models.ForeignKey("Club", on_delete=models.PROTECT,
                                   related_name="home_team")
+    # If Away Team is deleted -> disallow and protect the match
     away_team = models.ForeignKey("Club", on_delete=models.PROTECT,
                                   related_name="away_team")
     when = models.DateTimeField(help_text="Type the time in HH:MM format")
@@ -230,7 +237,9 @@ class Competition(models.Model):
 
 
 class Bonus(models.Model):
+    # If Category is deleted -> delete the bonuses associated as well
     category = models.ForeignKey("Category", related_name="bonuses", on_delete=models.CASCADE)
+    # If Team is deleted -> delete the bonuses as well
     team = models.ForeignKey("Club", on_delete=models.CASCADE)
     points = models.IntegerField(help_text="Bonus points can be negative")
 
@@ -272,6 +281,7 @@ class Category(models.Model):
         (JUNIOR, "JO")
     ]
     category = models.CharField(max_length=3, choices=CATEGORY_CHOICES, help_text="Men open, women open, mixed open...")
+    # If Competition is deleted -> delete the category as well
     competition = models.ForeignKey("Competition", on_delete=models.CASCADE, related_name="categories")
 
     def __str__(self):
@@ -282,9 +292,10 @@ class Category(models.Model):
 
 
 class Pool(models.Model):
+    # If Category is deleted -> delete the pool as well
     category = models.ForeignKey("Category", on_delete=models.CASCADE, related_name="pools")
     name = models.CharField(max_length=50, help_text="Do not create any pools for a league type competition")
-    teams = models.ManyToManyField("Club")
+    teams = models.ManyToManyField("Club", related_name="+")
 
     def __str__(self):
         return self.name
@@ -374,6 +385,7 @@ class BannerPicture(models.Model):
 
 class Picture(models.Model):
     picture = FileBrowseField(max_length=500)
+    # If Gallery is deleted -> delete the pictures as well
     in_gallery = models.ForeignKey("Gallery", on_delete=models.CASCADE)
 
 
@@ -381,3 +393,11 @@ class Gallery(models.Model):
 
     class Meta:
         verbose_name_plural = "galleries"
+
+
+# Reversion registration for Models which are used inline in the
+# admin. Other models are registered with reversion using VersionAdmin
+# in admin.py
+reversion.register(Category)
+reversion.register(Pool)
+reversion.register(Match)

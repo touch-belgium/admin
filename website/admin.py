@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.utils import timezone
+from reversion.admin import VersionAdmin
 
 from .models import Tag, Post, Venue, Club, Match, TBMember, Event, File, Link, Contact, BannerPicture, Pool, Bonus, Category, Competition, Picture, Gallery
 from .forms import PostForm, BonusForm, MatchForm, PoolForm, TBMemberForm
@@ -9,10 +10,12 @@ import nested_admin
 
 admin.site.site_title = "Touch Belgium site admin"
 admin.site.site_header = "Touch Belgium Administration"
+admin.site.site_url = "https://touch-belgium.be"
+
 gmaps = googlemaps.Client(key=os.environ.get('GMAPS_API_KEY'))
 
 @admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(VersionAdmin):
     form = PostForm
     list_display = ("title", "author", "created_at")
     list_filter = ("author",)
@@ -36,7 +39,7 @@ class PostAdmin(admin.ModelAdmin):
 
 
 @admin.register(Club)
-class ClubAdmin(admin.ModelAdmin):
+class ClubAdmin(VersionAdmin):
     list_display = ("name", "venue", "main_belgian_club")
     # Lat and long will be given by the Geocoding API, no need to show
     # them on the admin interface
@@ -61,20 +64,20 @@ class ClubAdmin(admin.ModelAdmin):
 
 
 @admin.register(TBMember)
-class TBMemberAdmin(admin.ModelAdmin):
+class TBMemberAdmin(VersionAdmin):
     form = TBMemberForm
     list_display = ("name", "club", "referee", "referee_level", "coach")
     list_filter = ("club", "referee", "referee_level", "coach")
 
 
 @admin.register(Link)
-class LinkAdmin(admin.ModelAdmin):
+class LinkAdmin(VersionAdmin):
     list_display = ("title", "tag", "link")
     list_filter = ("tag",)
 
 
 @admin.register(Contact)
-class ContactAdmin(admin.ModelAdmin):
+class ContactAdmin(VersionAdmin):
     list_display = ("name", "email")
 
 
@@ -103,7 +106,7 @@ class CategoryAdmin(nested_admin.NestedStackedInline):
 
 
 @admin.register(Competition)
-class CompetitionAdmin(nested_admin.NestedModelAdmin):
+class CompetitionAdmin(VersionAdmin, nested_admin.NestedModelAdmin):
     inlines = [CategoryAdmin]
     list_display = ("name", "venue")
     list_filter = ("belgian_championship",)
@@ -114,7 +117,7 @@ class PictureAdmin(nested_admin.NestedStackedInline):
 
 
 @admin.register(Gallery)
-class GalleryAdmin(nested_admin.NestedModelAdmin):
+class GalleryAdmin(VersionAdmin, nested_admin.NestedModelAdmin):
     inlines = [PictureAdmin]
 
 

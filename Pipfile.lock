@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "95778cc534d7c3354ad3b6f0f2d0237fb3926da166b7d250a0bad1d5e276acbc"
+            "sha256": "e130181c989a8084a4c88661fa0a7229fe669e015a74ba2eca682e891e7a48a4"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -23,10 +23,10 @@
         },
         "certifi": {
             "hashes": [
-                "sha256:017c25db2a153ce562900032d5bc68e9f191e44e9a0f762f373977de9df1fbb3",
-                "sha256:25b64c7da4cd7479594d035c08c2d809eb4aab3a26e5a990ea98cc450c320f1f"
+                "sha256:b0e07438175de96ab74de9ab5dc40985ef8b44a41e9636a2000099dc3b670ddd",
+                "sha256:e68768546aa055623812ada64aec5e1f02ca20a9e7f3d3432dd8b0f35a6e7951"
             ],
-            "version": "==2019.11.28"
+            "version": "==2020.4.5"
         },
         "chardet": {
             "hashes": [
@@ -52,10 +52,10 @@
         },
         "django-autocomplete-light": {
             "hashes": [
-                "sha256:52e8d468060a5911c44300a374d74058c90e65bfdf87ace151abac67279c4ae5"
+                "sha256:4a32bce7bc3004f49eb36b377ad18bd6a291077904810f22a2b13a6c53215666"
             ],
             "index": "pypi",
-            "version": "==3.5.1"
+            "version": "==3.5.0"
         },
         "django-cors-headers": {
             "hashes": [
@@ -88,6 +88,21 @@
             ],
             "index": "pypi",
             "version": "==3.2.4"
+        },
+        "django-querysetsequence": {
+            "hashes": [
+                "sha256:c04128b29df46d3ca20c6d0ee6a5ad0f6046ca02ad8dde44e0b77f500984dbce"
+            ],
+            "index": "pypi",
+            "version": "==0.12"
+        },
+        "django-reversion": {
+            "hashes": [
+                "sha256:72fc53580a6b538f0cfff10f27f42333f67d79c406399289c94ec5a193cfb3e1",
+                "sha256:ecab4703ecc0871dc325c3e100139def84eb153622df3413fbcd9de7d3503c78"
+            ],
+            "index": "pypi",
+            "version": "==3.0.7"
         },
         "django-tinymce4-lite": {
             "hashes": [

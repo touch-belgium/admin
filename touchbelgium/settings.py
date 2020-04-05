@@ -37,9 +37,10 @@ CORS_ORIGIN_WHITELIST = (
 # Application definition
 
 INSTALLED_APPS = [
+    'reversion',
     'dal',
     'dal_select2',
-#    'dal_queryset_sequence',
+    'dal_queryset_sequence',
     'nested_admin',
     'django.contrib.admin',
     'django.contrib.auth',
