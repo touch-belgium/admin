@@ -46,6 +46,7 @@ router.register(r'galleries', views.GalleryViewSet)
 
 
 urlpatterns = [
+    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
     path('filebrowser/', site.urls),
     path('', admin.site.urls),
     re_path(r'^tinymce/', include('tinymce.urls')),

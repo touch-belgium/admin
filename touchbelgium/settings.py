@@ -38,6 +38,7 @@ CORS_ORIGIN_WHITELIST = (
 
 INSTALLED_APPS = [
     'reversion',
+    'jet',
     'dal',
     'dal_select2',
     'dal_queryset_sequence',
