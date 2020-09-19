@@ -183,15 +183,15 @@ class RegistrationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Registration
         exclude = ["url"]
-        # extra_kwargs = {"season": {"write_only": True},
-        #                 "name": {"write_only": True},
-        #                 "license_number": {"write_only": True},
-        #                 "email": {"write_only": True},
-        #                 "dob": {"write_only": True},
-        #                 "media_consent": {"write_only": True},
-        #                 "guardian_name": {"write_only": True},
-        #                 "guardian_email": {"write_only": True},
-        #                 "club": {"write_only": True}}
+        extra_kwargs = {"season": {"write_only": True},
+                        "name": {"write_only": True},
+                        "license_number": {"write_only": True},
+                        "club": {"write_only": True},
+                        "email": {"write_only": True},
+                        "dob": {"write_only": True},
+                        "media_consent": {"write_only": True},
+                        "guardian_name": {"write_only": True},
+                        "guardian_email": {"write_only": True}}
 
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):
