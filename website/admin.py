@@ -2,8 +2,8 @@ from django.contrib import admin
 from django.utils import timezone
 from reversion.admin import VersionAdmin
 
-from .models import Tag, Post, Venue, Club, Match, TBMember, Event, File, Link, Contact, BannerPicture, Pool, Bonus, Category, Competition, Picture, Gallery
-from .forms import PostForm, BonusForm, MatchForm, PoolForm, TBMemberForm
+from .models import Tag, Post, Venue, Club, Match, TBMember, Registration, Event, File, Link, Contact, BannerPicture, Pool, Bonus, Category, Competition, Picture, Gallery
+from .forms import PostForm, BonusForm, MatchForm, PoolForm, TBMemberForm, RegistrationForm
 import os
 import googlemaps
 import nested_admin
@@ -68,6 +68,13 @@ class TBMemberAdmin(VersionAdmin):
     form = TBMemberForm
     list_display = ("name", "club", "referee", "referee_level", "coach")
     list_filter = ("club", "referee", "referee_level", "coach")
+
+
+@admin.register(Registration)
+class RegistrationAdmin(VersionAdmin):
+    form = RegistrationForm
+    list_display = ("name", "email", "season", "club", "dob")
+    list_filter = ("name", "email", "season", "club")
 
 
 @admin.register(Link)

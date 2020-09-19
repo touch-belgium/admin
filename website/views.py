@@ -10,11 +10,11 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from .models import Tag, Post, Venue, Club, Match, TBMember, \
-    Event, File, Link, Contact, BannerPicture, Competition, \
+    Registration, Event, File, Link, Contact, BannerPicture, Competition, \
     Category, Pool, Picture, Gallery
 from .serializers import TagSerializer, PostSerializer, \
     ClubSerializer, CompetitionSerializer, MatchSerializer, VenueSerializer,\
-    TBMemberSerializer, EventSerializer, FileSerializer, LinkSerializer, \
+    TBMemberSerializer, RegistrationSerializer, EventSerializer, FileSerializer, LinkSerializer, \
     ContactSerializer, ClubStatsSerializer, BannerPictureSerializer, \
     CompetitionDetailSerializer, CategorySerializer, PoolSerializer, \
     PictureSerializer, GallerySerializer
@@ -103,10 +103,18 @@ class LinkViewSet(viewsets.ReadOnlyModelViewSet):
     paginator = None
 
 
-class TBMemberViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = TBMember.objects.all()
-    serializer_class = TBMemberSerializer
+# class TBMemberViewSet(viewsets.ReadOnlyModelViewSet):
+#     queryset = TBMember.objects.all()
+#     serializer_class = TBMemberSerializer
+#     paginator = None
+
+
+# Read and write
+class RegistrationViewSet(viewsets.ModelViewSet):
+    queryset = Registration.objects.all()
+    serializer_class = RegistrationSerializer
     paginator = None
+    permission_classes = []
 
 
 class RefereeViewSet(viewsets.ReadOnlyModelViewSet):

@@ -34,7 +34,9 @@ router.register(r'belgian_clubs', views.BelgianClubViewSet, basename="belgian_cl
 router.register(r'member_clubs', views.MemberClubViewSet, basename="member_clubs")
 router.register(r'competitions', views.CompetitionViewSet)
 router.register(r'files', views.FileViewSet)
-router.register(r'members', views.TBMemberViewSet, basename="member")
+# Members should not be public (or at least hide name, email and dob)
+# router.register(r'members', views.TBMemberViewSet, basename="member")
+router.register(r'registrations', views.RegistrationViewSet)
 router.register(r'referees', views.RefereeViewSet, basename="referee")
 router.register(r'coaches', views.CoachViewSet, basename="coach")
 router.register(r'committee', views.CommitteeViewSet)
@@ -46,7 +48,6 @@ router.register(r'galleries', views.GalleryViewSet)
 
 
 urlpatterns = [
-    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
     path('filebrowser/', site.urls),
     path('', admin.site.urls),
     re_path(r'^tinymce/', include('tinymce.urls')),

@@ -5,7 +5,7 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 from filebrowser.fields import FileBrowseField
-from tinymce import HTMLField
+from tinymce.models import HTMLField
 
 import reversion
 
@@ -24,8 +24,8 @@ class Post(models.Model):
     picture = FileBrowseField(max_length=500, default="base/news_placeholder.png",
                               directory="/")
     author = models.ForeignKey(User, on_delete=models.PROTECT, blank=True, null=True, editable=False)
-    excerpt = models.TextField(blank=True, null=True)
-    body = HTMLField()
+    excerpt = models.TextField(blank=True, null=True, help_text="A few lines describing what the post is about")
+    body = HTMLField(help_text="Full post body")
     created_at = models.DateTimeField(blank=True)
     updated_at = models.DateTimeField(blank=True)
     tags = models.ManyToManyField(Tag, blank=True)
@@ -294,7 +294,7 @@ class Category(models.Model):
 class Pool(models.Model):
     # If Category is deleted -> delete the pool as well
     category = models.ForeignKey("Category", on_delete=models.CASCADE, related_name="pools")
-    name = models.CharField(max_length=50, help_text="Do not create any pools for a league type competition")
+    name = models.CharField(max_length=50, help_text="Do not create pools for a league type competition")
     teams = models.ManyToManyField("Club", related_name="+")
 
     def __str__(self):
@@ -307,6 +307,8 @@ class TBMember(models.Model):
                               directory="/", blank=True)
     license_number = models.CharField(max_length=30, blank=True)
     club = models.ForeignKey("Club", on_delete=models.PROTECT, blank=True, null=True)
+    dob = models.DateField(blank=True, null=True, verbose_name="Date of birth")
+    media_consent = models.BooleanField(default=False)
 
     # Committee
     committee_member = models.BooleanField(default=False)
@@ -328,7 +330,6 @@ class TBMember(models.Model):
     coach_level = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)], blank=True, null=True)
     coach_position = models.CharField(max_length=50, blank=True, null=True)
 
-
     def __str__(self):
         return self.name
 
@@ -336,6 +337,22 @@ class TBMember(models.Model):
         ordering = ["name"]
         verbose_name = "Touch Belgium member"
         verbose_name_plural = "Touch Belgium members"
+
+
+class Registration(models.Model):
+    season = models.CharField(max_length=50, blank=True)
+    name = models.CharField(max_length=100)
+    license_number = models.CharField(max_length=30, blank=True)
+    club = models.ForeignKey("Club", on_delete=models.PROTECT, blank=True, null=True)
+    email = models.EmailField()
+    dob = models.DateField(verbose_name="Date of birth")
+    media_consent = models.BooleanField(default=False)
+
+    guardian_name = models.CharField(max_length=100, blank=True)
+    guardian_email = models.EmailField(blank=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Event(models.Model):

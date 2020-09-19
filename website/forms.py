@@ -1,7 +1,8 @@
 from django import forms
 from dal import autocomplete
 
-from .models import Post, Bonus, Match, Pool, TBMember
+from .models import Post, Bonus, Match, Pool, TBMember, Registration
+
 
 class MatchForm(forms.ModelForm):
     class Meta:
@@ -11,6 +12,7 @@ class MatchForm(forms.ModelForm):
             "home_team": autocomplete.ModelSelect2(),
             "away_team": autocomplete.ModelSelect2()
         }
+
 
 class BonusForm(forms.ModelForm):
     class Meta:
@@ -33,6 +35,15 @@ class PoolForm(forms.ModelForm):
 class TBMemberForm(forms.ModelForm):
     class Meta:
         model = TBMember
+        fields = ('__all__')
+        widgets = {
+            "team": autocomplete.ModelSelect2()
+        }
+
+
+class RegistrationForm(forms.ModelForm):
+    class Meta:
+        model = Registration
         fields = ('__all__')
         widgets = {
             "team": autocomplete.ModelSelect2()

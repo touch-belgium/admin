@@ -38,7 +38,6 @@ CORS_ORIGIN_WHITELIST = (
 
 INSTALLED_APPS = [
     'reversion',
-    'jet',
     'dal',
     'dal_select2',
     'dal_queryset_sequence',
@@ -142,10 +141,12 @@ REST_FRAMEWORK = {
 }
 
 # Config for TinyMCE4 widget
+TINYMCE_JS_URL = "https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.11/tinymce.min.js"
+TINYMCE_JS_ROOT = "https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.11/"
 TINYMCE_DEFAULT_CONFIG = {
-    'selector': 'textarea',
+    # 'selector': 'textarea',
     'theme': 'modern',
-    'plugins': 'link image preview contextmenu table lists textcolor colorpicker emoticons',
+    'plugins': 'link,image,preview,contextmenu,table,lists,textcolor,colorpicker,emoticons',
     'toolbar1': 'formatselect | bold italic underline | alignleft aligncenter alignright alignjustify '
                '| bullist numlist | outdent indent | table | link image | preview code | forecolor backcolor | emoticons',
     'contextmenu': 'formats | link image',

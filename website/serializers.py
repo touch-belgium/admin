@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from .models import Tag, Post, Match, Competition, Venue, Club, TBMember, Event, File, Link, Contact, BannerPicture, Category, Pool, Picture, Gallery, Bonus
+from .models import Tag, Post, Match, Competition, Venue, Club, TBMember, Registration, Event, File, Link, Contact, BannerPicture, Category, Pool, Picture, Gallery, Bonus
 from rest_framework import serializers
 
 
@@ -157,7 +157,7 @@ class CompetitionDetailSerializer(serializers.ModelSerializer):
 
 class TBMemberSerializer(serializers.HyperlinkedModelSerializer):
     picture = serializers.SerializerMethodField()
-    team = serializers.SlugRelatedField(
+    club = serializers.SlugRelatedField(
         read_only=True,
         slug_field="name"
     )
@@ -168,6 +168,30 @@ class TBMemberSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = TBMember
         exclude = ["url"]
+
+
+class RegistrationSerializer(serializers.HyperlinkedModelSerializer):
+    club = serializers.SlugRelatedField(
+        slug_field="name",
+        queryset=Club.objects.all(),
+        # Following two options allow for independent, no-club
+        # registrations on Touch Belgium
+        required=False,
+        allow_null=True
+    )
+
+    class Meta:
+        model = Registration
+        exclude = ["url"]
+        # extra_kwargs = {"season": {"write_only": True},
+        #                 "name": {"write_only": True},
+        #                 "license_number": {"write_only": True},
+        #                 "email": {"write_only": True},
+        #                 "dob": {"write_only": True},
+        #                 "media_consent": {"write_only": True},
+        #                 "guardian_name": {"write_only": True},
+        #                 "guardian_email": {"write_only": True},
+        #                 "club": {"write_only": True}}
 
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):
