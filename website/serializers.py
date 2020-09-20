@@ -177,7 +177,8 @@ class RegistrationSerializer(serializers.HyperlinkedModelSerializer):
         # Following two options allow for independent, no-club
         # registrations on Touch Belgium
         required=False,
-        allow_null=True
+        allow_null=True,
+        write_only=True
     )
 
     class Meta:
@@ -186,7 +187,6 @@ class RegistrationSerializer(serializers.HyperlinkedModelSerializer):
         extra_kwargs = {"season": {"write_only": True},
                         "name": {"write_only": True},
                         "license_number": {"write_only": True},
-                        "club": {"write_only": True},
                         "email": {"write_only": True},
                         "dob": {"write_only": True},
                         "media_consent": {"write_only": True},
