@@ -9,7 +9,7 @@ from rest_framework import generics
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from .models import Tag, Post, Venue, Club, Match, TBMember, \
+from .models import Tag, Post, Venue, Club, BelgianClub, Match, TBMember, \
     Registration, Event, File, Link, Contact, BannerPicture, Competition, \
     Category, Pool, Picture, Gallery
 from .serializers import TagSerializer, PostSerializer, \
@@ -63,13 +63,13 @@ class ClubViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class BelgianClubViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Club.objects.filter(main_belgian_club=True)
+    queryset = BelgianClub.objects.all()
     serializer_class = ClubSerializer
     paginator = None
 
 
 class MemberClubViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Club.objects.filter(member_club=True)
+    queryset = BelgianClub.objects.filter(member_club=True)
     serializer_class = ClubSerializer
     paginator = None
 

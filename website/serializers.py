@@ -63,7 +63,7 @@ class ClubStatsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Club
         fields = ["name", "logo", "founded", "website", "facebook",
-                  "instagram", "venue", "main_belgian_club",
+                  "instagram", "venue",
                   "lat", "lng", "n_registered_members", "n_refs",
                   "avg_ref_level", "matches_won", "matches_lost",
                   "matches_tied", "form", "avg_touchdowns_scored",

@@ -53,31 +53,9 @@ class Club(models.Model):
     # If Venue is deleted -> disallow and protect the club. Has to
     # delete the Venue first.
     venue = models.ForeignKey("Venue", on_delete=models.PROTECT, blank=True, null=True)
-    main_belgian_club = models.BooleanField(default=False)
-    member_club = models.BooleanField(default=False, verbose_name="Touch Belgium member ?")
+
     lat = models.DecimalField(max_digits=22, decimal_places=16, blank=True, null=True)
     lng = models.DecimalField(max_digits=22, decimal_places=16, blank=True, null=True)
-
-    @property
-    def registered_members(self):
-        return TBMember.objects.filter(club=self)
-
-    @property
-    def refs(self):
-        return self.registered_members.filter(referee=True)
-
-    @property
-    def n_registered_members(self):
-        return self.registered_members.count()
-
-    @property
-    def n_refs(self):
-        return self.refs.count()
-
-    @property
-    def avg_ref_level(self):
-        agg = self.refs.aggregate(avg_level=Coalesce(Avg("referee_level"), V(0)))
-        return round(agg["avg_level"], 2)
 
     @property
     def home_matches(self):
@@ -126,6 +104,32 @@ class Club(models.Model):
 
     class Meta:
         ordering = ['name']
+
+
+class BelgianClub(Club):
+    member_club = models.BooleanField(default=False,
+                                      verbose_name="Touch Belgium registered ?")
+
+    @property
+    def registered_members(self):
+        return TBMember.objects.filter(club=self)
+
+    @property
+    def refs(self):
+        return self.registered_members.filter(referee=True)
+
+    @property
+    def n_registered_members(self):
+        return self.registered_members.count()
+
+    @property
+    def n_refs(self):
+        return self.refs.count()
+
+    @property
+    def avg_ref_level(self):
+        agg = self.refs.aggregate(avg_level=Coalesce(Avg("referee_level"), V(0)))
+        return round(agg["avg_level"], 2)
 
 
 class Venue(models.Model):
@@ -240,7 +244,7 @@ class Bonus(models.Model):
     # If Category is deleted -> delete the bonuses associated as well
     category = models.ForeignKey("Category", related_name="bonuses", on_delete=models.CASCADE)
     # If Team is deleted -> delete the bonuses as well
-    team = models.ForeignKey("Club", on_delete=models.CASCADE)
+    club = models.ForeignKey("Club", on_delete=models.CASCADE)
     points = models.IntegerField(help_text="Bonus points can be negative")
 
     def __str__(self):

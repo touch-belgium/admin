@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils import timezone
 from reversion.admin import VersionAdmin
 
-from .models import Tag, Post, Venue, Club, Match, TBMember, Registration, Event, File, Link, Contact, BannerPicture, Pool, Bonus, Category, Competition, Picture, Gallery
+from .models import Tag, Post, Venue, Club, BelgianClub, Match, TBMember, Registration, Event, File, Link, Contact, BannerPicture, Pool, Bonus, Category, Competition, Picture, Gallery
 from .forms import PostForm, BonusForm, MatchForm, PoolForm, TBMemberForm, RegistrationForm
 import os
 import googlemaps
@@ -40,7 +40,7 @@ class PostAdmin(VersionAdmin):
 
 @admin.register(Club)
 class ClubAdmin(VersionAdmin):
-    list_display = ("name", "venue", "main_belgian_club")
+    list_display = ("name", "venue")
     # Lat and long will be given by the Geocoding API, no need to show
     # them on the admin interface
     exclude = ('lat', 'lng')
@@ -61,6 +61,11 @@ class ClubAdmin(VersionAdmin):
                 obj.lat = geocode_result[0]["geometry"]["location"]["lat"]
                 obj.lng = geocode_result[0]["geometry"]["location"]["lng"]
         obj.save()
+
+
+@admin.register(BelgianClub)
+class BelgianClubAdmin(ClubAdmin):
+    pass
 
 
 @admin.register(TBMember)
