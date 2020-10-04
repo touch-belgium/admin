@@ -7,7 +7,9 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from filebrowser.fields import FileBrowseField
 from tinymce.models import HTMLField
 
+import uuid
 import reversion
+
 
 class Tag(models.Model):
     word = models.CharField(max_length=35)
@@ -56,6 +58,8 @@ class Club(models.Model):
 
     lat = models.DecimalField(max_digits=22, decimal_places=16, blank=True, null=True)
     lng = models.DecimalField(max_digits=22, decimal_places=16, blank=True, null=True)
+
+    token = models.CharField(max_length=6, default="c61978")
 
     @property
     def home_matches(self):
@@ -109,6 +113,7 @@ class Club(models.Model):
 class BelgianClub(Club):
     member_club = models.BooleanField(default=False,
                                       verbose_name="Touch Belgium registered ?")
+
 
     @property
     def registered_members(self):
@@ -334,6 +339,8 @@ class TBMember(models.Model):
     coach_level = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(3)], blank=True, null=True)
     coach_position = models.CharField(max_length=50, blank=True, null=True)
 
+    registration_start_date = models.DateField(blank=True, null=True)
+
     def __str__(self):
         return self.name
 
@@ -354,6 +361,16 @@ class Registration(models.Model):
 
     guardian_name = models.CharField(max_length=100, blank=True)
     guardian_email = models.EmailField(blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    reviewed_at = models.DateTimeField(blank=True, null=True)
+    STATUS_CHOICES = [
+        ("P", "Pending"),
+        ("A", "Approved"),
+        ("R", "Rejected")
+    ]
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default="P")
+
 
     def __str__(self):
         return self.name

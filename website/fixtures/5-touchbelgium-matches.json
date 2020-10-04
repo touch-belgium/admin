@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "category": 1,
-    "home_team": 3,
+    "home_team": 24,
     "away_team": 12,
     "when": "2019-11-30T12:00:00Z",
     "pitch": "1",
@@ -21,7 +21,7 @@
   "pk": 2,
   "fields": {
     "category": 1,
-    "home_team": 1,
+    "home_team": 28,
     "away_team": 10,
     "when": "2019-11-30T12:00:00Z",
     "pitch": "2",
@@ -72,7 +72,7 @@
   "pk": 5,
   "fields": {
     "category": 1,
-    "home_team": 3,
+    "home_team": 24,
     "away_team": 14,
     "when": "2019-11-30T13:00:00Z",
     "pitch": "1",
@@ -89,7 +89,7 @@
   "pk": 6,
   "fields": {
     "category": 1,
-    "home_team": 1,
+    "home_team": 28,
     "away_team": 17,
     "when": "2019-11-30T13:00:00Z",
     "pitch": "2",
@@ -123,7 +123,7 @@
   "pk": 8,
   "fields": {
     "category": 1,
-    "home_team": 1,
+    "home_team": 28,
     "away_team": 16,
     "when": "2019-11-30T13:30:00Z",
     "pitch": "2",
@@ -174,7 +174,7 @@
   "pk": 11,
   "fields": {
     "category": 1,
-    "home_team": 2,
+    "home_team": 22,
     "away_team": 13,
     "when": "2019-11-30T12:00:00Z",
     "pitch": "3",
@@ -192,7 +192,7 @@
   "fields": {
     "category": 1,
     "home_team": 11,
-    "away_team": 8,
+    "away_team": 29,
     "when": "2019-11-30T12:30:00Z",
     "pitch": "3",
     "refs": "Ref Old Wesley, Ref Celtics",
@@ -208,7 +208,7 @@
   "pk": 13,
   "fields": {
     "category": 1,
-    "home_team": 2,
+    "home_team": 22,
     "away_team": 11,
     "when": "2019-11-30T13:00:00Z",
     "pitch": "3",
@@ -226,7 +226,7 @@
   "fields": {
     "category": 1,
     "home_team": 13,
-    "away_team": 8,
+    "away_team": 29,
     "when": "2019-11-30T13:00:00Z",
     "pitch": "4",
     "refs": "Jane, Ref TB Juniors",
@@ -259,7 +259,7 @@
   "pk": 16,
   "fields": {
     "category": 1,
-    "home_team": 3,
+    "home_team": 24,
     "away_team": 15,
     "when": "2019-11-30T13:30:00Z",
     "pitch": "4",
@@ -276,8 +276,8 @@
   "pk": 17,
   "fields": {
     "category": 1,
-    "home_team": 2,
-    "away_team": 8,
+    "home_team": 22,
+    "away_team": 29,
     "when": "2019-11-30T14:00:00Z",
     "pitch": "3",
     "refs": "Manu, Ref BRC",
@@ -327,8 +327,8 @@
   "pk": 20,
   "fields": {
     "category": 1,
-    "home_team": 3,
-    "away_team": 1,
+    "home_team": 24,
+    "away_team": 28,
     "when": "2019-11-30T15:00:00Z",
     "pitch": "2",
     "refs": "Ref Donnybrook, Ref Celtics",
@@ -361,7 +361,7 @@
   "pk": 22,
   "fields": {
     "category": 1,
-    "home_team": 3,
+    "home_team": 24,
     "away_team": 13,
     "when": "2019-11-30T15:30:00Z",
     "pitch": "2",
@@ -395,7 +395,7 @@
   "pk": 24,
   "fields": {
     "category": 1,
-    "home_team": 1,
+    "home_team": 28,
     "away_team": 13,
     "when": "2019-11-30T16:00:00Z",
     "pitch": "2",
@@ -447,7 +447,7 @@
   "fields": {
     "category": 1,
     "home_team": 14,
-    "away_team": 2,
+    "away_team": 22,
     "when": "2019-11-30T15:30:00Z",
     "pitch": "3",
     "refs": "Ref Amsterdam, Ref TB Juniors",
@@ -464,7 +464,7 @@
   "fields": {
     "category": 1,
     "home_team": 15,
-    "away_team": 8,
+    "away_team": 29,
     "when": "2019-11-30T15:30:00Z",
     "pitch": "4",
     "refs": "Ref Kituro, Ref Old Wesley",
@@ -481,7 +481,7 @@
   "fields": {
     "category": 1,
     "home_team": 17,
-    "away_team": 2,
+    "away_team": 22,
     "when": "2019-11-30T16:00:00Z",
     "pitch": "3",
     "refs": "Warren, Ref Eindhoven",
@@ -498,7 +498,7 @@
   "fields": {
     "category": 1,
     "home_team": 16,
-    "away_team": 8,
+    "away_team": 29,
     "when": "2019-11-30T16:00:00Z",
     "pitch": "4",
     "refs": "Ian, Ref Excelium",
@@ -514,8 +514,8 @@
   "pk": 31,
   "fields": {
     "category": 2,
-    "home_team": 5,
-    "away_team": 3,
+    "home_team": 25,
+    "away_team": 24,
     "when": "2019-10-12T10:30:00Z",
     "pitch": "1",
     "refs": "Barbara, Manu, Ref Celtics",
@@ -531,8 +531,8 @@
   "pk": 33,
   "fields": {
     "category": 2,
-    "home_team": 1,
-    "away_team": 8,
+    "home_team": 28,
+    "away_team": 29,
     "when": "2019-10-12T11:30:00Z",
     "pitch": "2",
     "refs": "Phil, Barbara, Ref Luxembourg",
@@ -549,7 +549,7 @@
   "fields": {
     "category": 2,
     "home_team": 18,
-    "away_team": 5,
+    "away_team": 25,
     "when": "2019-10-12T12:30:00Z",
     "pitch": "1",
     "refs": "Loic, Ref Boitsfort, Ref Gent",
@@ -565,8 +565,8 @@
   "pk": 35,
   "fields": {
     "category": 2,
-    "home_team": 2,
-    "away_team": 9,
+    "home_team": 22,
+    "away_team": 23,
     "when": "2019-10-12T13:00:00Z",
     "pitch": "2",
     "refs": "Ref Gent, Ref Boitsfort, Ref Boitsfort",
@@ -582,8 +582,8 @@
   "pk": 36,
   "fields": {
     "category": 2,
-    "home_team": 6,
-    "away_team": 3,
+    "home_team": 26,
+    "away_team": 24,
     "when": "2019-10-12T14:00:00Z",
     "pitch": "1",
     "refs": "Phil, Loic, Manu",
@@ -600,7 +600,7 @@
   "fields": {
     "category": 2,
     "home_team": 18,
-    "away_team": 1,
+    "away_team": 28,
     "when": "2019-10-12T14:00:00Z",
     "pitch": "2",
     "refs": "Barbara, Karla, Ref Oudenaarde",
@@ -616,8 +616,8 @@
   "pk": 38,
   "fields": {
     "category": 2,
-    "home_team": 8,
-    "away_team": 9,
+    "home_team": 29,
+    "away_team": 23,
     "when": "2019-10-12T15:00:00Z",
     "pitch": "2",
     "refs": "Karla, Loic, Phil",

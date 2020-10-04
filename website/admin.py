@@ -41,6 +41,7 @@ class PostAdmin(VersionAdmin):
 @admin.register(Club)
 class ClubAdmin(VersionAdmin):
     list_display = ("name", "venue")
+    readonly_fields = ('token',)
     # Lat and long will be given by the Geocoding API, no need to show
     # them on the admin interface
     exclude = ('lat', 'lng')
@@ -78,6 +79,7 @@ class TBMemberAdmin(VersionAdmin):
 @admin.register(Registration)
 class RegistrationAdmin(VersionAdmin):
     form = RegistrationForm
+    readonly_fields  = ('created_at',)
     list_display = ("name", "email", "season", "club", "dob")
     list_filter = ("name", "email", "season", "club")
 

@@ -1,0 +1,72 @@
+[
+{
+  "model": "website.belgianclub",
+  "pk": 20,
+  "fields": {
+    "member_club": false
+  }
+},
+{
+  "model": "website.belgianclub",
+  "pk": 21,
+  "fields": {
+    "member_club": false
+  }
+},
+{
+  "model": "website.belgianclub",
+  "pk": 22,
+  "fields": {
+    "member_club": false
+  }
+},
+{
+  "model": "website.belgianclub",
+  "pk": 23,
+  "fields": {
+    "member_club": false
+  }
+},
+{
+  "model": "website.belgianclub",
+  "pk": 24,
+  "fields": {
+    "member_club": true
+  }
+},
+{
+  "model": "website.belgianclub",
+  "pk": 25,
+  "fields": {
+    "member_club": false
+  }
+},
+{
+  "model": "website.belgianclub",
+  "pk": 26,
+  "fields": {
+    "member_club": false
+  }
+},
+{
+  "model": "website.belgianclub",
+  "pk": 27,
+  "fields": {
+    "member_club": false
+  }
+},
+{
+  "model": "website.belgianclub",
+  "pk": 28,
+  "fields": {
+    "member_club": false
+  }
+},
+{
+  "model": "website.belgianclub",
+  "pk": 29,
+  "fields": {
+    "member_club": false
+  }
+}
+]

@@ -6,7 +6,9 @@
     "name": "Phil Holliday",
     "picture": "player_pictures/phil.jpg",
     "license_number": "",
-    "club": 2,
+    "club": 22,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -16,10 +18,11 @@
     "referee_level": 3,
     "referee_board_member": true,
     "referee_board_position": "National Director of Referees",
-    "referee_text": "I\u2019m the National Director of Referees for Touch Belgium and I have overall management of referee activities in Belgium. I work closely with the Touch Belgium Committee on strategic referee planning for Belgium and I have fantastic support from Steph and Karla on working with developing referees from Belgium and referee organisation at tournaments in Belgium. I started refereeing in 2012 and I hold a L3 badge, which I obtained at the Euros in 2016. I am also a L1 referee coach and a L2 referee presenter.",
+    "referee_text": "I’m the National Director of Referees for Touch Belgium and I have overall management of referee activities in Belgium. I work closely with the Touch Belgium Committee on strategic referee planning for Belgium and I have fantastic support from Steph and Karla on working with developing referees from Belgium and referee organisation at tournaments in Belgium. I started refereeing in 2012 and I hold a L3 badge, which I obtained at the Euros in 2016. I am also a L1 referee coach and a L2 referee presenter.",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -29,7 +32,9 @@
     "name": "Karla Brincat",
     "picture": "player_pictures/karla.jpg",
     "license_number": "",
-    "club": 2,
+    "club": 22,
+    "dob": null,
+    "media_consent": false,
     "committee_member": true,
     "committee_position": "Referee Development Coordinator",
     "email": "refereetraining@touch-belgium.be",
@@ -42,17 +47,20 @@
     "referee_text": "My role within Touch Belgium is to help referees develop and progress through the different referee levels. I will help organise Level 1,2 and 3 courses in Belgium as well as regularly advertise courses taking place outside Belgium. I am here to answer any questions you may have on the referee pathway. I currently hold a L2 badge which I obtained at the Euros 2018. I am working towards obtaining my L3.",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
   "model": "website.tbmember",
   "pk": 3,
   "fields": {
-    "name": "St\u00e9phanie Horeau",
+    "name": "Stéphanie Horeau",
     "picture": "player_pictures/stephanie.jpg",
     "license_number": "",
-    "club": 3,
+    "club": 24,
+    "dob": null,
+    "media_consent": false,
     "committee_member": true,
     "committee_position": "Referee Tournament Coordinator",
     "email": "stephanie.horeau@gmail.com",
@@ -65,7 +73,8 @@
     "referee_text": "I am playing touch since 2016 and referring since 2017. I am holding a level 2 badge, that I got at the Euros in Nottingham in 2018.\r\n\r\nWithin Touch Belgium, I am helping with referee-related organization, and especially for tournaments : referee allocation, external refs coordination, etc.",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -75,7 +84,9 @@
     "name": "Jonathan Chevalier",
     "picture": "player_pictures/jonathanchevalier.jpg",
     "license_number": "",
-    "club": 5,
+    "club": 25,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -88,7 +99,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -98,7 +110,9 @@
     "name": "Vincent Lebacq",
     "picture": "player_pictures/vincentlebacq.jpg",
     "license_number": "",
-    "club": 2,
+    "club": 22,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -111,7 +125,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -121,7 +136,9 @@
     "name": "Mari Detragiache",
     "picture": "player_pictures/maridetragiache.jpg",
     "license_number": "",
-    "club": 3,
+    "club": 24,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -134,7 +151,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -144,7 +162,9 @@
     "name": "Claudia Nagels",
     "picture": "player_pictures/claudianagels.jpg",
     "license_number": "",
-    "club": 3,
+    "club": 24,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -157,7 +177,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -167,7 +188,9 @@
     "name": "Benjamin Devaux",
     "picture": "player_pictures/benjamindevaux.jpg",
     "license_number": "",
-    "club": 3,
+    "club": 24,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -180,7 +203,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -190,7 +214,9 @@
     "name": "Helen Cadwallender",
     "picture": "base/person_placeholder.png",
     "license_number": "",
-    "club": 2,
+    "club": 22,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -203,7 +229,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -213,7 +240,9 @@
     "name": "David Geneix",
     "picture": "base/person_placeholder.png",
     "license_number": "",
-    "club": 3,
+    "club": 24,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -226,17 +255,20 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
   "model": "website.tbmember",
   "pk": 11,
   "fields": {
-    "name": "J\u00e9rome Lepropre",
+    "name": "Jérome Lepropre",
     "picture": "base/person_placeholder.png",
     "license_number": "",
-    "club": 3,
+    "club": 24,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -249,7 +281,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -259,7 +292,9 @@
     "name": "Ugo Sibille",
     "picture": "base/person_placeholder.png",
     "license_number": "",
-    "club": 2,
+    "club": 22,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -272,7 +307,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -282,7 +318,9 @@
     "name": "Loic Dahan",
     "picture": "base/person_placeholder.png",
     "license_number": "",
-    "club": 1,
+    "club": 28,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -295,7 +333,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -305,7 +344,9 @@
     "name": "Samantha Verbois",
     "picture": "base/person_placeholder.png",
     "license_number": "",
-    "club": 1,
+    "club": 28,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -318,7 +359,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -328,7 +370,9 @@
     "name": "Warren Kint",
     "picture": "base/person_placeholder.png",
     "license_number": "",
-    "club": 3,
+    "club": 24,
+    "dob": null,
+    "media_consent": false,
     "committee_member": true,
     "committee_position": "Treasurer",
     "email": "treasurer@touch-belgium.be",
@@ -341,7 +385,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -351,7 +396,9 @@
     "name": "Emmanuel Cordi",
     "picture": "base/person_placeholder.png",
     "license_number": "",
-    "club": 1,
+    "club": 28,
+    "dob": null,
+    "media_consent": false,
     "committee_member": true,
     "committee_position": "Secretary",
     "email": "secretary@touch-belgium.be",
@@ -364,7 +411,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -374,7 +422,9 @@
     "name": "Clara Drewes",
     "picture": "base/person_placeholder.png",
     "license_number": "",
-    "club": 2,
+    "club": 22,
+    "dob": null,
+    "media_consent": false,
     "committee_member": true,
     "committee_position": "Social Media Director",
     "email": "socialmedia@touch-belgium.be",
@@ -387,7 +437,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -397,7 +448,9 @@
     "name": "Penelope Spencer",
     "picture": "base/person_placeholder.png",
     "license_number": "",
-    "club": 3,
+    "club": 24,
+    "dob": null,
+    "media_consent": false,
     "committee_member": true,
     "committee_position": "Tournament Director",
     "email": "tournament@touch-belgium.be",
@@ -410,7 +463,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -420,7 +474,9 @@
     "name": "Laurent Bondon",
     "picture": "base/person_placeholder.png",
     "license_number": "",
-    "club": 2,
+    "club": 22,
+    "dob": null,
+    "media_consent": false,
     "committee_member": true,
     "committee_position": "Youth Director",
     "email": "youth@touch-belgium.be",
@@ -433,7 +489,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -443,7 +500,9 @@
     "name": "Jane Gimber",
     "picture": "base/person_placeholder.png",
     "license_number": "",
-    "club": 2,
+    "club": 22,
+    "dob": null,
+    "media_consent": false,
     "committee_member": true,
     "committee_position": "President",
     "email": "president@touch-belgium.be",
@@ -456,7 +515,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -466,7 +526,9 @@
     "name": "Laurent Bondon",
     "picture": "player_pictures/laurentbondon.jpg",
     "license_number": "",
-    "club": 2,
+    "club": 22,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -479,7 +541,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -489,7 +552,9 @@
     "name": "Corentin Bondon",
     "picture": "player_pictures/corentinbondon.jpg",
     "license_number": "",
-    "club": 2,
+    "club": 22,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -502,7 +567,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -512,7 +578,9 @@
     "name": "Loic Bondon",
     "picture": "player_pictures/loicbondon.jpg",
     "license_number": "",
-    "club": 2,
+    "club": 22,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -525,7 +593,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 },
 {
@@ -535,7 +604,9 @@
     "name": "Ivo Broucke",
     "picture": "base/person_placeholder.png",
     "license_number": "",
-    "club": 6,
+    "club": 26,
+    "dob": null,
+    "media_consent": false,
     "committee_member": false,
     "committee_position": null,
     "email": null,
@@ -548,7 +619,8 @@
     "referee_text": "",
     "coach": false,
     "coach_level": null,
-    "coach_position": null
+    "coach_position": null,
+    "registration_start_date": null
   }
 }
 ]

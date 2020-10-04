@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Touch Belgium Registrations</h2>
+<h4>Club: {{ club.name }}</h4>
+
+<table class="table table-striped mt-4">
+   <thead>
+      <tr>
+         <th scope="col">#</th>
+         <th scope="col">Name</th>
+         <th scope="col">e-mail</th>
+         <th scope="col">Date of birth</th>
+         <th scope="col">Action</th>
+      </tr>
+   </thead>
+   <tbody>
+      {% for registration in registrations %}
+      <tr>
+         <th scope="row">{{ forloop.counter }}</th>
+         <td>{{ registration.name }}</td>
+         <td>{{ registration.email }}</td>
+         <td>{{ registration.dob }}</td>
+         <td>
+            <form action="/registrations/approve/" method="post" class="d-inline">
+               {% csrf_token %}
+               <input id="registration_email" type="hidden" name="registration_email" value="{{ registration.email }}">
+               <button type="submit" class="btn btn-success">Approve</button>
+            </form>
+            <form action="/registrations/reject/" method="post" class="d-inline">
+               {% csrf_token %}
+               <input id="registration_email" type="hidden" name="registration_email" value="{{ registration.email }}">
+               <button type="submit" class="btn btn-danger">Reject</button>
+            </form>
+         </td>
+      </tr>
+      {% empty %}
+      <tr>
+         <th scope="row">1</th>
+         <td>No pending registrations</td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      {% endfor %}
+   </tbody>
+</table>
+
+{% endblock %}

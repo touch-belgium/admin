@@ -12,7 +12,7 @@
   "model": "website.file",
   "pk": 52,
   "fields": {
-    "title": "Simplified rules (Fran\u00e7ais)",
+    "title": "Simplified rules (Français)",
     "file": "documents/simplified_rules_fr.pdf",
     "tag": 7
   }

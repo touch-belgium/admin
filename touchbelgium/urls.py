@@ -23,35 +23,39 @@ from filebrowser.sites import site
 from rest_framework import routers
 
 from website import views
+from website import site_views
 
 
-router = routers.DefaultRouter()
-router.register(r'posts', views.PostViewSet)
-router.register(r'tags', views.TagViewSet)
-router.register(r'venues', views.VenueViewSet)
-router.register(r'clubs', views.ClubViewSet)
-router.register(r'belgian_clubs', views.BelgianClubViewSet, basename="belgian_clubs")
-router.register(r'member_clubs', views.MemberClubViewSet, basename="member_clubs")
-router.register(r'competitions', views.CompetitionViewSet)
-router.register(r'files', views.FileViewSet)
+api_routes = routers.DefaultRouter()
+api_routes.register(r'posts', views.PostViewSet)
+api_routes.register(r'tags', views.TagViewSet)
+api_routes.register(r'venues', views.VenueViewSet)
+api_routes.register(r'clubs', views.ClubViewSet)
+api_routes.register(r'belgian_clubs', views.BelgianClubViewSet, basename="belgian_clubs")
+api_routes.register(r'member_clubs', views.MemberClubViewSet, basename="member_clubs")
+api_routes.register(r'competitions', views.CompetitionViewSet)
+api_routes.register(r'files', views.FileViewSet)
 # Members should not be public (or at least hide name, email and dob)
-# router.register(r'members', views.TBMemberViewSet, basename="member")
-router.register(r'registrations', views.RegistrationViewSet)
-router.register(r'referees', views.RefereeViewSet, basename="referee")
-router.register(r'coaches', views.CoachViewSet, basename="coach")
-router.register(r'committee', views.CommitteeViewSet)
-router.register(r'links', views.LinkViewSet)
-router.register(r'contacts', views.ContactViewSet)
-router.register(r'banner_pictures', views.BannerPictureViewSet)
-router.register(r'pictures', views.PictureViewSet)
-router.register(r'galleries', views.GalleryViewSet)
-
+# api_routes.register(r'members', views.TBMemberViewSet, basename="member")
+api_routes.register(r'registrations', views.RegistrationViewSet)
+api_routes.register(r'referees', views.RefereeViewSet, basename="referee")
+api_routes.register(r'coaches', views.CoachViewSet, basename="coach")
+api_routes.register(r'committee', views.CommitteeViewSet)
+api_routes.register(r'links', views.LinkViewSet)
+api_routes.register(r'contacts', views.ContactViewSet)
+api_routes.register(r'banner_pictures', views.BannerPictureViewSet)
+api_routes.register(r'pictures', views.PictureViewSet)
+api_routes.register(r'galleries', views.GalleryViewSet)
 
 urlpatterns = [
     path('filebrowser/', site.urls),
     path('', admin.site.urls),
     re_path(r'^tinymce/', include('tinymce.urls')),
-    path('api/', include(router.urls)),
+    path('api/', include(api_routes.urls)),
+    path('registrations', site_views.registrations_usage),
+    path('registrations/approve/', site_views.registrations_approve),
+    path('registrations/reject/', site_views.registrations_reject),
+    path('registrations/<str:token>/', site_views.registrations),
     path('robots.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
     re_path(r'^nested_admin/', include('nested_admin.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

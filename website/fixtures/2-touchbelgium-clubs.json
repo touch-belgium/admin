@@ -1,159 +1,6 @@
 [
 {
   "model": "website.club",
-  "pk": 1,
-  "fields": {
-    "name": "Kituro",
-    "logo": "team_logos/kituro_logo.jpg",
-    "founded": "1961",
-    "website": "http://www.kituro.be/",
-    "facebook": "https://www.facebook.com/KituroTouch.Rugby/",
-    "instagram": "",
-    "venue": 8,
-    "main_belgian_club": true,
-    "member_club": true,
-    "lat": "50.8605955000000000",
-    "lng": "4.3991514000000000"
-  }
-},
-{
-  "model": "website.club",
-  "pk": 2,
-  "fields": {
-    "name": "BBRFC Celtic",
-    "logo": "team_logos/bbrfcceltic_logo.png",
-    "founded": "1968",
-    "website": "https://bbrfcceltic.eu/",
-    "facebook": "https://www.facebook.com/BBRFCCelticTouch",
-    "instagram": "",
-    "venue": 2,
-    "main_belgian_club": true,
-    "member_club": true,
-    "lat": "50.8239964000000000",
-    "lng": "4.3988538000000000"
-  }
-},
-{
-  "model": "website.club",
-  "pk": 3,
-  "fields": {
-    "name": "Boitsfort",
-    "logo": "team_logos/boitsfort_logo.jpg",
-    "founded": "",
-    "website": "http://www.brclub.org/?oid=736&pid=7481",
-    "facebook": "https://www.facebook.com/BRCTouch",
-    "instagram": "",
-    "venue": 4,
-    "main_belgian_club": true,
-    "member_club": true,
-    "lat": "50.7936815000000000",
-    "lng": "4.4186864000000000"
-  }
-},
-{
-  "model": "website.club",
-  "pk": 4,
-  "fields": {
-    "name": "Hamme",
-    "logo": "team_logos/hamme_logo.jpg",
-    "founded": "",
-    "website": "http://www.rugbyclubhamme.be/touch.php",
-    "facebook": "",
-    "instagram": "",
-    "venue": 7,
-    "main_belgian_club": true,
-    "member_club": false,
-    "lat": "51.1042877000000000",
-    "lng": "4.1343842000000000"
-  }
-},
-{
-  "model": "website.club",
-  "pk": 5,
-  "fields": {
-    "name": "Brussels Citizens",
-    "logo": "team_logos/citizens_logo.jpg",
-    "founded": "",
-    "website": "http://www.citizensrugby.be/touch",
-    "facebook": "https://www.facebook.com/brusselscitizens/",
-    "instagram": "",
-    "venue": 5,
-    "main_belgian_club": true,
-    "member_club": true,
-    "lat": "50.8118601000000000",
-    "lng": "4.4403763000000000"
-  }
-},
-{
-  "model": "website.club",
-  "pk": 6,
-  "fields": {
-    "name": "Gent",
-    "logo": "team_logos/gent_logo.png",
-    "founded": "",
-    "website": "https://www.gent-rugby.be/teams/touch/",
-    "facebook": "https://www.facebook.com/Genttouchrugby/",
-    "instagram": "",
-    "venue": 6,
-    "main_belgian_club": true,
-    "member_club": true,
-    "lat": "51.0459870000000000",
-    "lng": "3.6876020000000000"
-  }
-},
-{
-  "model": "website.club",
-  "pk": 7,
-  "fields": {
-    "name": "Antwerp",
-    "logo": "team_logos/antwerp_logo.png",
-    "founded": "",
-    "website": "https://www.antwerprugbyclub.be/teams/touch-team/",
-    "facebook": "",
-    "instagram": "",
-    "venue": 1,
-    "main_belgian_club": true,
-    "member_club": false,
-    "lat": "51.1894327000000000",
-    "lng": "4.3984894000000000"
-  }
-},
-{
-  "model": "website.club",
-  "pk": 8,
-  "fields": {
-    "name": "Oudenaarde Rhinos",
-    "logo": "team_logos/oudenaarde_logo.jpg",
-    "founded": "",
-    "website": "https://www.rugby-oudenaarde.be/touch-rugby",
-    "facebook": "",
-    "instagram": "",
-    "venue": 9,
-    "main_belgian_club": true,
-    "member_club": true,
-    "lat": "50.8465849000000000",
-    "lng": "3.6189946000000000"
-  }
-},
-{
-  "model": "website.club",
-  "pk": 9,
-  "fields": {
-    "name": "BUC St Josse",
-    "logo": "team_logos/buc_logo.png",
-    "founded": "",
-    "website": "https://www.bucrugby.be/touch",
-    "facebook": "",
-    "instagram": "",
-    "venue": 3,
-    "main_belgian_club": true,
-    "member_club": true,
-    "lat": "50.8594467000000000",
-    "lng": "4.4222958000000000"
-  }
-},
-{
-  "model": "website.club",
   "pk": 10,
   "fields": {
     "name": "Old Wesley",
@@ -163,10 +10,9 @@
     "facebook": "",
     "instagram": "",
     "venue": null,
-    "main_belgian_club": false,
-    "member_club": false,
     "lat": null,
-    "lng": null
+    "lng": null,
+    "token": "d8fa52"
   }
 },
 {
@@ -180,10 +26,9 @@
     "facebook": "",
     "instagram": "",
     "venue": null,
-    "main_belgian_club": false,
-    "member_club": false,
     "lat": null,
-    "lng": null
+    "lng": null,
+    "token": "e824ed"
   }
 },
 {
@@ -197,10 +42,9 @@
     "facebook": "",
     "instagram": "",
     "venue": null,
-    "main_belgian_club": false,
-    "member_club": false,
     "lat": null,
-    "lng": null
+    "lng": null,
+    "token": "f9999e"
   }
 },
 {
@@ -214,10 +58,9 @@
     "facebook": "",
     "instagram": "",
     "venue": null,
-    "main_belgian_club": false,
-    "member_club": false,
     "lat": null,
-    "lng": null
+    "lng": null,
+    "token": "da3cdc"
   }
 },
 {
@@ -231,10 +74,9 @@
     "facebook": "",
     "instagram": "",
     "venue": null,
-    "main_belgian_club": false,
-    "member_club": false,
     "lat": null,
-    "lng": null
+    "lng": null,
+    "token": "63be84"
   }
 },
 {
@@ -248,10 +90,9 @@
     "facebook": "",
     "instagram": "",
     "venue": null,
-    "main_belgian_club": false,
-    "member_club": false,
     "lat": null,
-    "lng": null
+    "lng": null,
+    "token": "21f9f0"
   }
 },
 {
@@ -265,10 +106,9 @@
     "facebook": "",
     "instagram": "",
     "venue": null,
-    "main_belgian_club": false,
-    "member_club": false,
     "lat": null,
-    "lng": null
+    "lng": null,
+    "token": "7319b4"
   }
 },
 {
@@ -282,10 +122,9 @@
     "facebook": "",
     "instagram": "",
     "venue": null,
-    "main_belgian_club": false,
-    "member_club": false,
     "lat": null,
-    "lng": null
+    "lng": null,
+    "token": "3d9abd"
   }
 },
 {
@@ -299,15 +138,14 @@
     "facebook": "",
     "instagram": "",
     "venue": null,
-    "main_belgian_club": false,
-    "member_club": false,
     "lat": null,
-    "lng": null
+    "lng": null,
+    "token": "6b3051"
   }
 },
 {
   "model": "website.club",
-  "pk": 19,
+  "pk": 20,
   "fields": {
     "name": "Anderlecht",
     "logo": "team_logos/anderlecht-logo.png",
@@ -316,10 +154,153 @@
     "facebook": "https://www.facebook.com/RSCASectionRugby/",
     "instagram": "",
     "venue": 12,
-    "main_belgian_club": true,
-    "member_club": false,
     "lat": "50.8275681000000000",
-    "lng": "4.2720691000000000"
+    "lng": "4.2720691000000000",
+    "token": "c701d4"
+  }
+},
+{
+  "model": "website.club",
+  "pk": 21,
+  "fields": {
+    "name": "Antwerp",
+    "logo": "team_logos/antwerp_logo.png",
+    "founded": "",
+    "website": "https://www.antwerprugbyclub.be/teams/touch-team/",
+    "facebook": "",
+    "instagram": "",
+    "venue": 1,
+    "lat": "51.1894327000000000",
+    "lng": "4.3984894000000000",
+    "token": "c6bc28"
+  }
+},
+{
+  "model": "website.club",
+  "pk": 22,
+  "fields": {
+    "name": "BBRFC Celtic",
+    "logo": "team_logos/bbrfcceltic_logo.png",
+    "founded": "1968",
+    "website": "https://bbrfcceltic.eu/",
+    "facebook": "https://www.facebook.com/BBRFCCelticTouch",
+    "instagram": "",
+    "venue": 2,
+    "lat": "50.8239964000000000",
+    "lng": "4.3988538000000000",
+    "token": "8f108b"
+  }
+},
+{
+  "model": "website.club",
+  "pk": 23,
+  "fields": {
+    "name": "BUC St Josse",
+    "logo": "team_logos/buc_logo.png",
+    "founded": "",
+    "website": "https://www.bucrugby.be/touch",
+    "facebook": "",
+    "instagram": "",
+    "venue": 3,
+    "lat": "50.8594467000000000",
+    "lng": "4.4222958000000000",
+    "token": "68ba3d"
+  }
+},
+{
+  "model": "website.club",
+  "pk": 24,
+  "fields": {
+    "name": "Boitsfort",
+    "logo": "team_logos/boitsfort_logo.jpg",
+    "founded": "",
+    "website": "http://www.brclub.org/?oid=736&pid=7481",
+    "facebook": "https://www.facebook.com/BRCTouch",
+    "instagram": "",
+    "venue": 4,
+    "lat": "50.7936815000000000",
+    "lng": "4.4186864000000000",
+    "token": "16bfec"
+  }
+},
+{
+  "model": "website.club",
+  "pk": 25,
+  "fields": {
+    "name": "Brussels Citizens",
+    "logo": "team_logos/citizens_logo.jpg",
+    "founded": "",
+    "website": "http://www.citizensrugby.be/touch",
+    "facebook": "https://www.facebook.com/brusselscitizens/",
+    "instagram": "",
+    "venue": 5,
+    "lat": "50.8118601000000000",
+    "lng": "4.4403763000000000",
+    "token": "e6b20d"
+  }
+},
+{
+  "model": "website.club",
+  "pk": 26,
+  "fields": {
+    "name": "Gent",
+    "logo": "team_logos/gent_logo.png",
+    "founded": "",
+    "website": "https://www.gent-rugby.be/teams/touch/",
+    "facebook": "https://www.facebook.com/Genttouchrugby/",
+    "instagram": "",
+    "venue": 6,
+    "lat": "51.0459870000000000",
+    "lng": "3.6876020000000000",
+    "token": "eaebea"
+  }
+},
+{
+  "model": "website.club",
+  "pk": 27,
+  "fields": {
+    "name": "Hamme",
+    "logo": "team_logos/hamme_logo.jpg",
+    "founded": "",
+    "website": "http://www.rugbyclubhamme.be/touch.php",
+    "facebook": "",
+    "instagram": "",
+    "venue": 7,
+    "lat": "51.1042877000000000",
+    "lng": "4.1343842000000000",
+    "token": "a14a25"
+  }
+},
+{
+  "model": "website.club",
+  "pk": 28,
+  "fields": {
+    "name": "Kituro",
+    "logo": "team_logos/kituro_logo.jpg",
+    "founded": "1961",
+    "website": "http://www.kituro.be/",
+    "facebook": "https://www.facebook.com/KituroTouch.Rugby/",
+    "instagram": "",
+    "venue": 8,
+    "lat": "50.8605955000000000",
+    "lng": "4.3991514000000000",
+    "token": "fdb728"
+  }
+},
+{
+  "model": "website.club",
+  "pk": 29,
+  "fields": {
+    "name": "Oudenaarde Rhinos",
+    "logo": "team_logos/oudenaarde_logo.jpg",
+    "founded": "",
+    "website": "https://www.rugby-oudenaarde.be/touch-rugby",
+    "facebook": "",
+    "instagram": "",
+    "venue": 9,
+    "lat": "50.8465849000000000",
+    "lng": "3.6189946000000000",
+    "token": "bbdb5b"
   }
 }
 ]
