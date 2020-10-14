@@ -79,9 +79,9 @@ class TBMemberAdmin(VersionAdmin):
 @admin.register(Registration)
 class RegistrationAdmin(VersionAdmin):
     form = RegistrationForm
-    readonly_fields  = ('created_at',)
-    list_display = ("name", "email", "season", "club", "dob")
-    list_filter = ("name", "email", "season", "club")
+    readonly_fields  = ('created_at', 'reviewed_at')
+    list_display = ("name", "email", "season", "club", "dob", "status")
+    list_filter = ("season", "club", "status")
 
 
 @admin.register(Link)

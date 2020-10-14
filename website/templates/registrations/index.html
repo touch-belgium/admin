@@ -9,6 +9,7 @@
       <tr>
          <th scope="col">#</th>
          <th scope="col">Name</th>
+         <th scope="col">Season</th>
          <th scope="col">e-mail</th>
          <th scope="col">Date of birth</th>
          <th scope="col">Action</th>
@@ -19,17 +20,18 @@
       <tr>
          <th scope="row">{{ forloop.counter }}</th>
          <td>{{ registration.name }}</td>
+         <td>{{ registration.season }}</td>
          <td>{{ registration.email }}</td>
          <td>{{ registration.dob }}</td>
          <td>
             <form action="/registrations/approve/" method="post" class="d-inline">
                {% csrf_token %}
-               <input id="registration_email" type="hidden" name="registration_email" value="{{ registration.email }}">
+               <input id="registration_id" type="hidden" name="registration_id" value="{{ registration.id }}">
                <button type="submit" class="btn btn-success">Approve</button>
             </form>
             <form action="/registrations/reject/" method="post" class="d-inline">
                {% csrf_token %}
-               <input id="registration_email" type="hidden" name="registration_email" value="{{ registration.email }}">
+               <input id="registration_id" type="hidden" name="registration_id" value="{{ registration.id }}">
                <button type="submit" class="btn btn-danger">Reject</button>
             </form>
          </td>
@@ -38,6 +40,7 @@
       <tr>
          <th scope="row">1</th>
          <td>No pending registrations</td>
+         <td></td>
          <td></td>
          <td></td>
          <td></td>

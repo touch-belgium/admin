@@ -44,6 +44,10 @@ class Post(models.Model):
         ordering = ['-created_at']
 
 
+def generate_uuidv4():
+    return uuid.uuid4().hex[0:6]
+
+
 class Club(models.Model):
     name = models.CharField(max_length=50)
     logo = FileBrowseField(max_length=500, default="base/team_placeholder.png",
@@ -59,7 +63,7 @@ class Club(models.Model):
     lat = models.DecimalField(max_digits=22, decimal_places=16, blank=True, null=True)
     lng = models.DecimalField(max_digits=22, decimal_places=16, blank=True, null=True)
 
-    token = models.CharField(max_length=6, default="c61978")
+    token = models.CharField(max_length=6, default=generate_uuidv4)
 
     @property
     def home_matches(self):
@@ -315,15 +319,18 @@ class TBMember(models.Model):
     picture = FileBrowseField(max_length=500, default="base/person_placeholder.png",
                               directory="/", blank=True)
     license_number = models.CharField(max_length=30, blank=True)
-    club = models.ForeignKey("Club", on_delete=models.PROTECT, blank=True, null=True)
+    club = models.ForeignKey("BelgianClub", on_delete=models.PROTECT, blank=True, null=True)
     dob = models.DateField(blank=True, null=True, verbose_name="Date of birth")
+    email = models.EmailField(blank=True, null=True)
+    phone_number = models.CharField(max_length=20, blank=True, null=True)
     media_consent = models.BooleanField(default=False)
+
+    guardian_name = models.CharField(max_length=100, blank=True, null=True)
+    guardian_email = models.EmailField(blank=True, null=True)
 
     # Committee
     committee_member = models.BooleanField(default=False)
     committee_position = models.CharField(max_length=50, blank=True, null=True)
-    email = models.EmailField(blank=True, null=True)
-    phone_number = models.CharField(max_length=20, blank=True, null=True)
     committee_text = models.TextField(blank=True, null=True)
 
     # Ref
@@ -354,7 +361,7 @@ class Registration(models.Model):
     season = models.CharField(max_length=50, blank=True)
     name = models.CharField(max_length=100)
     license_number = models.CharField(max_length=30, blank=True)
-    club = models.ForeignKey("Club", on_delete=models.PROTECT, blank=True, null=True)
+    club = models.ForeignKey("BelgianClub", on_delete=models.PROTECT, blank=True, null=True)
     email = models.EmailField()
     dob = models.DateField(verbose_name="Date of birth")
     media_consent = models.BooleanField(default=False)
@@ -362,12 +369,15 @@ class Registration(models.Model):
     guardian_name = models.CharField(max_length=100, blank=True)
     guardian_email = models.EmailField(blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True, null=True)
-    reviewed_at = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True,
+                                      help_text="Date and time the registration was submitted")
+    reviewed_at = models.DateTimeField(blank=True, null=True,
+                                       help_text="Date and time in which it was reviewed by the club rep / director")
     STATUS_CHOICES = [
         ("P", "Pending"),
         ("A", "Approved"),
-        ("R", "Rejected")
+        ("R", "Rejected"),
+        ("M", "Manual review required")
     ]
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default="P")
 

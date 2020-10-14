@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from .models import Tag, Post, Match, Competition, Venue, Club, TBMember, Registration, Event, File, Link, Contact, BannerPicture, Category, Pool, Picture, Gallery, Bonus
+from .models import Tag, Post, Match, Competition, Venue, BelgianClub, Club, TBMember, Registration, Event, File, Link, Contact, BannerPicture, Category, Pool, Picture, Gallery, Bonus
 from rest_framework import serializers
 
 
@@ -173,7 +173,7 @@ class TBMemberSerializer(serializers.HyperlinkedModelSerializer):
 class RegistrationSerializer(serializers.HyperlinkedModelSerializer):
     club = serializers.SlugRelatedField(
         slug_field="name",
-        queryset=Club.objects.all(),
+        queryset=BelgianClub.objects.all(),
         # Following two options allow for independent, no-club
         # registrations on Touch Belgium
         required=False,
@@ -184,14 +184,22 @@ class RegistrationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Registration
         exclude = ["url"]
-        extra_kwargs = {"season": {"write_only": True},
-                        "name": {"write_only": True},
-                        "license_number": {"write_only": True},
-                        "email": {"write_only": True},
-                        "dob": {"write_only": True},
-                        "media_consent": {"write_only": True},
-                        "guardian_name": {"write_only": True},
-                        "guardian_email": {"write_only": True}}
+        extra_kwargs = {
+            "season": {"write_only": True},
+            "name": {"write_only": True},
+            "license_number": {"write_only": True},
+            "email": {"write_only": True},
+            "dob": {"write_only": True},
+            "media_consent": {"write_only": True},
+            "guardian_name": {"write_only": True},
+            "guardian_email": {"write_only": True},
+            # AssertionError
+            # May not set both `read_only` and `write_only`
+            # ¯\_(ツ)_/¯
+            # "created_at": {"write_only": True},
+            # "reviewed_at": {"write_only": True},
+            "status": {"write_only": True}
+        }
 
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):
